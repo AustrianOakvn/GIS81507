@@ -9,7 +9,10 @@ Sample code was taken from: [Github repo](https://github.com/TeamFightingICE/Pyt
 
 ## Requirement
 
+Please install DareFightingICE version 6.1 because it need to be compatiable with pyftg
+
 - `python==3.10`
 - `pyftg==1.1`
+  
 
 ## How to use
