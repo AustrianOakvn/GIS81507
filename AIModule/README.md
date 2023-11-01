@@ -89,7 +89,7 @@ Attack Data:
 - Input 2: Hp, energy, distance between 2 characters
 - Movement logic: extract the movement input keys --> select random?(sort keys based on if that key would make the character move closer) or any rules?
 - Attack logic: extract combo (search combination?, random?) Simple first: if-else (if the combo exist inside the sequence and enery full and near enemy --> launch combo else chose random attack?)
-- Advanced: insert keys into the mctsai? (2 mcts played against )
+- Advanced: insert keys into the mctsai? (2 mcts played against, modify the mctsai)
 - Let's the game run and there will be an AI that trains against another AI (random action, MCTS)
 - If both are random?
 
