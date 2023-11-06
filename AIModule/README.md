@@ -8,6 +8,8 @@ Link to the library: [Github repo](https://github.com/TeamFightingICE/pyftg)
 Sample code was taken from: [Github repo](https://github.com/TeamFightingICE/PythonAISamples)
 Reinforcement learning using only sounds: https://github.com/TeamFightingICE/BlindAI
 
+- Action corresponds to the CommandCenter: https://www.ice.ci.ritsumei.ac.jp/~ftgaic/ZEN_action_animations.htm
+
 ## Requirement
 
 Please install DareFightingICE version 6.1 because it need to be compatiable with pyftg
@@ -47,7 +49,7 @@ Please install DareFightingICE version 6.1 because it need to be compatiable wit
 │   ├── game_data.py (max_hps, max_energies, character_names, ai_names)
 │   ├── hit_area.py
 │   ├── key.py (Available keys: A, B, C, U, R, D, L)
-│   ├── round_result.py
+│  ├── round_result.py
 │   └── screen_data.py
 └── util.py
 
@@ -94,3 +96,12 @@ Attack Data:
 - If both are random?
 
 ## How to use
+
+- First run the game with option grpc
+
+```bash
+./run-linux-amd64.sh --grpc-auto
+
+```
+
+- Then run the python file Main_PyAIvsPyAI or your own file.

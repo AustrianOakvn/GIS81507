@@ -3,16 +3,20 @@ import argparse
 from pyftg import Gateway
 from KickAI import KickAI
 from DisplayInfo import DisplayInfo
+from DemoAI import DemoAI
 
 def start_game(port: int):
     gateway = Gateway(port=port)
     character = 'ZEN'
     game_num = 1
-    agent1 = KickAI()
+    #agent1 = KickAI()
+    agent1 = DemoAI()
     agent2 = DisplayInfo()
-    gateway.register_ai("KickAI", agent1)
-    gateway.register_ai("DisplayInfo", agent2)
-    gateway.run_game([character, character], ["KickAI", "DisplayInfo"], game_num)
+    # gateway.register_ai("KickAI", agent1)
+    gateway.register_ai("DemoAI", agent1)
+    #gateway.register_ai("DisplayInfo", agent2)
+    #gateway.run_game([character, character], ["KickAI", "DisplayInfo"], game_num)
+    gateway.run_game([character, character], ["DemoAI", "SandBox"], game_num)
     gateway.close()
 
 if __name__ == '__main__':
