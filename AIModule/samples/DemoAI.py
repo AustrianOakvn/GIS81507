@@ -59,7 +59,6 @@ class DemoAI(AIInterface):
         if distance == -1:
             self.cc.command_call("STAND_A")
         else:
-            print(distance)
             self.cc.command_call("FORWARD_WALK")
             close = 80*self.width/960
             far = 200*self.width/960
