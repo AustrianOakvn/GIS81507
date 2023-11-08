@@ -8,7 +8,7 @@
 
 - Start game
 
-```json
+```
 {
     game_id: string,
     start: bool,
@@ -17,7 +17,7 @@
 
 - Command handler
 
-```json
+```
 {
   player_1: 
   {
@@ -32,7 +32,7 @@
 
 - Game status
 
-```json
+```
 {
     game_status: string,
     character_1:
