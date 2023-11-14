@@ -6,8 +6,6 @@ from twitchio.message import Message
 
 
 logger = logging.getLogger(__name__)
-REFRESH_TOKEN = os.environ.get("REFRESH_TOKEN")
-CLIENT_ID = os.environ.get("CLIENT_ID")
 
 
 class Bot(commands.Bot):
@@ -57,8 +55,3 @@ class Bot(commands.Bot):
         # Send a hello back!
         # Sending a reply back to the channel is easy... Below is an example.
         await ctx.send(f"Hello {ctx.author.name}!")
-
-    # @commands.command()
-    # async def hello_whisper(self, ctx: commands.Context):
-    #     target_user = ctx.author.name
-    #     await ctx.author.send(f"Hello {target_user}!")
