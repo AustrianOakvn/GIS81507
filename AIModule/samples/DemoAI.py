@@ -1,7 +1,7 @@
 from pyftg import AIInterface 
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
-
+from action_mapping import *
 class DemoAI(AIInterface):
     def __init__(self) -> None:
         self.blind_flag = False
@@ -13,6 +13,9 @@ class DemoAI(AIInterface):
                        "JUMP", "NEUTRAL", "STAND_A", "STAND_B", "STAND_D_DB_BA", "STAND_D_DB_BB", "STAND_D_DF_FA", \
                        "STAND_D_DF_FB", "STAND_D_DF_FC", "STAND_F_D_DFA", "STAND_F_D_DFB", "STAND_FA", "STAND_FB", \
                        "STAND_GUARD", "THROW_A", "THROW_B"
+        
+
+        self.selected_action = None
 
     def name(self)->str:
         return self.__class__.__name__
@@ -49,14 +52,7 @@ class DemoAI(AIInterface):
         self.input_key.empty()
         self.cc.skill_cancel()
 
-        # self.get_information(self.frame_data, is_control=False, non_delay=self.frame_data)
-        # player_xs = []
-        # for ch in self.frame_data.character_data:
-        #     player_xs.append(ch.x)
-        # print(player_xs)
-        # distance = abs(player_xs[0] - player_xs[1])
         distance = self.calculate_distance()
-        #distance = self.calculate_distance(self.screen_data.display_bytes)
         if distance == -1:
             self.cc.command_call("STAND_A")
         else:
@@ -76,3 +72,14 @@ class DemoAI(AIInterface):
         for ch in self.frame_data.character_data:
             player_xs.append(ch.x)
         return abs(player_xs[0] - player_xs[1])
+    
+
+    def get_player_info(self):
+        # HP, Energy level
+        ret = {}
+        ret["hp"] = self.frame_data.character_data[0].hp
+        ret["enery"] = self.frame_data.character_data[0].energy
+        return ret
+    
+    def set_action(self, action):
+        self.selected_action = action
