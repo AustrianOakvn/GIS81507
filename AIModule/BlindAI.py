@@ -24,6 +24,7 @@ class SoundAgent(AIInterface):
         
         self.just_inited = None 
         self.pre_frame_data:FrameData = None 
+        self.nonDelay: FrameData = None 
 
     def name(self)-> str:
         return self.__class__.__name__
@@ -40,4 +41,29 @@ class SoundAgent(AIInterface):
     def get_information(self, frame_data:FrameData, is_control:bool, non_delay:FrameData):
         self.frameData = frame_data 
         self.cc.set_frame_data(self.frameData, self.player)
+        self.pre_frame_data = self.nonDelay if self.nonDelay is not None else non_delay
+        self.nonDelay = non_delay 
+        self.isControl = is_control 
+        self.currentFrameNum = self.frameData.current_frame_number
+
+    def round_end(self, round_result:RoundResult):
+        self.logger.info(round_result.remaining_hps[0])
+        self.logger.info(round_result.remaining_hps[1])
+        self.logger.info(round_result.elapsed_frame)
+        self.just_inited = True 
+    
+
+    def processing(self):
+        start_time = time.time()*1000
+        if self.frameData.empty_flag or self.frameData.current_frame_number<=0:
+            self.isGameJustStarted = True 
+            return 
+        
+        self.inputKey.empty()
+        self.cc.skill_cancel()
+        action = "AIR_A"
+        # perform action
+        self.cc.command_call(self.actions[action])
+
+
 

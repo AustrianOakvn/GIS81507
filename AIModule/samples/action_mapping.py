@@ -1,0 +1,58 @@
+
+ACTIONS = {
+    "AIR_A": "A", 
+    "AIR_B": "B", 
+    "AIR_D_DB_BA":"2 1 4_A", 
+    "AIR_D_DB_BB":"2 1 4_B", 
+    "AIR_D_DF_FA":"2 3 6_A", 
+    "AIR_D_DF_FB":"2 3 6_B", 
+    "AIR_DA":"2_A", 
+    "AIR_DB":"2_B", 
+    "AIR_F_D_DFA":"6 2 3_A", 
+    "AIR_F_D_DFB":"6 2 3_B", 
+    "AIR_FA":"6_A", 
+    "AIR_FB":"6_B", 
+    "AIR_UA":"8_A", 
+    "AIR_UB":"8_B", 
+    "BACK_JUMP":"7", 
+    "BACK_STEP":"4 4", 
+    "CROUCH_A":"2_A", 
+    "CROUCH_B":"2_B", 
+    "CROUCH_FA":"3_A", 
+    "CROUCH_FB":"3_B", 
+    "CROUCH_GUARD":"1", 
+    "DASH":"6 6", 
+    "FOR_JUMP": "9", 
+    "FORWARD_WALK":"6",
+    "JUMP":"8", 
+    "STAND_A": "A", 
+    "STAND_B": "B", 
+    "STAND_D_DB_BA":"2 1 4_A", 
+    "STAND_D_DB_BB":"2 1 4_B", 
+    "STAND_D_DF_FA":"2 3 6_A", 
+    "STAND_D_DF_FB":"2 3 6_B", 
+    "STAND_D_DF_FC":"2 3 6_C", 
+    "STAND_F_D_DFA":"6 2 3_A", 
+    "STAND_F_D_DFB":"6 2 3_B", 
+    "STAND_FA":"6_A", 
+    "STAND_FB":"6_B", 
+    "STAND_GUARD":"4", 
+    "THROW_A":"4_A", 
+    "THROW_B":"4_B"
+}
+
+KEY_MAP_INVERSE = {
+    "T": "A",
+    "Y": "B",
+    "U": "C",
+    "K+J": "1",
+    "K": "2",
+    "K+L": "3",
+    "J": "4",
+    "L": "6",
+    "I+J": "7",
+    "I": "8",
+    "I+L": 9
+}
+
+KEY_MAP = {v:k for k,v in KEY_MAP_INVERSE.items()}

@@ -2,7 +2,7 @@ from pyftg import AIInterface
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
 
-class DemoAI(AIInterface):
+class DemoAI_2(AIInterface):
     def __init__(self) -> None:
         self.blind_flag = False
         self.width = 96
@@ -49,14 +49,7 @@ class DemoAI(AIInterface):
         self.input_key.empty()
         self.cc.skill_cancel()
 
-        # self.get_information(self.frame_data, is_control=False, non_delay=self.frame_data)
-        # player_xs = []
-        # for ch in self.frame_data.character_data:
-        #     player_xs.append(ch.x)
-        # print(player_xs)
-        # distance = abs(player_xs[0] - player_xs[1])
         distance = self.calculate_distance()
-        #distance = self.calculate_distance(self.screen_data.display_bytes)
         if distance == -1:
             self.cc.command_call("STAND_A")
         else:
