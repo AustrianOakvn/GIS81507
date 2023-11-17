@@ -1,4 +1,5 @@
 from typing import Callable, Union
+
 from twitchio.channel import Channel
 from twitchio.ext import commands
 from twitchio.user import User
@@ -72,7 +73,7 @@ class Bot(commands.Bot):
         # Since we have commands and are overriding the default `event_message`
         # We must let the bot know we want to handle and invoke our commands...
         await self.handle_commands(message)
-    
+
     async def event_join(self, channel: Channel, user: User):
         print(f"{user.name} has joined {channel.name}")
         return await super().event_join(channel, user)
