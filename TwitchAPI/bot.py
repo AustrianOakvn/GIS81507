@@ -1,3 +1,4 @@
+from typing import List
 import logging
 import os
 import threading
@@ -7,8 +8,11 @@ import requests
 from twitchio.ext import commands
 from twitchio.message import Message
 
+
 from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS, NUM_PLAYERS, PING_ROUTE
 from datamodel import GameStatus, Player
+from components.databases.bet_db import BetDatabase
+
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +29,14 @@ class Bot(commands.Bot):
             initial_channels=[os.environ.get("CHANNEL")],
         )
 
+
         # if new game is started, then clear player_list and next_game_queue
+
+        # Bet database
+        self.bet_db = BetDatabase()
+
+        # TODO: if new game is started, then clear player_list and next_game_queue
+
         # player_list is a dictionary of twitch_id: Player
         # self.player_list = {'964201114': Player(twitch_id='964201114', username='damtien440', player_team='player_1')}
         self.player_list = {}
@@ -34,6 +45,7 @@ class Bot(commands.Bot):
         self.game = GameStatus(
             game_id=None, game_status=None, character_1=None, character_2=None
         )
+
 
         # start a thread checking game status every 0.5 seconds
         # TODO: Uncomment this when game API is ready
@@ -61,6 +73,7 @@ class Bot(commands.Bot):
 
         # Since we have commands and are overriding the default `event_message`
         # We must let the bot know we want to handle and invoke our commands...
+
         if isinstance(message.content, str) and message.content.startswith(
             self.command_prefix
         ):
@@ -90,6 +103,58 @@ class Bot(commands.Bot):
         # TODO: If the game ended, then output the result to chat,
         # and remove the players from the player_list, procede to the next game
         self._procede_to_next_game()
+
+    @commands.command()
+    async def balance(self, ctx: commands.Context):
+        """Check balance function. Invoked when users say "?balance"
+
+        Args:
+            ctx (commands.Context): Chat context
+        """
+        logger.info("Player %s sent check balance command.", ctx.author.name)
+        current_balance = self.bet_db.get_balance(ctx.author.id)
+        await ctx.send(f"User {ctx.author.name} has {current_balance} in balance.")
+
+    @commands.command()
+    async def bet(self, ctx: commands.Context):
+        """Bet function. Invoked when users say "?bet amount"
+
+        Args:
+            ctx (commands.Context): Chat context
+        """
+        logger.info("Player %s sent bet command.", ctx.author.name)
+        parts: List[str] = str(ctx.message.content).split()
+
+        ### BEGIN OF CHECK ###
+        # Check bet command validity
+        if len(parts) != 3:
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed due to syntax error.")
+            return
+
+        # Check parts[1]: chosen player
+        if not (parts[1].isdigit() and 1 <= int(parts[1]) <= 2):
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Chosen player must be 1 or 2.")
+            return
+        chosen_player = int(parts[1])
+
+        # Check parts[2]: amount of money
+        if not (parts[2].isdigit() and 0 < int(parts[2])):
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Amount of money must be an integer and bigger than 0.")
+            return
+        amount = int(parts[2])
+
+        # TODO: check if player has already placed a bet. If already, do not allow.
+        ### END OF CHECK
+
+        logger.info("Bet command from player %s has valid syntax.", ctx.author.name)
+        success = self.bet_db.bet(ctx.author.id, amount)
+        if not success:
+            logger.error("Bet command from player %s was not executed. Reason: not enough mineral.", ctx.author.name, ctx.author.id)
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Reason: balance is not enough.")
+            return
+
+        new_balance = self.bet_db.get_balance(ctx.author.id)
+        await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
