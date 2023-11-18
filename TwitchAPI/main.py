@@ -1,7 +1,8 @@
 import logging
 
-from bot import Bot
 from dotenv import load_dotenv
+
+from bot import Bot
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
