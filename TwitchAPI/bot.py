@@ -104,10 +104,16 @@ class Bot(commands.Bot):
     @commands.command()
     async def register(self, ctx: commands.Context):
         """Register player"""
-        self._register_player(ctx.message)
-        await ctx.send(
-            f"Registered {ctx.author.name} to player queue for {self.next_game_queue[ctx.author.id].player_team}!"
-        )
+        result = self._register_player(ctx.message)
+
+        if result:
+            await ctx.send(
+                f"Registered {ctx.author.name} to player queue for {self.next_game_queue[ctx.author.id].player_team}!"
+            )
+        else:
+            await ctx.send(
+                f"{ctx.author.name} is already in player_list or player_queue!"
+            )
 
     @staticmethod
     def _get_action_key(message: Message) -> str or None:
@@ -136,15 +142,19 @@ class Bot(commands.Bot):
         self.game.character_2.hp = game_status["character_2"]["hp"]
         self.game.character_2.energy = game_status["character_2"]["energy"]
 
-    def _register_player(self, message: Message) -> None:
-        if message.author.id in self.player_list:
-            return
+    def _register_player(self, message: Message):
+        if (message.author.id in self.player_list) or (
+            message.author.id in self.next_game_queue
+        ):
+            return False
 
         self.next_game_queue[message.author.id] = Player(
             twitch_id=message.author.id,
             username=message.author.name,
             player_team="player_1" if len(self.player_list) % 2 == 0 else "player_2",
         )
+
+        return True
 
     def _procede_to_next_game(self):
         """Procede to the next game"""
