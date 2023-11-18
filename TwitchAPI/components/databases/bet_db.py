@@ -8,8 +8,8 @@ logger = logging.getLogger(__name__)
 
 
 class BetDatabase(Database):
-    def __init__(self, db_name: str):
-        super().__init__(db_name)
+    def __init__(self):
+        super().__init__("bet")
 
         # Check if need init
         if not self.check_if_table_exists("balance"):

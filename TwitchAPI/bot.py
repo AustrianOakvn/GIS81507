@@ -8,6 +8,9 @@ from datamodel import GameStatus, Player
 from twitchio.ext import commands
 from twitchio.message import Message
 
+from components.databases.bet_db import BetDatabase
+
+
 logger = logging.getLogger(__name__)
 
 
@@ -22,6 +25,9 @@ class Bot(commands.Bot):
             prefix=os.environ.get("COMMAND_PREFIX"),
             initial_channels=[os.environ.get("CHANNEL")],
         )
+
+        # Bet database
+        self.bet_db = BetDatabase()
 
         # TODO: if new game is started, then clear player_list and next_game_queue
         # player_list is a dictionary of twitch_id: Player
@@ -82,13 +88,24 @@ class Bot(commands.Bot):
         # and remove the players from the player_list, procede to the next game
 
     @commands.command()
+    async def balance(self, ctx: commands.Context):
+        """Check balance function. Invoked when users say "?balance"
+
+        Args:
+            ctx (commands.Context): Chat context
+        """
+        logger.info("Player %s sent check balance command.", ctx.author.name)
+        current_balance = self.bet_db.get_balance(ctx.author.id)
+        await ctx.send(f"User {ctx.author.name} has {current_balance} in balance.")
+
+    @commands.command()
     async def bet(self, ctx: commands.Context):
         """Bet function. Invoked when users say "?bet amount"
 
         Args:
             ctx (commands.Context): Chat context
         """
-        logger.info("Player %s (%s) sent bet command.", ctx.author.name, ctx.author.id)
+        logger.info("Player %s sent bet command.", ctx.author.name)
         parts: List[str] = str(ctx.message.content).split()
 
         ### BEGIN OF CHECK ###
@@ -101,18 +118,26 @@ class Bot(commands.Bot):
         if not (parts[1].isdigit() and 1 <= int(parts[1]) <= 2):
             await ctx.send(f"Bet command from {ctx.author.name} was not executed. Chosen player must be 1 or 2.")
             return
+        chosen_player = int(parts[1])
 
         # Check parts[2]: amount of money
         if not (parts[2].isdigit() and 0 < int(parts[2])):
             await ctx.send(f"Bet command from {ctx.author.name} was not executed. Amount of money must be an integer and bigger than 0.")
             return
+        amount = int(parts[2])
 
-        # TODO: check if enough money to bet
+        # TODO: check if player has already placed a bet. If already, do not allow.
         ### END OF CHECK
 
-        logger.info("Bet command from player %s (%s) is valid.", ctx.author.name, ctx.author.id)
+        logger.info("Bet command from player %s has valid syntax.", ctx.author.name)
+        success = self.bet_db.bet(ctx.author.id, amount)
+        if not success:
+            logger.error("Bet command from player %s was not executed. Reason: not enough mineral.", ctx.author.name, ctx.author.id)
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Reason: balance is not enough.")
+            return
 
-        await ctx.send(f"Received valid bet command from {ctx.author.name} ({ctx.author.id}).")
+        new_balance = self.bet_db.get_balance(ctx.author.id)
+        await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
