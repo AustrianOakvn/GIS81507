@@ -1,3 +1,4 @@
+from typing import List
 import logging
 import os
 
@@ -56,7 +57,6 @@ class Bot(commands.Bot):
             await self.handle_commands(message)
 
             # TODO: add game status check here to initiate game
-
             return
 
         logger.info("Usual chat")
@@ -86,9 +86,33 @@ class Bot(commands.Bot):
         """Bet function. Invoked when users say "?bet amount"
 
         Args:
-            ctx (commands.Context): _description_
+            ctx (commands.Context): Chat context
         """
-        await ctx.send(f"Received bet command from {ctx.author.name} ({ctx.author.id}).")
+        logger.info("Player %s (%s) sent bet command.", ctx.author.name, ctx.author.id)
+        parts: List[str] = str(ctx.message.content).split()
+
+        ### BEGIN OF CHECK ###
+        # Check bet command validity
+        if len(parts) != 3:
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed due to syntax error.")
+            return
+
+        # Check parts[1]: chosen player
+        if not (parts[1].isdigit() and 1 <= int(parts[1]) <= 2):
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Chosen player must be 1 or 2.")
+            return
+
+        # Check parts[2]: amount of money
+        if not (parts[2].isdigit() and 0 < int(parts[2])):
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Amount of money must be an integer and bigger than 0.")
+            return
+
+        # TODO: check if enough money to bet
+        ### END OF CHECK
+
+        logger.info("Bet command from player %s (%s) is valid.", ctx.author.name, ctx.author.id)
+
+        await ctx.send(f"Received valid bet command from {ctx.author.name} ({ctx.author.id}).")
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
