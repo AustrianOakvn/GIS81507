@@ -1,7 +1,7 @@
 import dataclasses
 
 
-@dataclasses
+@dataclasses.dataclass
 class Player:
     twitch_id: str
     username: str
@@ -10,13 +10,13 @@ class Player:
     player_team: str
 
 
-@dataclasses
+@dataclasses.dataclass
 class Character:
     hp: float
     energy: float
 
 
-@dataclasses
+@dataclasses.dataclass
 class GameStatus:
     game_id: str
     game_status: str

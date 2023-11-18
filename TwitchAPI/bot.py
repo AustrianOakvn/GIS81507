@@ -5,8 +5,8 @@ import requests
 from twitchio.ext import commands
 from twitchio.message import Message
 
-from TwitchAPI.config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS, GAME_ENDPOINT
-from TwitchAPI.dataclasses import GameStatus, Player
+from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS
+from datamodel import GameStatus, Player
 
 logger = logging.getLogger(__name__)
 
@@ -25,8 +25,9 @@ class Bot(commands.Bot):
 
         # TODO: if new game is started, then clear player_list and next_game_queue
         # player_list is a dictionary of twitch_id: Player
+        # self.player_list = {'964201114': Player(twitch_id='964201114', username='damtien440', player_team='player_1')}
         self.player_list = {}
-        self.next_game_queue = set()
+        self.next_game_queue = {}
 
         self.game = GameStatus(
             game_id=None, game_status=None, character_1=None, character_2=None
@@ -47,9 +48,9 @@ class Bot(commands.Bot):
             return
 
         # Print the contents of our message to console...
-        logger.info(
-            "%s (%s): %s", message.author.name, message.author.id, message.content
-        )
+        # logger.info(
+        #     "%s (%s): %s", message.author.name, message.author.id, message.content
+        # )
 
         # Since we have commands and are overriding the default `event_message`
         # We must let the bot know we want to handle and invoke our commands...
@@ -65,14 +66,14 @@ class Bot(commands.Bot):
 
         if message.author.id not in self.player_list:
             return
-
+        
         action_key = self._get_action_key(message)
         if action_key is None:
             return
 
-        logger.info("No action key found")
+        logger.info("There is an action key")
 
-        response = self._send_action_key_to_api(
+        response = self._send_action_key_to_gameapi(
             action_key, self.player_list[message.author.id]
         )
 
@@ -96,18 +97,15 @@ class Bot(commands.Bot):
     @staticmethod
     def _get_action_key(message: Message) -> str or None:
         """Check if message contains a valid action key"""
-        action_key = None
-        for char in message.content:
-            if char not in CONTROL_KEYS:
-                continue
-            action_key = char
-        if action_key is None:
-            return None
+        action_key = message.content[0].lower()
+        
+        if action_key in CONTROL_KEYS:
+            return action_key
 
-        return action_key
+        return None
 
     @staticmethod
-    def _send_action_key_to_api(action_key: str, player: Player):
+    def _send_action_key_to_gameapi(action_key: str, player: Player):
         """Send action key to API"""
         status = send_to_api(
             COMMAND_HANDLER_ROUTE, {player.player_team: {"actions": action_key}}
