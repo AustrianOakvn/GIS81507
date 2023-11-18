@@ -4,10 +4,11 @@ import threading
 from time import sleep
 
 import requests
-from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS, NUM_PLAYERS, PING_ROUTE
-from datamodel import GameStatus, Player
 from twitchio.ext import commands
 from twitchio.message import Message
+
+from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS, NUM_PLAYERS, PING_ROUTE
+from datamodel import GameStatus, Player
 
 logger = logging.getLogger(__name__)
 
@@ -33,10 +34,11 @@ class Bot(commands.Bot):
         self.game = GameStatus(
             game_id=None, game_status=None, character_1=None, character_2=None
         )
-        
+
         # start a thread checking game status every 0.5 seconds
-        ping_thread = threading.Thread(target=self._check_game_status)
-        ping_thread.start()
+        # TODO: Uncomment this when game API is ready
+        # ping_thread = threading.Thread(target=self._check_game_status)
+        # ping_thread.start()
 
         # TODO: Init API for whispering
 
@@ -64,13 +66,6 @@ class Bot(commands.Bot):
         ):
             logger.info("Received command")
             await self.handle_commands(message)
-
-            # TODO: add game status check here to initiate game
-
-            if message.content == "!register":
-                logger.info("Received register command")
-                self._register_player(message)
-
             return
 
         logger.info("Usual chat")
@@ -95,7 +90,6 @@ class Bot(commands.Bot):
         # TODO: If the game ended, then output the result to chat,
         # and remove the players from the player_list, procede to the next game
         self._procede_to_next_game()
-            
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
@@ -106,6 +100,14 @@ class Bot(commands.Bot):
         # Send a hello back!
         # Sending a reply back to the channel is easy... Below is an example.
         await ctx.send(f"Hello {ctx.author.name}!")
+
+    @commands.command()
+    async def register(self, ctx: commands.Context):
+        """Register player"""
+        self._register_player(ctx.message)
+        await ctx.send(
+            f"Registered {ctx.author.name} to player queue for {self.next_game_queue[ctx.author.id].player_team}!"
+        )
 
     @staticmethod
     def _get_action_key(message: Message) -> str or None:
@@ -133,23 +135,23 @@ class Bot(commands.Bot):
         self.game.character_1.energy = game_status["character_1"]["energy"]
         self.game.character_2.hp = game_status["character_2"]["hp"]
         self.game.character_2.energy = game_status["character_2"]["energy"]
-        
-    def _register_player(self, message:Message) -> None:
+
+    def _register_player(self, message: Message) -> None:
         if message.author.id in self.player_list:
             return
 
         self.next_game_queue[message.author.id] = Player(
             twitch_id=message.author.id,
             username=message.author.name,
-            player_team="player_1" if len(self.player_list)%2 == 0 else "player_2",
+            player_team="player_1" if len(self.player_list) % 2 == 0 else "player_2",
         )
-        
+
     def _procede_to_next_game(self):
         """Procede to the next game"""
         if self.game.game_status == False:
             logger.info("Game ended")
             self.player_list.clear()
-            
+
             for id, player in enumerate(self.next_game_queue, start=1):
                 self.player_list[player.twitch_id] = player
                 if id > NUM_PLAYERS:
@@ -158,15 +160,14 @@ class Bot(commands.Bot):
             logger.info("New game started, player list has been updated")
 
     def _check_game_status(self, interval=500):
-        
-        while(True):
-        
+        while True:
             response = send_to_api(PING_ROUTE, {})
             self._update_game_status(response.json())
             self._procede_to_next_game()
-            
-            sleep(interval/1000)
-    
+
+            sleep(interval / 1000)
+
+
 def send_to_api(endpoint, json_content):
     """Send json content to API"""
     response = requests.post(endpoint, json=json_content)
