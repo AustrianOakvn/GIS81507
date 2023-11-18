@@ -2,11 +2,10 @@ import logging
 import os
 
 import requests
-from twitchio.ext import commands
-from twitchio.message import Message
-
 from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS
 from datamodel import GameStatus, Player
+from twitchio.ext import commands
+from twitchio.message import Message
 
 logger = logging.getLogger(__name__)
 
@@ -66,7 +65,7 @@ class Bot(commands.Bot):
 
         if message.author.id not in self.player_list:
             return
-        
+
         action_key = self._get_action_key(message)
         if action_key is None:
             return
@@ -98,7 +97,7 @@ class Bot(commands.Bot):
     def _get_action_key(message: Message) -> str or None:
         """Check if message contains a valid action key"""
         action_key = message.content[0].lower()
-        
+
         if action_key in CONTROL_KEYS:
             return action_key
 
