@@ -1,8 +1,10 @@
 import logging
 import os
+import threading
+from time import sleep
 
 import requests
-from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS
+from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS, NUM_PLAYERS, PING_ROUTE
 from datamodel import GameStatus, Player
 from twitchio.ext import commands
 from twitchio.message import Message
@@ -22,7 +24,7 @@ class Bot(commands.Bot):
             initial_channels=[os.environ.get("CHANNEL")],
         )
 
-        # TODO: if new game is started, then clear player_list and next_game_queue
+        # if new game is started, then clear player_list and next_game_queue
         # player_list is a dictionary of twitch_id: Player
         # self.player_list = {'964201114': Player(twitch_id='964201114', username='damtien440', player_team='player_1')}
         self.player_list = {}
@@ -31,6 +33,10 @@ class Bot(commands.Bot):
         self.game = GameStatus(
             game_id=None, game_status=None, character_1=None, character_2=None
         )
+        
+        # start a thread checking game status every 0.5 seconds
+        ping_thread = threading.Thread(target=self._check_game_status)
+        ping_thread.start()
 
         # TODO: Init API for whispering
 
@@ -53,11 +59,17 @@ class Bot(commands.Bot):
 
         # Since we have commands and are overriding the default `event_message`
         # We must let the bot know we want to handle and invoke our commands...
-        if isinstance(message.content, str) and message.content.startswith("?"):
+        if isinstance(message.content, str) and message.content.startswith(
+            self.command_prefix
+        ):
             logger.info("Received command")
             await self.handle_commands(message)
 
             # TODO: add game status check here to initiate game
+
+            if message.content == "!register":
+                logger.info("Received register command")
+                self._register_player(message)
 
             return
 
@@ -82,6 +94,8 @@ class Bot(commands.Bot):
 
         # TODO: If the game ended, then output the result to chat,
         # and remove the players from the player_list, procede to the next game
+        self._procede_to_next_game()
+            
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
@@ -119,8 +133,40 @@ class Bot(commands.Bot):
         self.game.character_1.energy = game_status["character_1"]["energy"]
         self.game.character_2.hp = game_status["character_2"]["hp"]
         self.game.character_2.energy = game_status["character_2"]["energy"]
+        
+    def _register_player(self, message:Message) -> None:
+        if message.author.id in self.player_list:
+            return
 
+        self.next_game_queue[message.author.id] = Player(
+            twitch_id=message.author.id,
+            username=message.author.name,
+            player_team="player_1" if len(self.player_list)%2 == 0 else "player_2",
+        )
+        
+    def _procede_to_next_game(self):
+        """Procede to the next game"""
+        if self.game.game_status == False:
+            logger.info("Game ended")
+            self.player_list.clear()
+            
+            for id, player in enumerate(self.next_game_queue, start=1):
+                self.player_list[player.twitch_id] = player
+                if id > NUM_PLAYERS:
+                    break
+            self.next_game_queue.clear()
+            logger.info("New game started, player list has been updated")
 
+    def _check_game_status(self, interval=500):
+        
+        while(True):
+        
+            response = send_to_api(PING_ROUTE, {})
+            self._update_game_status(response.json())
+            self._procede_to_next_game()
+            
+            sleep(interval/1000)
+    
 def send_to_api(endpoint, json_content):
     """Send json content to API"""
     response = requests.post(endpoint, json=json_content)
