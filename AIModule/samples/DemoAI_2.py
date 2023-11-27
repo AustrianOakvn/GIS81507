@@ -2,6 +2,7 @@ from pyftg import AIInterface
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
 from action_mapping import *
+import time 
 class DemoAI_2(AIInterface):
     def __init__(self) -> None:
         self.blind_flag = False
@@ -46,23 +47,33 @@ class DemoAI_2(AIInterface):
         self.input_key.empty()
         self.cc.skill_cancel()
         # print("generate random action")
+        distance = self.calculate_distance()
+        print(distance)
         action = self.self_generate_action()
         self.selected_move = action["move"]
         self.selected_attk = action["attack"]
-
-        if self.selected_move == None and self.selected_attk== None:
-            return 
-        elif self.selected_move == None and self.selected_attk!= None:
+        if distance <= 50:
+            self.selected_attk = generate_random_attack()
             self.cc.command_call(self.selected_attk)
             self.selected_attk = None
-        elif self.selected_move != None and self.selected_attk == None:
-            self.cc.command_call(self.selected_move)
-            self.selected_move = None 
         else:
-            self.cc.command_call(self.selected_move)
-            self.cc.command_call(self.selected_attk)
-            self.selected_move = None 
-            self.selected_attk = None
+            if self.selected_move == None and self.selected_attk== None:
+                time.sleep(0.5)
+                return 
+            elif self.selected_move == None and self.selected_attk!= None:
+                time.sleep(0.5)
+                self.cc.command_call(self.selected_attk)
+                self.selected_attk = None
+            elif self.selected_move != None and self.selected_attk == None:
+                time.sleep(0.5)
+                self.cc.command_call(self.selected_move)
+                self.selected_move = None 
+            else:
+                time.sleep(0.5)
+                self.cc.command_call(self.selected_move)
+                self.cc.command_call(self.selected_attk)
+                self.selected_move = None 
+                self.selected_attk = None
 
     def calculate_distance(self):
         self.get_information(self.frame_data, is_control=False, non_delay=self.frame_data)

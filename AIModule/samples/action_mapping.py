@@ -70,6 +70,14 @@ def generate_random_keys(key_length:int):
     # print(type(available_keys))
     return random.sample(available_keys, key_length)
 
+def generate_random_attack():
+    k = random.sample(ATTACK_KEYS, 1)[0]
+    while k == 'U':
+        k = random.sample(ATTACK_KEYS, 1)[0]
+    attk = KEY_MAP_INVERSE[k]
+    attk = ACTIONS_INVERSE[attk]
+    return attk
+
 
 def keys2action(keys:list):
     # input: list of keys
