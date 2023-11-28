@@ -98,10 +98,11 @@ def ping():
 if __name__ == "__main__":
     procs = []
     game_proc = Process(target=run_game, args=(GAME_PORT,))
+    command_proc = Process(target=command_handler)
     server_proc = Process(target=uvicorn.run, args=(app,), kwargs={"port": 8888})
     for proc in procs:
         proc.start()
-        
+
     for proc in procs:
         proc.join()
     #uvicorn.run(app, port=8888)
