@@ -48,7 +48,6 @@ class DemoAI_2(AIInterface):
         self.cc.skill_cancel()
         # print("generate random action")
         distance = self.calculate_distance()
-        print(distance)
         action = self.self_generate_action()
         self.selected_move = action["move"]
         self.selected_attk = action["attack"]
