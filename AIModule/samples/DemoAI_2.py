@@ -1,7 +1,7 @@
 from pyftg import AIInterface 
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
-from action_mapping import *
+from .action_mapping import *
 import time 
 class DemoAI_2(AIInterface):
     def __init__(self) -> None:

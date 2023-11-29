@@ -5,10 +5,12 @@ from typing import List
 from multiprocessing import Process
 from queue import Queue
 import time
+import requests
 
 
 ACTION_QUEUE_1 = Queue(maxsize=100)
 ACTION_QUEUE_2 = Queue(maxsize=100)
+GAME_ENDPOINT = "http://127.0.0.1:8888/set_commands"
 GAME_STATUS = None
 
 class CommandRequest(BaseModel):
@@ -34,7 +36,14 @@ def pop_command(window_size:int=5):
     
     
 def send_command2game(commands):
-    pass
+    payload = {
+        "p1_actions": commands["p1_actions"],
+        "p2_actions": commands["p2_actions"]
+    }
+    response = requests.post(GAME_ENDPOINT, json=payload)
+    game_status = response.json()
+    return game_status
+
 
 def game_handler():
     while True:
