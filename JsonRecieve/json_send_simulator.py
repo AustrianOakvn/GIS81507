@@ -3,7 +3,7 @@ import json
 
 # define the json structure
 json_data = {
-    'player_3': {
+    '123player_3': {
         'actions': ['action_1', 'action_2', 'action_3']
     },
     'player_2': {
@@ -12,7 +12,7 @@ json_data = {
 }
 
 # server address
-server_url = 'http://localhost:3000/receive_json'  # server address
+server_url = 'http://localhost:3000/receive_game_state'  # server address
 
 headers = {'Content-Type': 'application/json'}  # head info
 
