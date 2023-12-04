@@ -1,21 +1,16 @@
 from pyftg import AIInterface 
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
-from action_mapping import *
-class DemoAI(AIInterface):
+from .action_mapping import *
+import time 
+class DemoAI_2(AIInterface):
     def __init__(self) -> None:
         self.blind_flag = False
         self.width = 96
         self.height = 64 
-        self.actions = "AIR_A", "AIR_B", "AIR_D_DB_BA", "AIR_D_DB_BB", "AIR_D_DF_FA", "AIR_D_DF_FB", "AIR_DA", "AIR_DB", \
-                       "AIR_F_D_DFA", "AIR_F_D_DFB", "AIR_FA", "AIR_FB", "AIR_UA", "AIR_UB", "BACK_JUMP", "BACK_STEP", \
-                       "CROUCH_A", "CROUCH_B", "CROUCH_FA", "CROUCH_FB", "CROUCH_GUARD", "DASH", "FOR_JUMP", "FORWARD_WALK", \
-                       "JUMP", "NEUTRAL", "STAND_A", "STAND_B", "STAND_D_DB_BA", "STAND_D_DB_BB", "STAND_D_DF_FA", \
-                       "STAND_D_DF_FB", "STAND_D_DF_FC", "STAND_F_D_DFA", "STAND_F_D_DFB", "STAND_FA", "STAND_FB", \
-                       "STAND_GUARD", "THROW_A", "THROW_B"
+        self.selected_move = None 
+        self.selected_attk = None
         
-
-        self.selected_action = None
 
     def name(self)->str:
         return self.__class__.__name__
@@ -51,20 +46,33 @@ class DemoAI(AIInterface):
         
         self.input_key.empty()
         self.cc.skill_cancel()
-
+        # print("generate random action")
         distance = self.calculate_distance()
-        if distance == -1:
-            self.cc.command_call("STAND_A")
+        action = self.self_generate_action()
+        self.selected_move = action["move"]
+        self.selected_attk = action["attack"]
+        if distance <= 50:
+            self.selected_attk = generate_random_attack()
+            self.cc.command_call(self.selected_attk)
+            self.selected_attk = None
         else:
-            self.cc.command_call("FORWARD_WALK")
-            close = 80*self.width/960
-            far = 200*self.width/960
-            if distance < close:
-                self.cc.command_call("CROUCH_B")
-            elif distance >= close and distance < far:
-                self.cc.command_call("STAND_FB")
+            if self.selected_move == None and self.selected_attk== None:
+                time.sleep(0.5)
+                return 
+            elif self.selected_move == None and self.selected_attk!= None:
+                time.sleep(0.5)
+                self.cc.command_call(self.selected_attk)
+                self.selected_attk = None
+            elif self.selected_move != None and self.selected_attk == None:
+                time.sleep(0.5)
+                self.cc.command_call(self.selected_move)
+                self.selected_move = None 
             else:
-                self.cc.command_call("STAND_D_DF_FA")
+                time.sleep(0.5)
+                self.cc.command_call(self.selected_move)
+                self.cc.command_call(self.selected_attk)
+                self.selected_move = None 
+                self.selected_attk = None
 
     def calculate_distance(self):
         self.get_information(self.frame_data, is_control=False, non_delay=self.frame_data)
@@ -73,13 +81,15 @@ class DemoAI(AIInterface):
             player_xs.append(ch.x)
         return abs(player_xs[0] - player_xs[1])
     
+    def set_action(self, move, attk):
+        self.selected_move = move 
+        self.selected_attk = attk
 
-    def get_player_info(self):
-        # HP, Energy level
-        ret = {}
-        ret["hp"] = self.frame_data.character_data[0].hp
-        ret["enery"] = self.frame_data.character_data[0].energy
-        return ret
+    def self_generate_action(self):
+        rand = generate_random_keys(key_length=5)
+        action = keys2action(rand)
+        return action
+
+
+
     
-    def set_action(self, action):
-        self.selected_action = action
