@@ -1,7 +1,7 @@
 from pyftg import AIInterface 
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
-from action_mapping import *
+from AIModule.action_mapping import *
 class DemoAI(AIInterface):
     def __init__(self) -> None:
         self.blind_flag = False

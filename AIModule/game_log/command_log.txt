@@ -1,0 +1,83 @@
+2023-12-06 23:33:00,154 INFO Buffer key: [] []
+2023-12-06 23:33:19,913 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:19,913 INFO Commands to game:  JUMP STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:20,547 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:20,547 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:21,115 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:21,115 INFO Commands to game:  CROUCH STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:21,459 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:21,460 INFO Commands to game:  STAND_GUARD STAND_B CROUCH STAND_A
+2023-12-06 23:33:21,686 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:21,686 INFO Commands to game:  JUMP STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:22,118 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:22,118 INFO Commands to game:  CROUCH STAND_B CROUCH STAND_A
+2023-12-06 23:33:22,480 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:22,481 INFO Commands to game:  CROUCH STAND_B JUMP STAND_A
+2023-12-06 23:33:22,746 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:22,746 INFO Commands to game:  STAND_GUARD STAND_B JUMP STAND_A
+2023-12-06 23:33:27,145 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:27,145 INFO Commands to game:  CROUCH STAND_B CROUCH STAND_A
+2023-12-06 23:33:27,442 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:27,443 INFO Commands to game:  CROUCH STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:27,731 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:27,732 INFO Commands to game:  STAND_GUARD STAND_B JUMP STAND_A
+2023-12-06 23:33:28,004 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:28,005 INFO Commands to game:  STAND_GUARD STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:28,262 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:28,263 INFO Commands to game:  FORWARD_WALK STAND_B CROUCH STAND_A
+2023-12-06 23:33:28,502 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:28,503 INFO Commands to game:  CROUCH STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:29,451 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:29,451 INFO Commands to game:  FORWARD_WALK STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:29,685 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:29,685 INFO Commands to game:  CROUCH STAND_B JUMP STAND_A
+2023-12-06 23:33:29,902 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:29,902 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:30,133 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:30,134 INFO Commands to game:  JUMP STAND_B JUMP STAND_A
+2023-12-06 23:33:30,389 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:30,389 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:30,778 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:30,779 INFO Commands to game:  CROUCH STAND_B JUMP STAND_A
+2023-12-06 23:33:31,070 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:31,070 INFO Commands to game:  CROUCH STAND_B JUMP STAND_A
+2023-12-06 23:33:31,328 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:31,328 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:31,580 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:31,581 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:31,824 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:31,825 INFO Commands to game:  STAND_GUARD STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:32,073 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:32,073 INFO Commands to game:  CROUCH STAND_B CROUCH STAND_A
+2023-12-06 23:33:32,287 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:32,287 INFO Commands to game:  JUMP STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:32,506 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:32,506 INFO Commands to game:  JUMP STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:32,763 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:32,763 INFO Commands to game:  JUMP STAND_B CROUCH STAND_A
+2023-12-06 23:33:32,957 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:32,958 INFO Commands to game:  CROUCH STAND_B CROUCH STAND_A
+2023-12-06 23:33:33,172 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:33,173 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:33,405 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:33,406 INFO Commands to game:  CROUCH STAND_B JUMP STAND_A
+2023-12-06 23:33:33,604 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:33,604 INFO Commands to game:  CROUCH STAND_B CROUCH STAND_A
+2023-12-06 23:33:33,793 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:33,793 INFO Commands to game:  JUMP STAND_B CROUCH STAND_A
+2023-12-06 23:33:34,009 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:34,009 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:34,217 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:34,217 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:34,427 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:34,428 INFO Commands to game:  FORWARD_WALK STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:34,626 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:34,626 INFO Commands to game:  JUMP STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:34,823 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:34,823 INFO Commands to game:  FORWARD_WALK STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:35,019 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:35,019 INFO Commands to game:  JUMP STAND_B FORWARD_WALK STAND_A
+2023-12-06 23:33:35,356 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:35,356 INFO Commands to game:  FORWARD_WALK STAND_B JUMP STAND_A
+2023-12-06 23:33:35,534 INFO Buffer key: ['K', 'J', 'L', 'I', 'Y'] ['K', 'T', 'L', 'T', 'I']
+2023-12-06 23:33:35,534 INFO Commands to game:  CROUCH STAND_B JUMP STAND_A

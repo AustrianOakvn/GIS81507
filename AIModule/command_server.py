@@ -2,33 +2,33 @@ import uvicorn
 from fastapi import FastAPI 
 from pydantic import BaseModel
 from typing import List
-from multiprocessing import Process
-from queue import Queue
+from multiprocessing import Process, Queue, Value
+from multiprocessing.managers import BaseManager
+# from queue import Queue
 import time
 import requests
 
 
-ACTION_QUEUE_1 = Queue(maxsize=100)
-ACTION_QUEUE_2 = Queue(maxsize=100)
-GAME_ENDPOINT = "http://127.0.0.1:8888/set_commands"
-GAME_STATUS = None
 
+GAME_ENDPOINT = "http://127.0.0.1:8888/set-command"
+
+    
 class CommandRequest(BaseModel):
     p1_actions: List[str]
     p2_actions: List[str]
 
-def pop_command(window_size:int=5):
+def pop_command(queue_1, queue_2, window_size:int=5):
     # check if queue is empty
-    if ACTION_QUEUE_1.empty() or ACTION_QUEUE_2.empty():
+    if queue_1.empty() or queue_2.empty():
         return None
-    if ACTION_QUEUE_1.qsize() < window_size() or ACTION_QUEUE_2.qsize() < window_size:
+    if queue_1.qsize() < window_size or queue_2.qsize() < window_size:
         return None
     else:
         sub_actions_1 = []
         sub_actions_2 = []
         for i in range(window_size):
-            sub_actions_1.append(ACTION_QUEUE_1.get())
-            sub_actions_2.append(ACTION_QUEUE_2.get())
+            sub_actions_1.append(queue_1.get())
+            sub_actions_2.append(queue_2.get())
         return {
             "p1_actions": sub_actions_1,
             "p2_actions": sub_actions_2
@@ -41,17 +41,21 @@ def send_command2game(commands):
         "p2_actions": commands["p2_actions"]
     }
     response = requests.post(GAME_ENDPOINT, json=payload)
-    game_status = response.json()
-    return game_status
+    game_stat = response.json()
+    return game_stat
 
 
-def game_handler():
+def game_handler(queue_1, queue_2, game_stat):
     while True:
-        commands = pop_command(window_size=5)
+        time.sleep(0.5)
+        commands = pop_command(queue_1, queue_2, 
+                               window_size=5)
+        print("commands", commands)
         if commands == None:
             continue
         else:
-            GAME_STATUS = send_command2game()
+            print("sending commands to game server", commands)
+            game_stat = send_command2game(commands)
 
         
 app = FastAPI()
@@ -61,10 +65,11 @@ def perform_command(body:CommandRequest):
     p1_commands, p2_commands = body.p1_actions, body.p2_actions
     print(p1_commands, p2_commands)
     for c1, c2 in zip(p1_commands, p2_commands):
-        ACTION_QUEUE_1.put(c1)
-        ACTION_QUEUE_2.put(c2)
+        # tmp_storage.append_queue(c1, c2)
+        QUEUE_1.put(c1)
+        QUEUE_2.put(c2)
 
-    return {"game_status": GAME_STATUS}
+    return {"game_status": GAME_STATUS.value}
 
     
 @app.get("/ping", status_code=200)
@@ -74,4 +79,14 @@ def ping():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, port=8080)
+    QUEUE_1 = Queue(maxsize=100)
+    QUEUE_2 = Queue(maxsize=100)
+    GAME_STATUS = Value('i', 0)
+
+    server_proc = Process(target=uvicorn.run, args=(app,), kwargs={"port": 8080})
+    command_proc = Process(target=game_handler, args=(QUEUE_1, QUEUE_2, GAME_STATUS,))
+    procs = [server_proc, command_proc]
+    for proc in procs:
+        proc.start()
+    for proc in procs:
+        proc.join()

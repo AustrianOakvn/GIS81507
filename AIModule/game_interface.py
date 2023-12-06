@@ -1,8 +1,9 @@
 from pyftg import AIInterface 
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
-from .action_mapping import *
+from action_mapping import *
 import time 
+
 class DemoAI_2(AIInterface):
     def __init__(self) -> None:
         self.blind_flag = False
@@ -10,6 +11,7 @@ class DemoAI_2(AIInterface):
         self.height = 64 
         self.selected_move = None 
         self.selected_attk = None
+        self.p1_data, self.p2_data = None, None
         
 
     def name(self)->str:
@@ -43,36 +45,27 @@ class DemoAI_2(AIInterface):
         if self.cc.get_skill_flag():
             self.input_key = self.cc.get_skill_key()
             return 
-        
+        self.p1_data, self.p2_data = self.get_status_from_game()
+        #self.p1_data, self.p2_data = None, None
         self.input_key.empty()
         self.cc.skill_cancel()
-        # print("generate random action")
-        distance = self.calculate_distance()
-        action = self.self_generate_action()
-        self.selected_move = action["move"]
-        self.selected_attk = action["attack"]
-        if distance <= 50:
-            self.selected_attk = generate_random_attack()
+        if self.selected_move == None and self.selected_attk== None:
+            time.sleep(0.5)
+            return 
+        elif self.selected_move == None and self.selected_attk!= None:
+            time.sleep(0.5)
             self.cc.command_call(self.selected_attk)
             self.selected_attk = None
+        elif self.selected_move != None and self.selected_attk == None:
+            time.sleep(0.5)
+            self.cc.command_call(self.selected_move)
+            self.selected_move = None 
         else:
-            if self.selected_move == None and self.selected_attk== None:
-                time.sleep(0.5)
-                return 
-            elif self.selected_move == None and self.selected_attk!= None:
-                time.sleep(0.5)
-                self.cc.command_call(self.selected_attk)
-                self.selected_attk = None
-            elif self.selected_move != None and self.selected_attk == None:
-                time.sleep(0.5)
-                self.cc.command_call(self.selected_move)
-                self.selected_move = None 
-            else:
-                time.sleep(0.5)
-                self.cc.command_call(self.selected_move)
-                self.cc.command_call(self.selected_attk)
-                self.selected_move = None 
-                self.selected_attk = None
+            time.sleep(0.5)
+            self.cc.command_call(self.selected_move)
+            self.cc.command_call(self.selected_attk)
+            self.selected_move = None 
+            self.selected_attk = None
 
     def calculate_distance(self):
         self.get_information(self.frame_data, is_control=False, non_delay=self.frame_data)
@@ -80,6 +73,24 @@ class DemoAI_2(AIInterface):
         for ch in self.frame_data.character_data:
             player_xs.append(ch.x)
         return abs(player_xs[0] - player_xs[1])
+    
+    def get_status_from_game(self):
+        self.get_information(self.frame_data, is_control=False, non_delay=self.frame_data)
+        characters = self.frame_data.character_data
+        p1_data, p2_data = {}, {}
+        for i, character in enumerate(characters):
+            if i == 0:
+                p1_data["hp"] = character.hp
+                p1_data["energy"] = character.energy
+                p1_data["player_number"] = character.player_number
+            elif i == 1:
+                p2_data["hp"] = character.hp
+                p2_data["energy"] = character.energy
+                p2_data["player_number"] = character.player_number
+        return p1_data, p2_data
+    
+    def get_status(self):
+        return self.p1_data, self.p2_data
     
     def set_action(self, move, attk):
         self.selected_move = move 
