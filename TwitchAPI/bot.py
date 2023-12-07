@@ -37,8 +37,6 @@ class Bot(commands.Bot):
         self.bet_db = BetDatabase()
         self.bet_system = BetSystem(self.bet_db)
 
-        # TODO: if new game is started, then clear player_list and next_game_queue
-
         # player_list is a dictionary of twitch_id: Player
         # self.player_list = {'964201114': Player(twitch_id='964201114', username='damtien440', player_team='player_1')}
         self.player_list = {}
@@ -52,12 +50,9 @@ class Bot(commands.Bot):
         self.p2_commands = []
 
         # start a thread checking game status every 0.5 seconds
-        # TODO: Uncomment this when game API is ready
         ping_thread = threading.Thread(target=self._send_command)
         ping_thread.start()
     
-
-        # TODO: Init API for whispering
 
     async def event_ready(self):
         # Notify us when everything is ready!
@@ -88,8 +83,8 @@ class Bot(commands.Bot):
 
         logger.info("Usual chat")
 
-        # if message.author.id not in self.player_list:
-        #     return
+        if message.author.id not in self.player_list:
+            return
 
         action_key = self._get_action_key(message)
         if action_key is None:
@@ -277,8 +272,8 @@ class Bot(commands.Bot):
             
             # TODO: Detect game end, update player list
             
-            # self._update_game_status(response.json())
-            # self._procede_to_next_game()
+            self._update_game_status(response.json())
+            self._procede_to_next_game()
 
             sleep(interval / 1000)
 
