@@ -3,4 +3,3 @@ python-dotenv==1.0.0
 httpx==0.25.1
 
 requests
-```

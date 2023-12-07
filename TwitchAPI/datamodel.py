@@ -18,7 +18,6 @@ class Character:
 
 @dataclasses.dataclass
 class GameStatus:
-    game_id: str
-    game_status: str
-    character_1: Character
-    character_2: Character
+    game_state: str
+    p1_stats: Character
+    p2_stats: Character
