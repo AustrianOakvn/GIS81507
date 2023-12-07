@@ -2,20 +2,21 @@ import uvicorn
 from fastapi import FastAPI 
 from pydantic import BaseModel
 from typing import List
-from multiprocessing import Process, Queue, Value
-from multiprocessing.managers import BaseManager
-# from queue import Queue
+#from multiprocessing import Process, Queue, Value, Array
+#from multiprocessing.managers import BaseManager
+from queue import Queue
 import time
 import requests
+import threading
 
 
 
 GAME_ENDPOINT = "http://127.0.0.1:8888/set-command"
-
+GAME_STATUS = {}
     
 class CommandRequest(BaseModel):
-    p1_actions: List[str]
-    p2_actions: List[str]
+    player_1: List[str]
+    player_2: List[str]
 
 def pop_command(queue_1, queue_2, window_size:int=5):
     # check if queue is empty
@@ -42,10 +43,12 @@ def send_command2game(commands):
     }
     response = requests.post(GAME_ENDPOINT, json=payload)
     game_stat = response.json()
+    #print("game_stat", type(game_stat), game_stat)
     return game_stat
 
 
-def game_handler(queue_1, queue_2, game_stat):
+def game_handler(queue_1, queue_2):
+    global GAME_STATUS
     while True:
         time.sleep(0.5)
         commands = pop_command(queue_1, queue_2, 
@@ -55,24 +58,38 @@ def game_handler(queue_1, queue_2, game_stat):
             continue
         else:
             print("sending commands to game server", commands)
-            game_stat = send_command2game(commands)
+            GAME_STATUS = send_command2game(commands)
+            #print("game_stat", GAME_STATUS)
 
+def clear_queue(queue):
+    while not queue.empty():
+        queue.get()
         
 app = FastAPI()
 
 @app.post("/commands")
 def perform_command(body:CommandRequest):
-    p1_commands, p2_commands = body.p1_actions, body.p2_actions
+    print("received command", body)
+    p1_commands, p2_commands = body.player_1, body.player_2
     print(p1_commands, p2_commands)
-    for c1, c2 in zip(p1_commands, p2_commands):
+    print("game stat when command invoked", GAME_STATUS)
+    #for c1, c2 in zip(p1_commands, p2_commands):
         # tmp_storage.append_queue(c1, c2)
+        # QUEUE_1.put(c1)
+        # QUEUE_2.put(c2)
+    for c1 in p1_commands:
         QUEUE_1.put(c1)
+    for c2 in p2_commands:
         QUEUE_2.put(c2)
+    # if "game_state" in GAME_STATUS.keys():
+    #     if GAME_STATUS["game_state"] == "finished":
+    #         clear_queue(QUEUE_1)
+    #         clear_queue(QUEUE_2)
 
-    return {"game_status": GAME_STATUS.value}
+    return GAME_STATUS
 
     
-@app.get("/ping", status_code=200)
+@app.post("/ping", status_code=200)
 def ping():
     return {"message": "Hello world!"}
 
@@ -81,10 +98,13 @@ def ping():
 if __name__ == "__main__":
     QUEUE_1 = Queue(maxsize=100)
     QUEUE_2 = Queue(maxsize=100)
-    GAME_STATUS = Value('i', 0)
-
-    server_proc = Process(target=uvicorn.run, args=(app,), kwargs={"port": 8080})
-    command_proc = Process(target=game_handler, args=(QUEUE_1, QUEUE_2, GAME_STATUS,))
+    #GAME_STATUS = Value('d', {"state": ""})
+    #GAME_STATUS = Array('i', {"state": "sth"})
+    #GAME_STATUS = Array('i', {'state': 'initial_value'})
+    #server_proc = Process(target=uvicorn.run, args=(app,), kwargs={"host": '0.0.0.0', "port": 8080})
+    #command_proc = Process(target=game_handler, args=(QUEUE_1, QUEUE_2, GAME_STATUS,))
+    server_proc = threading.Thread(target=uvicorn.run, args=(app,), kwargs={"host": '0.0.0.0', "port": 8080})
+    command_proc = threading.Thread(target=game_handler, args=(QUEUE_1, QUEUE_2,))
     procs = [server_proc, command_proc]
     for proc in procs:
         proc.start()

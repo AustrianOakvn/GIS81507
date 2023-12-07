@@ -4,6 +4,7 @@ import argparse
 from pyftg import Gateway
 from game_interface import DemoAI_2
 from action_mapping import *
+from combo_logic import combo_finder, sample_action
 
 from typing import List
 import uvicorn
@@ -32,7 +33,9 @@ game_logger = setup_logger('game_logger', './game_log/game_log.txt', level=loggi
 # logging.basicConfig(filename='./game_log/log.txt', level=LOG_TYPE)
 
 def AICommand(twitch_keys: List[str]):
-    # At the moment use the default random actions
+    # At the moment use simple heuristic to decide the action
+    #command_logger.info("triggered AI command")
+    print("triggered AI command")
     twitch_move_keys = []
     twitch_attk_keys = []
     for k in twitch_keys:
@@ -40,24 +43,33 @@ def AICommand(twitch_keys: List[str]):
             twitch_move_keys.append(k)
         if k in ATTACK_KEYS:
             twitch_attk_keys.append(k)
-    choosen_move = random.sample(twitch_move_keys, 1)[0]
-    choosen_attk = random.sample(twitch_attk_keys, 1)[0]
-    choosen_move = KEY_MAP_INVERSE[choosen_move]
-    choosen_attk = KEY_MAP_INVERSE[choosen_attk]
-    return ACTIONS_INVERSE[choosen_move], ACTIONS_INVERSE[choosen_attk]
+    combo_2, combo_4 = combo_finder(twitch_keys)
+    if combo_4 != None:
+        return combo_4, sample_action(twitch_move_keys)
+    if combo_2 != None:
+        return combo_2, sample_action(twitch_attk_keys)
+    else:
+        return sample_action(twitch_attk_keys), sample_action(twitch_move_keys)
     
 
 def run_game(port:int, gateway, character):
+    # Thread to run the game
     game_num = 1
+    # while True:
+    #     try:
     gateway.run_game([character, character], ["KickAI", "DisplayInfo"], game_num)
     gateway.close()
+        # except Exception as ex:
+        #     gateway.close()
+
 
 
 def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
+    # Thread to check the command buffer and send to game
     # input: list of commands
     # output: move + attack
-    command_logger.info(f"Buffer key: {p1_twich_keys} {p2_twitch_keys}")
-    #print("current buffer key:", p1_twich_keys, p2_twitch_keys)
+    #command_logger.info(f"Buffer key: {p1_twich_keys} {p2_twitch_keys}")
+    print("current buffer key:", p1_twich_keys, p2_twitch_keys)
     if len(p1_twich_keys) == 0 or len(p2_twitch_keys) == 0:
         return
     else:
@@ -73,8 +85,8 @@ def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
     
 
 def get_game_status(agent_1):
-    p1_data, p2_data = agent_1.get_status()
-    return p1_data, p2_data
+    round_finished, p1_data, p2_data = agent_1.get_status()
+    return round_finished, p1_data, p2_data
         
         
 class Commands(BaseModel):
@@ -92,19 +104,24 @@ def perform_command(body:Commands):
     command_handler(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS)
     if game_state == None:
         return {"game_state": "error"}
-    if game_state[0] == None or game_state[1] == None:
+    if game_state[1] == None or game_state[2] == None:
         return {"game_state": "character data unavailable"}
     state = {"p1_stats": {
-            "hp": game_state[0]["hp"],
-            "energy": game_state[0]["energy"],
-            "player_number": game_state[0]["player_number"]},
-        "p2_stats": {
             "hp": game_state[1]["hp"],
             "energy": game_state[1]["energy"],
-            "player_number": game_state[1]["player_number"]
+            "player_number": game_state[1]["player_number"]},
+        "p2_stats": {
+            "hp": game_state[2]["hp"],
+            "energy": game_state[2]["energy"],
+            "player_number": game_state[2]["player_number"]
         }
     }
-    state["game_state"] = "running"
+    if game_state[0] == True:
+        state["game_state"] = "finished"
+        agent_1.set_round_status(False)
+        agent_2.set_round_status(False)
+    else:
+        state["game_state"] = "running"
     return state
 
 
@@ -126,9 +143,9 @@ if __name__ == "__main__":
     gateway.register_ai("DisplayInfo", agent_2)
 
     game_proc = Process(target=run_game, args=(GAME_PORT, gateway, character))
-    command_proc = Process(target=command_handler, args=(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS))
+    #command_proc = Process(target=command_handler, args=(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS))
     server_proc = Process(target=uvicorn.run, args=(app,), kwargs={"port": 8888})
-    procs = [game_proc, command_proc, server_proc]
+    procs = [game_proc, server_proc]
     for proc in procs:
         proc.start()
 

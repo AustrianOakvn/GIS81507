@@ -3,22 +3,18 @@ import argparse
 from pyftg import Gateway
 from KickAI import KickAI
 from DisplayInfo import DisplayInfo
-from DemoAI import DemoAI
-from AIModule.game_interface import DemoAI_2, Agent
+from DemoAI import DemoAI_2
 from multiprocessing import Process
 
 def start_game(port: int):
     gateway = Gateway(port=port)
     character = 'ZEN'
     game_num = 1
-    # agent1 = KickAI()
-    # agent2 = DisplayInfo()
-    ai = Agent()
+    #agent1 = KickAI()
+    #agent2 = DisplayInfo()
     agent1 = DemoAI_2()
     agent2 = DemoAI_2()
     gateway.register_ai("KickAI", agent1)
-    # gateway.register_ai("DemoAI", agent1)
-    # gateway.register_ai("DemoAI_2", agent2)
     gateway.register_ai("DisplayInfo", agent2)
     gateway.run_game([character, character], ["KickAI", "DisplayInfo"], game_num)
     # gateway.run_game([character, character], ["DemoAI_1", "DemoAI_2"], game_num)
