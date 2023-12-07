@@ -2,6 +2,7 @@ from pyftg import AIInterface
 from pyftg.struct import *
 from pyftg.struct import AudioData, GameData, ScreenData
 from action_mapping import *
+
 import time 
 
 class DemoAI_2(AIInterface):
@@ -9,6 +10,7 @@ class DemoAI_2(AIInterface):
         self.blind_flag = False
         self.width = 96
         self.height = 64 
+
         self.selected_move = None 
         self.selected_attk = None
         self.p1_data, self.p2_data = None, None
@@ -68,6 +70,7 @@ class DemoAI_2(AIInterface):
             self.selected_move = None 
             self.selected_attk = None
 
+
     def calculate_distance(self):
         self.get_information(self.frame_data, is_control=False, non_delay=self.frame_data)
         player_xs = []
@@ -118,5 +121,3 @@ class DemoAI_2(AIInterface):
         return action
 
 
-
-    

@@ -4,6 +4,7 @@ from tkinter import ttk
 # Main application window
 root = tk.Tk()
 root.title("Game Betting Interface")
+
 root.resizable(False, False)
 
 # Frame for the game display (assuming a label for simplicity)
@@ -25,6 +26,7 @@ character1_frame = tk.LabelFrame(root, text="Character 1")
 character1_frame.grid(row=5, column=0, padx=10, pady=10)
 
 character2_frame = tk.LabelFrame(root, text="Character 2")
+
 character2_frame.grid(row=5, column=1, padx=10, pady=10)
 
 # Placeholder for player names in character frames (using labels for simplicity)
@@ -32,11 +34,13 @@ tk.Label(character1_frame, text="player1, player2, etc.").pack()
 tk.Label(character2_frame, text="player1, player2, etc.").pack()
 
 # Frame for balance leaderboard
+
 balance_leaderboard_frame = tk.LabelFrame(root, text="Balance Leaderboard")
 balance_leaderboard_frame.grid(row=1, column=2, columnspan=2, padx=10, pady=10)
 
 # Example of how to add items to the balance leaderboard
 for i in range(5):
+
    ttk.Label(balance_leaderboard_frame, text=f"Player {i+1} (score)").pack() 
 
 # Frame for game stats

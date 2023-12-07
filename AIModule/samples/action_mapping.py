@@ -2,6 +2,7 @@ import random
 ACTIONS = {
     "AIR_A": "A", 
     "AIR_B": "B", 
+
     "AIR_D_DB_BA":"2 1 4 A", 
     "AIR_D_DB_BB":"2 1 4 B", 
     "AIR_D_DF_FA":"2 3 6 A", 
@@ -21,6 +22,7 @@ ACTIONS = {
     "CROUCH_B":"2 B", 
     "CROUCH_FA":"3 A", 
     "CROUCH_FB":"3 B", 
+
     "CROUCH_GUARD":"1", 
     "DASH":"6 6", 
     "FOR_JUMP": "9", 
@@ -28,6 +30,7 @@ ACTIONS = {
     "JUMP":"8", 
     "STAND_A": "A", 
     "STAND_B": "B", 
+
     "STAND_D_DB_BA":"2 1 4 A", 
     "STAND_D_DB_BB":"2 1 4 B", 
     "STAND_D_DF_FA":"2 3 6 A", 
@@ -40,6 +43,7 @@ ACTIONS = {
     "STAND_GUARD":"4", 
     "THROW_A":"4 A", 
     "THROW_B":"4 B"
+
 }
 
 ACTIONS_INVERSE = {v:k for k, v in ACTIONS.items()}

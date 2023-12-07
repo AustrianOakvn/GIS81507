@@ -2,14 +2,17 @@
 import logging
 import argparse
 from pyftg import Gateway
+
 from game_interface import DemoAI_2
 from action_mapping import *
 from combo_logic import combo_finder, sample_action
+
 
 from typing import List
 import uvicorn
 from fastapi import FastAPI 
 from pydantic import BaseModel
+
 from multiprocessing import Process, Value
 from multiprocessing.managers import BaseManager
 import random
@@ -87,6 +90,7 @@ def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
 def get_game_status(agent_1):
     round_finished, p1_data, p2_data = agent_1.get_status()
     return round_finished, p1_data, p2_data
+
         
         
 class Commands(BaseModel):
@@ -99,6 +103,7 @@ app = FastAPI()
 @app.post("/set-command")
 def perform_command(body:Commands):
     P1_TWITCH_KEYS, P2_TWITCH_KEYS = body.p1_actions, body.p2_actions
+
     print("received keys", P1_TWITCH_KEYS, P2_TWITCH_KEYS)
     game_state = get_game_status(agent_1)
     command_handler(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS)
@@ -122,6 +127,7 @@ def perform_command(body:Commands):
         agent_2.set_round_status(False)
     else:
         state["game_state"] = "running"
+
     return state
 
 
@@ -132,6 +138,7 @@ def ping():
 
 
 if __name__ == "__main__":
+
     BaseManager.register('DemoAI_2', DemoAI_2)
     gateway = Gateway(port=GAME_PORT)
     manager = BaseManager()
@@ -146,6 +153,7 @@ if __name__ == "__main__":
     #command_proc = Process(target=command_handler, args=(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS))
     server_proc = Process(target=uvicorn.run, args=(app,), kwargs={"port": 8888})
     procs = [game_proc, server_proc]
+
     for proc in procs:
         proc.start()
 

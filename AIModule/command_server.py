@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI 
 from pydantic import BaseModel
 from typing import List
+
 #from multiprocessing import Process, Queue, Value, Array
 #from multiprocessing.managers import BaseManager
 from queue import Queue
@@ -23,13 +24,16 @@ def pop_command(queue_1, queue_2, window_size:int=5):
     if queue_1.empty() or queue_2.empty():
         return None
     if queue_1.qsize() < window_size or queue_2.qsize() < window_size:
+
         return None
     else:
         sub_actions_1 = []
         sub_actions_2 = []
         for i in range(window_size):
+
             sub_actions_1.append(queue_1.get())
             sub_actions_2.append(queue_2.get())
+
         return {
             "p1_actions": sub_actions_1,
             "p2_actions": sub_actions_2
@@ -42,6 +46,7 @@ def send_command2game(commands):
         "p2_actions": commands["p2_actions"]
     }
     response = requests.post(GAME_ENDPOINT, json=payload)
+
     game_stat = response.json()
     #print("game_stat", type(game_stat), game_stat)
     return game_stat
@@ -64,11 +69,13 @@ def game_handler(queue_1, queue_2):
 def clear_queue(queue):
     while not queue.empty():
         queue.get()
+
         
 app = FastAPI()
 
 @app.post("/commands")
 def perform_command(body:CommandRequest):
+
     print("received command", body)
     p1_commands, p2_commands = body.player_1, body.player_2
     print(p1_commands, p2_commands)
@@ -90,12 +97,14 @@ def perform_command(body:CommandRequest):
 
     
 @app.post("/ping", status_code=200)
+
 def ping():
     return {"message": "Hello world!"}
 
 
 
 if __name__ == "__main__":
+
     QUEUE_1 = Queue(maxsize=100)
     QUEUE_2 = Queue(maxsize=100)
     #GAME_STATUS = Value('d', {"state": ""})
@@ -110,3 +119,4 @@ if __name__ == "__main__":
         proc.start()
     for proc in procs:
         proc.join()
+

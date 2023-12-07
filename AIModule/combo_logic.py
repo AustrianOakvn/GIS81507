@@ -47,3 +47,4 @@ if __name__ == "__main__":
     keys = ["K", "J", "L", "I", "Y"]
     # combo_finder(keys)
     print(AICommand(keys))
+
