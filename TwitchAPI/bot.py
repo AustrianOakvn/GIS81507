@@ -12,6 +12,7 @@ from twitchio.message import Message
 from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS, NUM_PLAYERS, PING_ROUTE
 from datamodel import GameStatus, Player
 from components.databases.bet_db import BetDatabase
+from components.bet.bet_system import BetSystem
 
 
 logger = logging.getLogger(__name__)
@@ -32,8 +33,9 @@ class Bot(commands.Bot):
 
         # if new game is started, then clear player_list and next_game_queue
 
-        # Bet database
+        # Bet database & system
         self.bet_db = BetDatabase()
+        self.bet_system = BetSystem(self.bet_db)
 
         # TODO: if new game is started, then clear player_list and next_game_queue
 
@@ -111,8 +113,8 @@ class Bot(commands.Bot):
         Args:
             ctx (commands.Context): Chat context
         """
-        logger.info("Player %s sent check balance command.", ctx.author.name)
-        current_balance = self.bet_db.get_balance(ctx.author.id)
+        logger.debug("Player %s sent check balance command.", ctx.author.name)
+        current_balance = self.bet_system.get_balance(ctx.author.id)
         await ctx.send(f"User {ctx.author.name} has {current_balance} in balance.")
 
     @commands.command()
@@ -125,36 +127,40 @@ class Bot(commands.Bot):
         logger.info("Player %s sent bet command.", ctx.author.name)
         parts: List[str] = str(ctx.message.content).split()
 
-        ### BEGIN OF CHECK ###
+        ### BEGIN OF COMMAND CHECK ###
+        valid = True
         # Check bet command validity
         if len(parts) != 3:
             await ctx.send(f"Bet command from {ctx.author.name} was not executed due to syntax error.")
-            return
+            valid = False
 
         # Check parts[1]: chosen player
-        if not (parts[1].isdigit() and 1 <= int(parts[1]) <= 2):
+        if valid and not (parts[1].isdigit() and 1 <= int(parts[1]) <= 2):
             await ctx.send(f"Bet command from {ctx.author.name} was not executed. Chosen player must be 1 or 2.")
-            return
-        chosen_player = int(parts[1])
+            valid = False
 
         # Check parts[2]: amount of money
-        if not (parts[2].isdigit() and 0 < int(parts[2])):
+        if valid and not (parts[2].isdigit() and 0 < int(parts[2])):
             await ctx.send(f"Bet command from {ctx.author.name} was not executed. Amount of money must be an integer and bigger than 0.")
+            valid = False
+
+        if not valid:
+            await ctx.send(f"Bet command syntax: ?bet <player> <amount>. Example: ?bet 1 100.")
             return
+
+        chosen_player = int(parts[1])
         amount = int(parts[2])
+        ### END OF COMMAND CHECK
 
-        # TODO: check if player has already placed a bet. If already, do not allow.
-        ### END OF CHECK
-
-        logger.info("Bet command from player %s has valid syntax.", ctx.author.name)
-        success = self.bet_db.bet(ctx.author.id, amount)
-        if not success:
-            logger.error("Bet command from player %s was not executed. Reason: not enough mineral.", ctx.author.name, ctx.author.id)
-            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Reason: balance is not enough.")
-            return
-
-        new_balance = self.bet_db.get_balance(ctx.author.id)
-        await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
+        logger.debug("Bet command from player %s has valid syntax.", ctx.author.name)
+        status, message = self.bet_system.bet(ctx.author.id, amount, chosen_player)
+        if status:
+            logger.info("Executed bet command from user %s (%s) for player %d with amount of %d.", ctx.author.name, ctx.author.id, chosen_player, amount)
+            new_balance = self.bet_db.get_balance(ctx.author.id)
+            await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
+        else:
+            logger.error("Bet command from user %s (%s) was not executed. Reason: %s", ctx.author.name, ctx.author.id, message)
+            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Reason: {message}")
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
