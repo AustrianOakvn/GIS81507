@@ -1,0 +1,1488 @@
+2023-12-07 14:21:32,040 INFO Buffer key: [] []
+2023-12-07 14:21:54,293 INFO Buffer key: ['T', 'L', 'Y', 'I', 'U'] ['Y', 'K', 'T', 'U', 'J']
+2023-12-07 14:21:54,293 INFO triggered AI command
+2023-12-07 14:21:55,300 INFO Buffer key: ['U', 'K', 'T', 'I', 'J'] ['U', 'L', 'Y', 'I', 'K']
+2023-12-07 14:21:55,300 INFO triggered AI command
+2023-12-07 14:21:56,307 INFO Buffer key: ['K', 'J', 'Y', 'L', 'T'] ['J', 'K', 'I', 'L', 'T']
+2023-12-07 14:21:56,308 INFO triggered AI command
+2023-12-07 14:21:56,308 INFO triggered AI command
+2023-12-07 14:21:56,308 INFO Commands to game:  CROUCH_B STAND_B THROW_A STAND_A
+2023-12-07 14:21:57,315 INFO Buffer key: ['I', 'J', 'T', 'Y', 'U'] ['U', 'I', 'Y', 'L', 'T']
+2023-12-07 14:21:57,315 INFO triggered AI command
+2023-12-07 14:21:58,322 INFO Buffer key: ['I', 'J', 'K', 'U', 'Y'] ['I', 'J', 'U', 'T', 'K']
+2023-12-07 14:21:58,323 INFO triggered AI command
+2023-12-07 14:21:58,323 INFO triggered AI command
+2023-12-07 14:21:59,331 INFO Buffer key: ['I', 'K', 'T', 'U', 'L'] ['Y', 'U', 'I', 'L', 'J']
+2023-12-07 14:21:59,331 INFO triggered AI command
+2023-12-07 14:22:00,338 INFO Buffer key: ['K', 'J', 'T', 'U', 'Y'] ['T', 'Y', 'K', 'L', 'I']
+2023-12-07 14:22:00,338 INFO triggered AI command
+2023-12-07 14:22:00,338 INFO triggered AI command
+2023-12-07 14:22:00,339 INFO Commands to game:  CROUCH_A STAND_B STAND_A JUMP
+2023-12-07 14:22:01,344 INFO Buffer key: ['U', 'K', 'Y', 'J', 'L'] ['J', 'K', 'I', 'U', 'Y']
+2023-12-07 14:22:01,344 INFO triggered AI command
+2023-12-07 14:22:02,350 INFO Buffer key: ['K', 'J', 'U', 'Y', 'L'] ['L', 'T', 'J', 'K', 'U']
+2023-12-07 14:22:02,350 INFO triggered AI command
+2023-12-07 14:22:02,350 INFO triggered AI command
+2023-12-07 14:22:03,355 INFO Buffer key: ['L', 'T', 'K', 'Y', 'J'] ['K', 'I', 'Y', 'L', 'J']
+2023-12-07 14:22:03,355 INFO triggered AI command
+2023-12-07 14:22:03,355 INFO triggered AI command
+2023-12-07 14:22:03,355 INFO Commands to game:  AIR_FA STAND_B CROUCH_B STAND_B
+2023-12-07 14:24:33,767 INFO Buffer key: [] []
+2023-12-07 14:25:40,402 INFO Buffer key: ['K', 'U', 'T', 'I', 'Y'] ['I', 'U', 'K', 'Y', 'L']
+2023-12-07 14:25:40,403 INFO triggered AI command
+2023-12-07 14:25:40,404 INFO triggered AI command
+2023-12-07 14:30:45,903 INFO Buffer key: ['T', 'U', 'I', 'K', 'J'] ['U', 'K', 'I', 'L', 'Y']
+2023-12-07 14:30:45,904 INFO triggered AI command
+2023-12-07 14:30:46,912 INFO Buffer key: ['T', 'Y', 'I', 'L', 'K'] ['Y', 'T', 'J', 'I', 'L']
+2023-12-07 14:30:46,912 INFO triggered AI command
+2023-12-07 14:30:46,912 INFO triggered AI command
+2023-12-07 14:30:46,912 INFO Commands to game:  STAND_A JUMP STAND_A FORWARD_WALK
+2023-12-07 14:30:47,919 INFO Buffer key: ['Y', 'J', 'U', 'T', 'K'] ['K', 'Y', 'I', 'T', 'L']
+2023-12-07 14:30:47,920 INFO triggered AI command
+2023-12-07 14:30:47,920 INFO triggered AI command
+2023-12-07 14:30:47,920 INFO Commands to game:  THROW_A STAND_A CROUCH_B STAND_B
+2023-12-07 14:30:48,927 INFO Buffer key: ['Y', 'J', 'I', 'K', 'U'] ['L', 'T', 'I', 'K', 'J']
+2023-12-07 14:30:48,928 INFO triggered AI command
+2023-12-07 14:30:49,935 INFO Buffer key: ['Y', 'L', 'J', 'K', 'T'] ['K', 'L', 'T', 'I', 'J']
+2023-12-07 14:30:49,935 INFO triggered AI command
+2023-12-07 14:30:49,935 INFO triggered AI command
+2023-12-07 14:30:49,936 INFO Commands to game:  AIR_FA STAND_B CROUCH_A STAND_A
+2023-12-07 14:30:50,943 INFO Buffer key: ['J', 'T', 'K', 'U', 'L'] ['U', 'Y', 'L', 'T', 'K']
+2023-12-07 14:30:50,943 INFO triggered AI command
+2023-12-07 14:30:51,952 INFO Buffer key: ['L', 'U', 'I', 'Y', 'K'] ['K', 'I', 'U', 'J', 'L']
+2023-12-07 14:30:51,952 INFO triggered AI command
+2023-12-07 14:30:52,959 INFO Buffer key: ['L', 'Y', 'J', 'K', 'T'] ['U', 'T', 'L', 'J', 'I']
+2023-12-07 14:30:52,960 INFO triggered AI command
+2023-12-07 14:30:52,960 INFO triggered AI command
+2023-12-07 14:30:52,960 INFO Commands to game:  AIR_FB STAND_A STAND_A STAND_GUARD
+2023-12-07 14:30:53,965 INFO Buffer key: ['Y', 'U', 'L', 'K', 'T'] ['L', 'I', 'Y', 'U', 'J']
+2023-12-07 14:30:53,965 INFO triggered AI command
+2023-12-07 14:30:53,965 INFO triggered AI command
+2023-12-07 14:30:54,973 INFO Buffer key: ['U', 'K', 'I', 'Y', 'L'] ['J', 'L', 'K', 'U', 'I']
+2023-12-07 14:30:54,973 INFO triggered AI command
+2023-12-07 14:30:55,980 INFO Buffer key: ['T', 'L', 'J', 'U', 'I'] ['K', 'Y', 'J', 'T', 'U']
+2023-12-07 14:30:55,981 INFO triggered AI command
+2023-12-07 14:30:56,988 INFO Buffer key: ['T', 'U', 'L', 'K', 'J'] ['Y', 'K', 'U', 'T', 'J']
+2023-12-07 14:30:56,988 INFO triggered AI command
+2023-12-07 14:30:56,988 INFO triggered AI command
+2023-12-07 14:30:57,994 INFO Buffer key: ['Y', 'L', 'T', 'J', 'U'] ['J', 'T', 'L', 'Y', 'U']
+2023-12-07 14:30:57,994 INFO triggered AI command
+2023-12-07 14:30:57,994 INFO triggered AI command
+2023-12-07 14:30:57,994 INFO Commands to game:  AIR_FA STAND_A THROW_A STAND_B
+2023-12-07 14:30:59,002 INFO Buffer key: ['T', 'U', 'J', 'I', 'K'] ['T', 'L', 'Y', 'U', 'J']
+2023-12-07 14:30:59,002 INFO triggered AI command
+2023-12-07 14:31:00,008 INFO Buffer key: ['J', 'I', 'L', 'Y', 'U'] ['Y', 'L', 'I', 'K', 'J']
+2023-12-07 14:31:00,008 INFO triggered AI command
+2023-12-07 14:31:01,015 INFO Buffer key: ['J', 'U', 'T', 'I', 'K'] ['U', 'K', 'J', 'I', 'Y']
+2023-12-07 14:31:01,015 INFO triggered AI command
+2023-12-07 14:31:01,015 INFO triggered AI command
+2023-12-07 14:31:01,015 INFO Commands to game:  THROW_A STAND_A CROUCH_B STAND_B
+2023-12-07 14:31:02,023 INFO Buffer key: ['Y', 'U', 'T', 'L', 'I'] ['I', 'J', 'L', 'T', 'U']
+2023-12-07 14:31:02,023 INFO triggered AI command
+2023-12-07 14:31:03,031 INFO Buffer key: ['T', 'U', 'Y', 'J', 'L'] ['L', 'K', 'J', 'T', 'U']
+2023-12-07 14:31:03,031 INFO triggered AI command
+2023-12-07 14:31:04,037 INFO Buffer key: ['U', 'T', 'I', 'L', 'Y'] ['K', 'U', 'J', 'Y', 'T']
+2023-12-07 14:31:04,037 INFO triggered AI command
+2023-12-07 14:31:04,037 INFO triggered AI command
+2023-12-07 14:31:04,037 INFO Commands to game:  AIR_UB STAND_A CROUCH_B STAND_A
+2023-12-07 14:31:05,045 INFO Buffer key: ['J', 'K', 'T', 'L', 'U'] ['T', 'Y', 'I', 'L', 'U']
+2023-12-07 14:31:05,046 INFO triggered AI command
+2023-12-07 14:31:05,046 INFO triggered AI command
+2023-12-07 14:31:06,052 INFO Buffer key: ['Y', 'J', 'K', 'T', 'I'] ['T', 'Y', 'I', 'J', 'K']
+2023-12-07 14:31:06,053 INFO triggered AI command
+2023-12-07 14:31:06,053 INFO triggered AI command
+2023-12-07 14:31:06,053 INFO Commands to game:  THROW_A STAND_A STAND_A JUMP
+2023-12-07 14:31:07,060 INFO Buffer key: ['L', 'I', 'U', 'T', 'J'] ['K', 'Y', 'I', 'U', 'T']
+2023-12-07 14:31:07,060 INFO triggered AI command
+2023-12-07 14:31:08,067 INFO Buffer key: ['Y', 'U', 'J', 'I', 'K'] ['L', 'J', 'Y', 'U', 'I']
+2023-12-07 14:31:08,067 INFO triggered AI command
+2023-12-07 14:31:08,068 INFO triggered AI command
+2023-12-07 14:31:09,075 INFO Buffer key: ['U', 'J', 'Y', 'I', 'K'] ['T', 'L', 'J', 'K', 'U']
+2023-12-07 14:31:09,076 INFO triggered AI command
+2023-12-07 14:31:10,083 INFO Buffer key: ['T', 'L', 'K', 'U', 'I'] ['K', 'J', 'Y', 'U', 'T']
+2023-12-07 14:31:10,083 INFO triggered AI command
+2023-12-07 14:31:11,088 INFO Buffer key: ['L', 'K', 'Y', 'T', 'J'] ['L', 'T', 'K', 'I', 'Y']
+2023-12-07 14:31:11,089 INFO triggered AI command
+2023-12-07 14:31:11,089 INFO triggered AI command
+2023-12-07 14:31:11,089 INFO Commands to game:  AIR_FB STAND_B AIR_FA STAND_B
+2023-12-07 14:31:12,097 INFO Buffer key: ['T', 'L', 'K', 'I', 'U'] ['I', 'Y', 'L', 'J', 'U']
+2023-12-07 14:31:12,097 INFO triggered AI command
+2023-12-07 14:31:12,097 INFO triggered AI command
+2023-12-07 14:31:13,104 INFO Buffer key: ['Y', 'K', 'J', 'T', 'I'] ['T', 'K', 'I', 'L', 'J']
+2023-12-07 14:31:13,104 INFO triggered AI command
+2023-12-07 14:31:13,105 INFO triggered AI command
+2023-12-07 14:31:13,105 INFO Commands to game:  CROUCH_A STAND_A STAND_A CROUCH
+2023-12-07 14:31:14,111 INFO Buffer key: ['Y', 'K', 'J', 'L', 'U'] ['L', 'T', 'K', 'I', 'U']
+2023-12-07 14:31:14,111 INFO triggered AI command
+2023-12-07 14:31:14,111 INFO triggered AI command
+2023-12-07 14:31:14,111 INFO Commands to game:  STAND_B CROUCH AIR_FA STAND_A
+2023-12-07 14:31:15,119 INFO Buffer key: ['K', 'L', 'T', 'Y', 'U'] ['J', 'T', 'I', 'U', 'L']
+2023-12-07 14:31:15,120 INFO triggered AI command
+2023-12-07 14:31:15,120 INFO triggered AI command
+2023-12-07 14:31:16,128 INFO Buffer key: ['T', 'Y', 'K', 'I', 'J'] ['T', 'J', 'U', 'L', 'K']
+2023-12-07 14:31:16,128 INFO triggered AI command
+2023-12-07 14:31:16,128 INFO triggered AI command
+2023-12-07 14:31:17,134 INFO Buffer key: ['U', 'K', 'I', 'L', 'Y'] ['U', 'I', 'T', 'Y', 'K']
+2023-12-07 14:31:17,134 INFO triggered AI command
+2023-12-07 14:31:17,135 INFO triggered AI command
+2023-12-07 14:31:17,135 INFO Commands to game:  CROUCH_B STAND_B AIR_UA STAND_B
+2023-12-07 14:31:18,142 INFO Buffer key: ['Y', 'J', 'T', 'L', 'U'] ['L', 'T', 'I', 'Y', 'K']
+2023-12-07 14:31:18,142 INFO triggered AI command
+2023-12-07 14:31:19,150 INFO Buffer key: ['L', 'J', 'K', 'I', 'T'] ['Y', 'I', 'U', 'K', 'T']
+2023-12-07 14:31:19,150 INFO triggered AI command
+2023-12-07 14:31:19,150 INFO triggered AI command
+2023-12-07 14:31:20,156 INFO Buffer key: ['Y', 'I', 'U', 'L', 'K'] ['U', 'L', 'Y', 'T', 'I']
+2023-12-07 14:31:20,157 INFO triggered AI command
+2023-12-07 14:31:20,157 INFO triggered AI command
+2023-12-07 14:31:20,157 INFO Commands to game:  STAND_B FORWARD_WALK AIR_FB STAND_A
+2023-12-07 14:31:21,164 INFO Buffer key: ['Y', 'L', 'T', 'I', 'K'] ['J', 'K', 'T', 'Y', 'L']
+2023-12-07 14:31:21,164 INFO triggered AI command
+2023-12-07 14:31:21,164 INFO triggered AI command
+2023-12-07 14:31:21,164 INFO Commands to game:  AIR_FA STAND_B THROW_A STAND_B
+2023-12-07 14:31:22,171 INFO Buffer key: ['K', 'U', 'T', 'I', 'L'] ['U', 'K', 'L', 'J', 'Y']
+2023-12-07 14:31:22,171 INFO triggered AI command
+2023-12-07 14:31:22,171 INFO triggered AI command
+2023-12-07 14:31:22,171 INFO Commands to game:  CROUCH_A STAND_A CROUCH_B STAND_B
+2023-12-07 14:31:23,177 INFO Buffer key: ['K', 'U', 'J', 'Y', 'I'] ['T', 'I', 'L', 'J', 'K']
+2023-12-07 14:31:23,177 INFO triggered AI command
+2023-12-07 14:31:23,178 INFO triggered AI command
+2023-12-07 14:31:23,178 INFO Commands to game:  CROUCH_B STAND_B STAND_A FORWARD_WALK
+2023-12-07 14:31:24,184 INFO Buffer key: ['J', 'Y', 'T', 'U', 'I'] ['K', 'I', 'L', 'U', 'T']
+2023-12-07 14:31:24,184 INFO triggered AI command
+2023-12-07 14:31:24,185 INFO triggered AI command
+2023-12-07 14:31:25,191 INFO Buffer key: ['K', 'U', 'Y', 'L', 'J'] ['U', 'K', 'Y', 'I', 'T']
+2023-12-07 14:31:25,192 INFO triggered AI command
+2023-12-07 14:31:25,192 INFO triggered AI command
+2023-12-07 14:31:25,192 INFO Commands to game:  CROUCH_B STAND_B CROUCH_B STAND_B
+2023-12-07 14:31:26,200 INFO Buffer key: ['T', 'K', 'J', 'L', 'I'] ['K', 'T', 'J', 'I', 'Y']
+2023-12-07 14:31:26,200 INFO triggered AI command
+2023-12-07 14:31:26,200 INFO triggered AI command
+2023-12-07 14:31:26,200 INFO Commands to game:  STAND_A JUMP CROUCH_A STAND_B
+2023-12-07 14:31:27,208 INFO Buffer key: ['I', 'K', 'L', 'J', 'Y'] ['J', 'K', 'T', 'I', 'L']
+2023-12-07 14:31:27,208 INFO triggered AI command
+2023-12-07 14:31:27,209 INFO triggered AI command
+2023-12-07 14:31:27,209 INFO Commands to game:  AIR_UB STAND_B THROW_A STAND_A
+2023-12-07 14:31:28,215 INFO Buffer key: ['J', 'Y', 'L', 'U', 'K'] ['K', 'U', 'I', 'L', 'J']
+2023-12-07 14:31:28,215 INFO triggered AI command
+2023-12-07 14:31:28,215 INFO triggered AI command
+2023-12-07 14:31:29,222 INFO Buffer key: ['K', 'L', 'Y', 'U', 'I'] ['L', 'J', 'Y', 'T', 'K']
+2023-12-07 14:31:29,223 INFO triggered AI command
+2023-12-07 14:31:30,229 INFO Buffer key: ['T', 'K', 'L', 'Y', 'U'] ['Y', 'L', 'I', 'K', 'U']
+2023-12-07 14:31:30,230 INFO triggered AI command
+2023-12-07 14:31:31,237 INFO Buffer key: ['T', 'K', 'J', 'U', 'I'] ['Y', 'U', 'L', 'K', 'T']
+2023-12-07 14:31:31,237 INFO triggered AI command
+2023-12-07 14:31:32,245 INFO Buffer key: ['K', 'T', 'I', 'L', 'U'] ['J', 'L', 'Y', 'K', 'I']
+2023-12-07 14:31:32,245 INFO triggered AI command
+2023-12-07 14:31:33,253 INFO Buffer key: ['T', 'J', 'K', 'U', 'I'] ['T', 'K', 'J', 'I', 'U']
+2023-12-07 14:31:33,253 INFO triggered AI command
+2023-12-07 14:31:34,259 INFO Buffer key: ['I', 'U', 'K', 'J', 'T'] ['J', 'K', 'U', 'L', 'T']
+2023-12-07 14:31:34,259 INFO triggered AI command
+2023-12-07 14:31:34,259 INFO triggered AI command
+2023-12-07 14:31:35,266 INFO Buffer key: ['K', 'J', 'T', 'L', 'Y'] ['L', 'I', 'K', 'U', 'T']
+2023-12-07 14:31:35,266 INFO triggered AI command
+2023-12-07 14:31:35,266 INFO triggered AI command
+2023-12-07 14:31:35,266 INFO Commands to game:  CROUCH_A STAND_A AIR_FA STAND_A
+2023-12-07 14:31:36,273 INFO Buffer key: ['Y', 'K', 'L', 'U', 'I'] ['U', 'L', 'Y', 'J', 'K']
+2023-12-07 14:31:36,274 INFO triggered AI command
+2023-12-07 14:31:37,281 INFO Buffer key: ['L', 'Y', 'K', 'U', 'T'] ['I', 'J', 'K', 'T', 'U']
+2023-12-07 14:31:37,281 INFO triggered AI command
+2023-12-07 14:31:37,281 INFO triggered AI command
+2023-12-07 14:31:38,289 INFO Buffer key: ['U', 'T', 'Y', 'J', 'I'] ['I', 'J', 'Y', 'T', 'U']
+2023-12-07 14:31:38,290 INFO triggered AI command
+2023-12-07 14:31:38,290 INFO triggered AI command
+2023-12-07 14:31:38,291 INFO Commands to game:  STAND_B STAND_GUARD AIR_UB STAND_B
+2023-12-07 14:31:39,299 INFO Buffer key: ['T', 'I', 'J', 'Y', 'L'] ['K', 'L', 'Y', 'J', 'T']
+2023-12-07 14:31:39,299 INFO triggered AI command
+2023-12-07 14:31:39,299 INFO triggered AI command
+2023-12-07 14:31:39,299 INFO Commands to game:  AIR_UB STAND_A CROUCH_B STAND_A
+2023-12-07 14:31:40,307 INFO Buffer key: ['T', 'K', 'I', 'U', 'Y'] ['T', 'J', 'Y', 'L', 'U']
+2023-12-07 14:31:40,307 INFO triggered AI command
+2023-12-07 14:31:40,308 INFO triggered AI command
+2023-12-07 14:31:40,308 INFO Commands to game:  CROUCH_B STAND_B THROW_B STAND_B
+2023-12-07 14:31:41,318 INFO Buffer key: ['U', 'I', 'K', 'T', 'L'] ['J', 'T', 'Y', 'L', 'I']
+2023-12-07 14:31:41,318 INFO triggered AI command
+2023-12-07 14:31:42,325 INFO Buffer key: ['J', 'L', 'U', 'I', 'Y'] ['L', 'T', 'I', 'Y', 'U']
+2023-12-07 14:31:42,326 INFO triggered AI command
+2023-12-07 14:31:42,326 INFO triggered AI command
+2023-12-07 14:31:43,331 INFO Buffer key: ['K', 'J', 'I', 'L', 'T'] ['T', 'U', 'L', 'I', 'J']
+2023-12-07 14:31:43,332 INFO triggered AI command
+2023-12-07 14:31:43,332 INFO triggered AI command
+2023-12-07 14:31:44,339 INFO Buffer key: ['J', 'L', 'T', 'Y', 'K'] ['T', 'Y', 'I', 'U', 'K']
+2023-12-07 14:31:44,340 INFO triggered AI command
+2023-12-07 14:31:44,340 INFO triggered AI command
+2023-12-07 14:31:44,340 INFO Commands to game:  THROW_A STAND_A STAND_B JUMP
+2023-12-07 14:31:45,347 INFO Buffer key: ['I', 'Y', 'L', 'U', 'J'] ['K', 'J', 'L', 'I', 'U']
+2023-12-07 14:31:45,347 INFO triggered AI command
+2023-12-07 14:31:46,353 INFO Buffer key: ['L', 'U', 'K', 'T', 'I'] ['T', 'J', 'U', 'I', 'L']
+2023-12-07 14:31:46,353 INFO triggered AI command
+2023-12-07 14:31:46,353 INFO triggered AI command
+2023-12-07 14:31:46,353 INFO Commands to game:  AIR_FA STAND_A STAND_A STAND_GUARD
+2023-12-07 14:31:47,362 INFO Buffer key: ['K', 'L', 'I', 'T', 'J'] ['K', 'T', 'U', 'L', 'I']
+2023-12-07 14:31:47,363 INFO triggered AI command
+2023-12-07 14:31:47,364 INFO triggered AI command
+2023-12-07 14:31:48,371 INFO Buffer key: ['K', 'L', 'Y', 'U', 'I'] ['Y', 'I', 'J', 'K', 'T']
+2023-12-07 14:31:48,371 INFO triggered AI command
+2023-12-07 14:31:48,371 INFO triggered AI command
+2023-12-07 14:31:48,371 INFO Commands to game:  CROUCH_B STAND_B AIR_UA STAND_A
+2023-12-07 14:31:49,379 INFO Buffer key: ['U', 'J', 'Y', 'K', 'L'] ['U', 'J', 'I', 'K', 'T']
+2023-12-07 14:31:49,379 INFO triggered AI command
+2023-12-07 14:31:50,386 INFO Buffer key: ['T', 'Y', 'K', 'L', 'U'] ['T', 'U', 'I', 'Y', 'L']
+2023-12-07 14:31:50,386 INFO triggered AI command
+2023-12-07 14:31:50,387 INFO triggered AI command
+2023-12-07 14:31:50,387 INFO Commands to game:  STAND_B FORWARD_WALK AIR_UB STAND_B
+2023-12-07 14:31:51,396 INFO Buffer key: ['J', 'U', 'Y', 'L', 'T'] ['Y', 'T', 'J', 'K', 'I']
+2023-12-07 14:31:51,396 INFO triggered AI command
+2023-12-07 14:31:51,396 INFO triggered AI command
+2023-12-07 14:31:51,396 INFO Commands to game:  THROW_B STAND_A STAND_B CROUCH
+2023-12-07 14:31:52,403 INFO Buffer key: ['K', 'U', 'L', 'Y', 'J'] ['J', 'Y', 'I', 'K', 'T']
+2023-12-07 14:31:52,404 INFO triggered AI command
+2023-12-07 14:31:52,404 INFO triggered AI command
+2023-12-07 14:31:52,404 INFO Commands to game:  CROUCH_B STAND_B THROW_B STAND_A
+2023-12-07 14:31:53,413 INFO Buffer key: ['L', 'I', 'J', 'K', 'Y'] ['L', 'Y', 'T', 'J', 'I']
+2023-12-07 14:31:53,413 INFO triggered AI command
+2023-12-07 14:31:53,414 INFO triggered AI command
+2023-12-07 14:31:53,414 INFO Commands to game:  AIR_FB STAND_B AIR_FB STAND_A
+2023-12-07 14:31:54,420 INFO Buffer key: ['I', 'U', 'T', 'L', 'K'] ['J', 'I', 'T', 'L', 'K']
+2023-12-07 14:31:54,420 INFO triggered AI command
+2023-12-07 14:31:55,428 INFO Buffer key: ['J', 'I', 'L', 'K', 'T'] ['I', 'K', 'Y', 'L', 'T']
+2023-12-07 14:31:55,428 INFO triggered AI command
+2023-12-07 14:31:55,428 INFO triggered AI command
+2023-12-07 14:31:55,429 INFO Commands to game:  THROW_A STAND_A AIR_UB STAND_B
+2023-12-07 14:31:56,435 INFO Buffer key: ['Y', 'I', 'T', 'J', 'K'] ['Y', 'J', 'I', 'T', 'U']
+2023-12-07 14:31:56,435 INFO triggered AI command
+2023-12-07 14:31:56,436 INFO triggered AI command
+2023-12-07 14:31:56,436 INFO Commands to game:  AIR_UA STAND_B THROW_A STAND_A
+2023-12-07 14:31:57,443 INFO Buffer key: ['L', 'U', 'T', 'K', 'I'] ['I', 'L', 'U', 'K', 'Y']
+2023-12-07 14:31:57,443 INFO triggered AI command
+2023-12-07 14:31:57,444 INFO triggered AI command
+2023-12-07 14:31:57,444 INFO Commands to game:  AIR_FA STAND_A AIR_UB STAND_B
+2023-12-07 14:31:58,451 INFO Buffer key: ['J', 'Y', 'I', 'K', 'U'] ['Y', 'T', 'J', 'K', 'L']
+2023-12-07 14:31:58,452 INFO triggered AI command
+2023-12-07 14:31:58,452 INFO triggered AI command
+2023-12-07 14:31:58,452 INFO Commands to game:  THROW_B STAND_B STAND_A STAND_GUARD
+2023-12-07 14:31:59,460 INFO Buffer key: ['I', 'Y', 'J', 'U', 'T'] ['J', 'T', 'K', 'U', 'Y']
+2023-12-07 14:31:59,461 INFO triggered AI command
+2023-12-07 14:31:59,462 INFO triggered AI command
+2023-12-07 14:31:59,462 INFO Commands to game:  AIR_UB STAND_A THROW_A STAND_B
+2023-12-07 14:32:00,470 INFO Buffer key: ['U', 'K', 'J', 'I', 'T'] ['T', 'U', 'I', 'J', 'K']
+2023-12-07 14:32:00,470 INFO triggered AI command
+2023-12-07 14:32:01,477 INFO Buffer key: ['J', 'T', 'L', 'Y', 'K'] ['J', 'T', 'U', 'K', 'Y']
+2023-12-07 14:32:01,478 INFO triggered AI command
+2023-12-07 14:32:01,478 INFO triggered AI command
+2023-12-07 14:32:01,478 INFO Commands to game:  THROW_A STAND_A THROW_A STAND_B
+2023-12-07 14:32:02,487 INFO Buffer key: ['U', 'Y', 'L', 'T', 'K'] ['J', 'K', 'T', 'U', 'I']
+2023-12-07 14:32:02,488 INFO triggered AI command
+2023-12-07 14:32:03,496 INFO Buffer key: ['T', 'K', 'L', 'Y', 'U'] ['Y', 'T', 'K', 'J', 'I']
+2023-12-07 14:32:03,496 INFO triggered AI command
+2023-12-07 14:32:04,503 INFO Buffer key: ['J', 'U', 'T', 'Y', 'K'] ['J', 'L', 'I', 'Y', 'U']
+2023-12-07 14:32:04,503 INFO triggered AI command
+2023-12-07 14:32:04,503 INFO triggered AI command
+2023-12-07 14:32:04,503 INFO Commands to game:  THROW_A STAND_B THROW_B STAND_B
+2023-12-07 14:32:05,511 INFO Buffer key: ['U', 'L', 'Y', 'J', 'T'] ['U', 'K', 'I', 'Y', 'J']
+2023-12-07 14:32:05,511 INFO triggered AI command
+2023-12-07 14:32:06,518 INFO Buffer key: ['I', 'U', 'J', 'K', 'T'] ['T', 'J', 'L', 'Y', 'U']
+2023-12-07 14:32:06,518 INFO triggered AI command
+2023-12-07 14:32:06,519 INFO triggered AI command
+2023-12-07 14:32:06,519 INFO Commands to game:  AIR_UA STAND_A THROW_B STAND_A
+2023-12-07 14:32:07,529 INFO Buffer key: ['Y', 'K', 'I', 'L', 'U'] ['K', 'L', 'U', 'T', 'I']
+2023-12-07 14:32:07,529 INFO triggered AI command
+2023-12-07 14:32:07,530 INFO triggered AI command
+2023-12-07 14:32:08,537 INFO Buffer key: ['L', 'I', 'U', 'J', 'K'] ['L', 'K', 'Y', 'T', 'J']
+2023-12-07 14:32:08,538 INFO triggered AI command
+2023-12-07 14:32:09,544 INFO Buffer key: ['I', 'K', 'L', 'J', 'T'] ['Y', 'T', 'K', 'L', 'J']
+2023-12-07 14:32:09,544 INFO triggered AI command
+2023-12-07 14:32:09,544 INFO triggered AI command
+2023-12-07 14:32:09,544 INFO Commands to game:  AIR_UA STAND_A STAND_A CROUCH
+2023-12-07 14:32:10,552 INFO Buffer key: ['L', 'K', 'J', 'I', 'U'] ['J', 'L', 'K', 'I', 'T']
+2023-12-07 14:32:10,552 INFO triggered AI command
+2023-12-07 14:32:11,559 INFO Buffer key: ['K', 'I', 'U', 'J', 'T'] ['U', 'I', 'K', 'L', 'T']
+2023-12-07 14:32:11,559 INFO triggered AI command
+2023-12-07 14:32:12,567 INFO Buffer key: ['L', 'J', 'T', 'K', 'Y'] ['T', 'Y', 'U', 'K', 'I']
+2023-12-07 14:32:12,567 INFO triggered AI command
+2023-12-07 14:32:12,568 INFO triggered AI command
+2023-12-07 14:32:12,568 INFO Commands to game:  AIR_FA STAND_A STAND_B CROUCH
+2023-12-07 14:32:13,577 INFO Buffer key: ['U', 'J', 'T', 'L', 'Y'] ['J', 'U', 'I', 'Y', 'L']
+2023-12-07 14:32:13,578 INFO triggered AI command
+2023-12-07 14:32:14,585 INFO Buffer key: ['J', 'U', 'I', 'Y', 'L'] ['J', 'Y', 'T', 'U', 'K']
+2023-12-07 14:32:14,585 INFO triggered AI command
+2023-12-07 14:32:14,585 INFO triggered AI command
+2023-12-07 14:32:15,592 INFO Buffer key: ['I', 'T', 'J', 'L', 'U'] ['I', 'Y', 'J', 'L', 'T']
+2023-12-07 14:32:15,593 INFO triggered AI command
+2023-12-07 14:32:16,600 INFO Buffer key: ['I', 'J', 'Y', 'T', 'L'] ['K', 'T', 'U', 'Y', 'J']
+2023-12-07 14:32:16,600 INFO triggered AI command
+2023-12-07 14:32:16,600 INFO triggered AI command
+2023-12-07 14:32:16,601 INFO Commands to game:  AIR_UB STAND_A CROUCH_A STAND_A
+2023-12-07 14:32:17,608 INFO Buffer key: ['K', 'I', 'U', 'J', 'T'] ['T', 'J', 'K', 'L', 'Y']
+2023-12-07 14:32:17,608 INFO triggered AI command
+2023-12-07 14:32:18,615 INFO Buffer key: ['U', 'Y', 'T', 'L', 'I'] ['L', 'Y', 'U', 'K', 'T']
+2023-12-07 14:32:18,615 INFO triggered AI command
+2023-12-07 14:32:18,616 INFO triggered AI command
+2023-12-07 14:32:18,616 INFO Commands to game:  STAND_B JUMP AIR_FB STAND_A
+2023-12-07 14:32:19,623 INFO Buffer key: ['J', 'L', 'Y', 'U', 'K'] ['L', 'U', 'J', 'Y', 'K']
+2023-12-07 14:32:19,623 INFO triggered AI command
+2023-12-07 14:32:20,631 INFO Buffer key: ['J', 'Y', 'U', 'K', 'T'] ['T', 'U', 'J', 'I', 'Y']
+2023-12-07 14:32:20,631 INFO triggered AI command
+2023-12-07 14:32:20,632 INFO triggered AI command
+2023-12-07 14:32:20,632 INFO Commands to game:  THROW_B STAND_B THROW_B STAND_A
+2023-12-07 14:32:21,640 INFO Buffer key: ['Y', 'L', 'I', 'K', 'T'] ['T', 'Y', 'I', 'J', 'K']
+2023-12-07 14:32:21,640 INFO triggered AI command
+2023-12-07 14:32:21,640 INFO triggered AI command
+2023-12-07 14:32:21,640 INFO Commands to game:  AIR_FA STAND_B STAND_B CROUCH
+2023-12-07 14:32:22,647 INFO Buffer key: ['T', 'L', 'U', 'J', 'K'] ['K', 'J', 'L', 'Y', 'I']
+2023-12-07 14:32:22,648 INFO triggered AI command
+2023-12-07 14:32:22,648 INFO triggered AI command
+2023-12-07 14:32:22,648 INFO Commands to game:  STAND_A FORWARD_WALK CROUCH_B STAND_B
+2023-12-07 14:32:23,656 INFO Buffer key: ['I', 'K', 'L', 'Y', 'U'] ['Y', 'L', 'T', 'K', 'J']
+2023-12-07 14:32:23,656 INFO triggered AI command
+2023-12-07 14:32:24,664 INFO Buffer key: ['T', 'K', 'L', 'J', 'I'] ['L', 'Y', 'J', 'U', 'T']
+2023-12-07 14:32:24,664 INFO triggered AI command
+2023-12-07 14:32:24,664 INFO triggered AI command
+2023-12-07 14:32:24,664 INFO Commands to game:  STAND_A JUMP AIR_FB STAND_A
+2023-12-07 14:32:25,671 INFO Buffer key: ['T', 'L', 'I', 'U', 'K'] ['U', 'T', 'Y', 'K', 'I']
+2023-12-07 14:32:25,671 INFO triggered AI command
+2023-12-07 14:32:25,671 INFO triggered AI command
+2023-12-07 14:32:25,671 INFO Commands to game:  STAND_A CROUCH STAND_A CROUCH
+2023-12-07 14:32:26,678 INFO Buffer key: ['T', 'J', 'L', 'U', 'I'] ['Y', 'U', 'I', 'L', 'K']
+2023-12-07 14:32:26,679 INFO triggered AI command
+2023-12-07 14:32:26,679 INFO triggered AI command
+2023-12-07 14:32:26,679 INFO Commands to game:  STAND_A STAND_GUARD STAND_B CROUCH
+2023-12-07 14:32:27,686 INFO Buffer key: ['I', 'K', 'U', 'Y', 'J'] ['Y', 'J', 'K', 'L', 'U']
+2023-12-07 14:32:27,686 INFO triggered AI command
+2023-12-07 14:32:28,693 INFO Buffer key: ['J', 'I', 'T', 'Y', 'K'] ['K', 'J', 'T', 'I', 'L']
+2023-12-07 14:32:28,693 INFO triggered AI command
+2023-12-07 14:32:28,694 INFO triggered AI command
+2023-12-07 14:32:28,694 INFO Commands to game:  THROW_A STAND_A CROUCH_A STAND_A
+2023-12-07 14:32:29,701 INFO Buffer key: ['K', 'T', 'L', 'U', 'J'] ['I', 'J', 'Y', 'K', 'L']
+2023-12-07 14:32:29,701 INFO triggered AI command
+2023-12-07 14:32:30,709 INFO Buffer key: ['I', 'K', 'U', 'Y', 'J'] ['L', 'J', 'T', 'I', 'U']
+2023-12-07 14:32:30,709 INFO triggered AI command
+2023-12-07 14:32:30,709 INFO triggered AI command
+2023-12-07 14:32:31,715 INFO Buffer key: ['U', 'Y', 'T', 'K', 'I'] ['L', 'U', 'Y', 'K', 'T']
+2023-12-07 14:32:31,715 INFO triggered AI command
+2023-12-07 14:32:31,715 INFO triggered AI command
+2023-12-07 14:32:31,715 INFO Commands to game:  STAND_A JUMP AIR_FB STAND_A
+2023-12-07 14:32:32,722 INFO Buffer key: ['J', 'K', 'Y', 'I', 'U'] ['I', 'L', 'K', 'Y', 'U']
+2023-12-07 14:32:32,722 INFO triggered AI command
+2023-12-07 14:32:33,731 INFO Buffer key: ['K', 'T', 'I', 'J', 'U'] ['T', 'K', 'L', 'J', 'I']
+2023-12-07 14:32:33,731 INFO triggered AI command
+2023-12-07 14:32:33,731 INFO triggered AI command
+2023-12-07 14:32:33,731 INFO Commands to game:  CROUCH_A STAND_A STAND_A CROUCH
+2023-12-07 14:32:34,739 INFO Buffer key: ['K', 'I', 'Y', 'J', 'L'] ['L', 'J', 'Y', 'T', 'U']
+2023-12-07 14:32:34,739 INFO triggered AI command
+2023-12-07 14:32:34,739 INFO triggered AI command
+2023-12-07 14:32:34,740 INFO Commands to game:  CROUCH_B STAND_B AIR_FB STAND_A
+2023-12-07 14:32:35,748 INFO Buffer key: ['U', 'J', 'T', 'L', 'Y'] ['L', 'Y', 'U', 'K', 'J']
+2023-12-07 14:32:35,748 INFO triggered AI command
+2023-12-07 14:32:35,748 INFO triggered AI command
+2023-12-07 14:32:36,755 INFO Buffer key: ['T', 'J', 'Y', 'K', 'U'] ['Y', 'T', 'K', 'U', 'J']
+2023-12-07 14:32:36,756 INFO triggered AI command
+2023-12-07 14:32:36,756 INFO triggered AI command
+2023-12-07 14:32:36,756 INFO Commands to game:  THROW_B STAND_B STAND_A CROUCH
+2023-12-07 14:32:37,765 INFO Buffer key: ['L', 'Y', 'I', 'K', 'T'] ['J', 'K', 'L', 'U', 'I']
+2023-12-07 14:32:37,766 INFO triggered AI command
+2023-12-07 14:32:37,766 INFO triggered AI command
+2023-12-07 14:32:38,773 INFO Buffer key: ['I', 'Y', 'L', 'U', 'J'] ['U', 'I', 'T', 'Y', 'K']
+2023-12-07 14:32:38,773 INFO triggered AI command
+2023-12-07 14:32:39,780 INFO Buffer key: ['I', 'T', 'Y', 'J', 'U'] ['K', 'U', 'L', 'J', 'T']
+2023-12-07 14:32:39,781 INFO triggered AI command
+2023-12-07 14:32:40,788 INFO Buffer key: ['Y', 'T', 'K', 'U', 'I'] ['J', 'U', 'I', 'L', 'T']
+2023-12-07 14:32:40,789 INFO triggered AI command
+2023-12-07 14:32:40,789 INFO triggered AI command
+2023-12-07 14:32:40,789 INFO Commands to game:  STAND_A JUMP THROW_A STAND_A
+2023-12-07 14:32:41,799 INFO Buffer key: ['K', 'I', 'J', 'L', 'Y'] ['L', 'J', 'T', 'Y', 'I']
+2023-12-07 14:32:41,799 INFO triggered AI command
+2023-12-07 14:32:41,799 INFO triggered AI command
+2023-12-07 14:32:41,799 INFO Commands to game:  CROUCH_B STAND_B AIR_FA STAND_A
+2023-12-07 14:32:42,807 INFO Buffer key: ['K', 'U', 'Y', 'J', 'T'] ['L', 'I', 'U', 'K', 'J']
+2023-12-07 14:32:42,807 INFO triggered AI command
+2023-12-07 14:32:42,807 INFO triggered AI command
+2023-12-07 14:32:43,815 INFO Buffer key: ['U', 'I', 'L', 'K', 'T'] ['Y', 'L', 'T', 'U', 'K']
+2023-12-07 14:32:43,815 INFO triggered AI command
+2023-12-07 14:32:43,816 INFO triggered AI command
+2023-12-07 14:32:43,816 INFO Commands to game:  AIR_UA STAND_A AIR_FA STAND_A
+2023-12-07 14:32:44,825 INFO Buffer key: ['I', 'T', 'J', 'Y', 'K'] ['Y', 'U', 'I', 'T', 'L']
+2023-12-07 14:32:44,826 INFO triggered AI command
+2023-12-07 14:32:44,826 INFO triggered AI command
+2023-12-07 14:32:45,832 INFO Buffer key: ['Y', 'I', 'K', 'U', 'T'] ['U', 'Y', 'L', 'K', 'J']
+2023-12-07 14:32:45,833 INFO triggered AI command
+2023-12-07 14:32:45,833 INFO triggered AI command
+2023-12-07 14:32:46,841 INFO Buffer key: ['Y', 'U', 'L', 'I', 'T'] ['Y', 'T', 'I', 'K', 'U']
+2023-12-07 14:32:46,842 INFO triggered AI command
+2023-12-07 14:32:47,850 INFO Buffer key: ['T', 'U', 'L', 'Y', 'K'] ['I', 'J', 'K', 'U', 'T']
+2023-12-07 14:32:47,850 INFO triggered AI command
+2023-12-07 14:32:47,851 INFO triggered AI command
+2023-12-07 14:32:47,851 INFO Commands to game:  AIR_FB STAND_B AIR_UA STAND_A
+2023-12-07 14:32:48,857 INFO Buffer key: ['K', 'J', 'T', 'L', 'I'] ['I', 'Y', 'J', 'K', 'L']
+2023-12-07 14:32:48,858 INFO triggered AI command
+2023-12-07 14:32:48,858 INFO triggered AI command
+2023-12-07 14:32:48,858 INFO Commands to game:  CROUCH_A STAND_A AIR_UB STAND_B
+2023-12-07 14:32:49,865 INFO Buffer key: ['U', 'L', 'I', 'T', 'K'] ['U', 'T', 'K', 'Y', 'I']
+2023-12-07 14:32:49,866 INFO triggered AI command
+2023-12-07 14:32:49,866 INFO triggered AI command
+2023-12-07 14:32:50,872 INFO Buffer key: ['T', 'U', 'K', 'L', 'Y'] ['L', 'J', 'U', 'K', 'T']
+2023-12-07 14:32:50,872 INFO triggered AI command
+2023-12-07 14:32:50,872 INFO triggered AI command
+2023-12-07 14:32:51,879 INFO Buffer key: ['U', 'T', 'I', 'K', 'J'] ['T', 'K', 'L', 'U', 'Y']
+2023-12-07 14:32:51,880 INFO triggered AI command
+2023-12-07 14:32:51,880 INFO triggered AI command
+2023-12-07 14:32:52,887 INFO Buffer key: ['L', 'Y', 'U', 'K', 'I'] ['Y', 'L', 'K', 'U', 'J']
+2023-12-07 14:32:52,887 INFO triggered AI command
+2023-12-07 14:32:52,887 INFO triggered AI command
+2023-12-07 14:32:52,888 INFO Commands to game:  AIR_FB STAND_B STAND_B FORWARD_WALK
+2023-12-07 14:32:53,894 INFO Buffer key: ['L', 'U', 'T', 'K', 'I'] ['T', 'Y', 'I', 'U', 'K']
+2023-12-07 14:32:53,895 INFO triggered AI command
+2023-12-07 14:32:54,901 INFO Buffer key: ['L', 'K', 'Y', 'J', 'U'] ['U', 'K', 'T', 'L', 'Y']
+2023-12-07 14:32:54,902 INFO triggered AI command
+2023-12-07 14:32:54,902 INFO triggered AI command
+2023-12-07 14:32:54,902 INFO Commands to game:  AIR_FB STAND_B CROUCH_A STAND_B
+2023-12-07 14:32:55,908 INFO Buffer key: ['K', 'I', 'J', 'T', 'Y'] ['J', 'U', 'K', 'I', 'Y']
+2023-12-07 14:32:55,908 INFO triggered AI command
+2023-12-07 14:32:55,908 INFO triggered AI command
+2023-12-07 14:32:55,909 INFO Commands to game:  CROUCH_A STAND_A THROW_B STAND_B
+2023-12-07 14:32:56,917 INFO Buffer key: ['U', 'T', 'K', 'L', 'J'] ['L', 'J', 'K', 'Y', 'T']
+2023-12-07 14:32:56,917 INFO triggered AI command
+2023-12-07 14:32:56,917 INFO triggered AI command
+2023-12-07 14:32:56,917 INFO Commands to game:  STAND_A FORWARD_WALK AIR_FB STAND_B
+2023-12-07 14:32:57,927 INFO Buffer key: ['U', 'T', 'J', 'L', 'K'] ['Y', 'K', 'J', 'L', 'I']
+2023-12-07 14:32:57,928 INFO triggered AI command
+2023-12-07 14:32:58,935 INFO Buffer key: ['U', 'T', 'J', 'Y', 'I'] ['I', 'T', 'U', 'L', 'Y']
+2023-12-07 14:32:58,935 INFO triggered AI command
+2023-12-07 14:32:58,935 INFO triggered AI command
+2023-12-07 14:32:58,936 INFO Commands to game:  THROW_B STAND_A AIR_UA STAND_A
+2023-12-07 14:32:59,942 INFO Buffer key: ['J', 'U', 'T', 'K', 'I'] ['I', 'T', 'U', 'K', 'L']
+2023-12-07 14:32:59,943 INFO triggered AI command
+2023-12-07 14:33:00,950 INFO Buffer key: ['T', 'L', 'J', 'K', 'U'] ['U', 'L', 'K', 'I', 'Y']
+2023-12-07 14:33:00,950 INFO triggered AI command
+2023-12-07 14:33:01,958 INFO Buffer key: ['Y', 'I', 'L', 'T', 'J'] ['I', 'K', 'L', 'T', 'Y']
+2023-12-07 14:33:01,958 INFO triggered AI command
+2023-12-07 14:33:01,959 INFO triggered AI command
+2023-12-07 14:33:01,959 INFO Commands to game:  AIR_UA STAND_B AIR_UA STAND_A
+2023-12-07 14:33:02,967 INFO Buffer key: ['Y', 'I', 'U', 'K', 'J'] ['I', 'U', 'Y', 'T', 'L']
+2023-12-07 14:33:02,968 INFO triggered AI command
+2023-12-07 14:33:03,975 INFO Buffer key: ['K', 'I', 'L', 'T', 'Y'] ['T', 'K', 'L', 'Y', 'I']
+2023-12-07 14:33:03,975 INFO triggered AI command
+2023-12-07 14:33:03,975 INFO triggered AI command
+2023-12-07 14:33:03,976 INFO Commands to game:  CROUCH_A STAND_A CROUCH_B STAND_A
+2023-12-07 14:33:04,983 INFO Buffer key: ['J', 'K', 'I', 'U', 'Y'] ['U', 'Y', 'I', 'T', 'L']
+2023-12-07 14:33:04,984 INFO triggered AI command
+2023-12-07 14:33:04,984 INFO triggered AI command
+2023-12-07 14:33:04,984 INFO Commands to game:  THROW_B STAND_B AIR_UA STAND_B
+2023-12-07 14:33:05,992 INFO Buffer key: ['I', 'U', 'L', 'Y', 'J'] ['Y', 'T', 'L', 'K', 'J']
+2023-12-07 14:33:05,992 INFO triggered AI command
+2023-12-07 14:33:07,001 INFO Buffer key: ['U', 'I', 'Y', 'T', 'L'] ['L', 'U', 'K', 'T', 'J']
+2023-12-07 14:33:07,001 INFO triggered AI command
+2023-12-07 14:33:07,002 INFO triggered AI command
+2023-12-07 14:33:08,008 INFO Buffer key: ['L', 'K', 'I', 'T', 'U'] ['U', 'T', 'J', 'Y', 'L']
+2023-12-07 14:33:08,009 INFO triggered AI command
+2023-12-07 14:33:08,009 INFO triggered AI command
+2023-12-07 14:33:08,009 INFO Commands to game:  AIR_FA STAND_A THROW_B STAND_A
+2023-12-07 14:33:09,016 INFO Buffer key: ['T', 'K', 'J', 'Y', 'U'] ['L', 'I', 'U', 'J', 'T']
+2023-12-07 14:33:09,016 INFO triggered AI command
+2023-12-07 14:33:10,026 INFO Buffer key: ['L', 'K', 'J', 'I', 'U'] ['U', 'T', 'K', 'J', 'L']
+2023-12-07 14:33:10,026 INFO triggered AI command
+2023-12-07 14:33:11,034 INFO Buffer key: ['I', 'K', 'J', 'Y', 'U'] ['I', 'T', 'K', 'L', 'Y']
+2023-12-07 14:33:11,035 INFO triggered AI command
+2023-12-07 14:33:11,035 INFO triggered AI command
+2023-12-07 14:33:11,035 INFO Commands to game:  AIR_UB STAND_B AIR_UA STAND_A
+2023-12-07 14:33:12,044 INFO Buffer key: ['T', 'U', 'J', 'L', 'Y'] ['Y', 'I', 'T', 'U', 'J']
+2023-12-07 14:33:12,044 INFO triggered AI command
+2023-12-07 14:33:12,044 INFO triggered AI command
+2023-12-07 14:33:12,045 INFO Commands to game:  THROW_B STAND_B AIR_UA STAND_A
+2023-12-07 14:33:13,052 INFO Buffer key: ['J', 'I', 'L', 'Y', 'K'] ['K', 'L', 'Y', 'T', 'U']
+2023-12-07 14:33:13,052 INFO triggered AI command
+2023-12-07 14:33:13,052 INFO triggered AI command
+2023-12-07 14:33:14,060 INFO Buffer key: ['K', 'T', 'L', 'J', 'Y'] ['Y', 'U', 'I', 'T', 'K']
+2023-12-07 14:33:14,061 INFO triggered AI command
+2023-12-07 14:33:14,061 INFO triggered AI command
+2023-12-07 14:33:15,068 INFO Buffer key: ['T', 'L', 'U', 'I', 'K'] ['I', 'U', 'L', 'Y', 'T']
+2023-12-07 14:33:15,068 INFO triggered AI command
+2023-12-07 14:33:15,068 INFO triggered AI command
+2023-12-07 14:33:15,069 INFO Commands to game:  STAND_A JUMP AIR_UB STAND_B
+2023-12-07 14:33:16,081 INFO Buffer key: ['J', 'U', 'L', 'I', 'T'] ['U', 'Y', 'K', 'L', 'J']
+2023-12-07 14:33:16,081 INFO triggered AI command
+2023-12-07 14:33:17,088 INFO Buffer key: ['U', 'J', 'T', 'Y', 'L'] ['T', 'J', 'L', 'K', 'U']
+2023-12-07 14:33:17,089 INFO triggered AI command
+2023-12-07 14:33:17,089 INFO triggered AI command
+2023-12-07 14:33:18,097 INFO Buffer key: ['T', 'Y', 'U', 'K', 'L'] ['T', 'Y', 'I', 'K', 'L']
+2023-12-07 14:33:18,097 INFO triggered AI command
+2023-12-07 14:33:18,098 INFO triggered AI command
+2023-12-07 14:33:18,098 INFO Commands to game:  STAND_B FORWARD_WALK STAND_B FORWARD_WALK
+2023-12-07 14:33:19,107 INFO Buffer key: ['L', 'K', 'I', 'J', 'T'] ['I', 'T', 'L', 'U', 'Y']
+2023-12-07 14:33:19,108 INFO triggered AI command
+2023-12-07 14:33:19,108 INFO triggered AI command
+2023-12-07 14:33:19,108 INFO Commands to game:  AIR_FA STAND_A AIR_UA STAND_B
+2023-12-07 14:33:20,115 INFO Buffer key: ['L', 'Y', 'U', 'K', 'J'] ['Y', 'T', 'U', 'K', 'I']
+2023-12-07 14:33:20,115 INFO triggered AI command
+2023-12-07 14:33:20,115 INFO triggered AI command
+2023-12-07 14:33:20,116 INFO Commands to game:  AIR_FB STAND_B STAND_A JUMP
+2023-12-07 14:33:21,123 INFO Buffer key: ['T', 'J', 'K', 'U', 'I'] ['I', 'K', 'U', 'Y', 'L']
+2023-12-07 14:33:21,123 INFO triggered AI command
+2023-12-07 14:33:21,124 INFO triggered AI command
+2023-12-07 14:33:22,132 INFO Buffer key: ['J', 'L', 'T', 'I', 'K'] ['L', 'U', 'K', 'T', 'I']
+2023-12-07 14:33:22,132 INFO triggered AI command
+2023-12-07 14:33:22,132 INFO triggered AI command
+2023-12-07 14:33:23,141 INFO Buffer key: ['Y', 'K', 'T', 'L', 'I'] ['I', 'L', 'T', 'Y', 'J']
+2023-12-07 14:33:23,141 INFO triggered AI command
+2023-12-07 14:33:23,141 INFO triggered AI command
+2023-12-07 14:33:23,142 INFO Commands to game:  CROUCH_A STAND_A AIR_UA STAND_A
+2023-12-07 14:33:24,149 INFO Buffer key: ['K', 'T', 'L', 'J', 'Y'] ['T', 'L', 'I', 'U', 'J']
+2023-12-07 14:33:24,149 INFO triggered AI command
+2023-12-07 14:33:24,149 INFO triggered AI command
+2023-12-07 14:33:24,149 INFO Commands to game:  CROUCH_A STAND_A STAND_A FORWARD_WALK
+2023-12-07 14:33:25,157 INFO Buffer key: ['J', 'L', 'U', 'I', 'T'] ['L', 'T', 'J', 'K', 'U']
+2023-12-07 14:33:25,157 INFO triggered AI command
+2023-12-07 14:33:26,165 INFO Buffer key: ['Y', 'I', 'T', 'L', 'J'] ['L', 'T', 'K', 'I', 'U']
+2023-12-07 14:33:26,165 INFO triggered AI command
+2023-12-07 14:33:26,165 INFO triggered AI command
+2023-12-07 14:33:26,166 INFO Commands to game:  AIR_UA STAND_B AIR_FA STAND_A
+2023-12-07 14:33:27,173 INFO Buffer key: ['L', 'I', 'U', 'Y', 'J'] ['K', 'J', 'I', 'T', 'U']
+2023-12-07 14:33:27,173 INFO triggered AI command
+2023-12-07 14:33:28,179 INFO Buffer key: ['I', 'J', 'K', 'U', 'L'] ['T', 'J', 'L', 'U', 'I']
+2023-12-07 14:33:28,179 INFO triggered AI command
+2023-12-07 14:33:29,187 INFO Buffer key: ['I', 'L', 'T', 'J', 'K'] ['T', 'U', 'I', 'K', 'J']
+2023-12-07 14:33:29,187 INFO triggered AI command
+2023-12-07 14:33:29,187 INFO triggered AI command
+2023-12-07 14:33:30,195 INFO Buffer key: ['I', 'Y', 'T', 'K', 'J'] ['T', 'U', 'K', 'J', 'I']
+2023-12-07 14:33:30,195 INFO triggered AI command
+2023-12-07 14:33:30,195 INFO triggered AI command
+2023-12-07 14:33:31,202 INFO Buffer key: ['Y', 'L', 'I', 'K', 'J'] ['I', 'U', 'Y', 'J', 'L']
+2023-12-07 14:33:31,203 INFO triggered AI command
+2023-12-07 14:33:31,203 INFO triggered AI command
+2023-12-07 14:33:32,210 INFO Buffer key: ['K', 'T', 'I', 'L', 'U'] ['Y', 'J', 'T', 'K', 'L']
+2023-12-07 14:33:32,210 INFO triggered AI command
+2023-12-07 14:33:33,217 INFO Buffer key: ['U', 'I', 'L', 'J', 'T'] ['J', 'K', 'I', 'Y', 'L']
+2023-12-07 14:33:33,218 INFO triggered AI command
+2023-12-07 14:33:34,227 INFO Buffer key: ['T', 'U', 'K', 'L', 'I'] ['T', 'K', 'I', 'Y', 'L']
+2023-12-07 14:33:34,227 INFO triggered AI command
+2023-12-07 14:33:35,235 INFO Buffer key: ['K', 'Y', 'I', 'J', 'T'] ['Y', 'J', 'L', 'U', 'K']
+2023-12-07 14:33:35,235 INFO triggered AI command
+2023-12-07 14:33:35,236 INFO triggered AI command
+2023-12-07 14:33:36,244 INFO Buffer key: ['T', 'L', 'K', 'U', 'I'] ['T', 'J', 'Y', 'U', 'L']
+2023-12-07 14:33:36,244 INFO triggered AI command
+2023-12-07 14:33:37,252 INFO Buffer key: ['Y', 'I', 'L', 'K', 'J'] ['I', 'L', 'J', 'U', 'K']
+2023-12-07 14:33:37,252 INFO triggered AI command
+2023-12-07 14:33:37,252 INFO triggered AI command
+2023-12-07 14:33:38,259 INFO Buffer key: ['L', 'U', 'I', 'K', 'J'] ['L', 'T', 'J', 'Y', 'K']
+2023-12-07 14:33:38,260 INFO triggered AI command
+2023-12-07 14:33:39,267 INFO Buffer key: ['L', 'J', 'T', 'U', 'K'] ['J', 'Y', 'U', 'I', 'T']
+2023-12-07 14:33:39,267 INFO triggered AI command
+2023-12-07 14:33:39,267 INFO triggered AI command
+2023-12-07 14:33:39,267 INFO Commands to game:  AIR_FA STAND_A THROW_B STAND_B
+2023-12-07 14:33:40,276 INFO Buffer key: ['J', 'U', 'L', 'K', 'Y'] ['I', 'J', 'Y', 'L', 'K']
+2023-12-07 14:33:40,276 INFO triggered AI command
+2023-12-07 14:33:41,284 INFO Buffer key: ['J', 'L', 'U', 'I', 'K'] ['K', 'L', 'J', 'Y', 'T']
+2023-12-07 14:33:41,284 INFO triggered AI command
+2023-12-07 14:33:42,291 INFO Buffer key: ['K', 'J', 'I', 'U', 'L'] ['T', 'K', 'Y', 'J', 'L']
+2023-12-07 14:33:42,292 INFO triggered AI command
+2023-12-07 14:33:43,299 INFO Buffer key: ['K', 'I', 'Y', 'U', 'L'] ['T', 'K', 'J', 'Y', 'I']
+2023-12-07 14:33:43,299 INFO triggered AI command
+2023-12-07 14:33:44,307 INFO Buffer key: ['L', 'T', 'U', 'J', 'Y'] ['K', 'Y', 'L', 'U', 'I']
+2023-12-07 14:33:44,307 INFO triggered AI command
+2023-12-07 14:33:45,315 INFO Buffer key: ['K', 'T', 'J', 'L', 'U'] ['I', 'K', 'Y', 'T', 'U']
+2023-12-07 14:33:45,315 INFO triggered AI command
+2023-12-07 14:33:46,323 INFO Buffer key: ['J', 'K', 'U', 'I', 'Y'] ['K', 'I', 'J', 'T', 'U']
+2023-12-07 14:33:46,323 INFO triggered AI command
+2023-12-07 14:33:46,323 INFO triggered AI command
+2023-12-07 14:33:47,330 INFO Buffer key: ['I', 'T', 'L', 'Y', 'K'] ['T', 'U', 'Y', 'J', 'I']
+2023-12-07 14:33:47,330 INFO triggered AI command
+2023-12-07 14:33:47,331 INFO triggered AI command
+2023-12-07 14:33:47,331 INFO Commands to game:  AIR_UA STAND_B STAND_B STAND_GUARD
+2023-12-07 14:33:48,338 INFO Buffer key: ['I', 'J', 'K', 'U', 'T'] ['T', 'Y', 'K', 'L', 'J']
+2023-12-07 14:33:48,338 INFO triggered AI command
+2023-12-07 14:33:48,338 INFO triggered AI command
+2023-12-07 14:33:48,338 INFO Commands to game:  AIR_UA STAND_A STAND_B CROUCH
+2023-12-07 14:33:49,345 INFO Buffer key: ['L', 'I', 'J', 'T', 'Y'] ['I', 'T', 'J', 'K', 'Y']
+2023-12-07 14:33:49,345 INFO triggered AI command
+2023-12-07 14:33:49,345 INFO triggered AI command
+2023-12-07 14:33:49,346 INFO Commands to game:  AIR_FA STAND_B AIR_UA STAND_A
+2023-12-07 14:33:50,353 INFO Buffer key: ['I', 'J', 'T', 'L', 'Y'] ['Y', 'L', 'K', 'I', 'J']
+2023-12-07 14:33:50,353 INFO triggered AI command
+2023-12-07 14:33:50,353 INFO triggered AI command
+2023-12-07 14:33:50,353 INFO Commands to game:  AIR_UA STAND_A STAND_B STAND_GUARD
+2023-12-07 14:33:51,360 INFO Buffer key: ['U', 'J', 'Y', 'I', 'K'] ['Y', 'T', 'J', 'I', 'K']
+2023-12-07 14:33:51,361 INFO triggered AI command
+2023-12-07 14:33:51,361 INFO triggered AI command
+2023-12-07 14:33:51,361 INFO Commands to game:  THROW_B STAND_B STAND_B STAND_GUARD
+2023-12-07 14:33:52,368 INFO Buffer key: ['K', 'L', 'Y', 'J', 'I'] ['I', 'K', 'J', 'T', 'L']
+2023-12-07 14:33:52,368 INFO triggered AI command
+2023-12-07 14:33:52,369 INFO triggered AI command
+2023-12-07 14:33:52,369 INFO Commands to game:  CROUCH_B STAND_B AIR_UA STAND_A
+2023-12-07 14:33:53,376 INFO Buffer key: ['T', 'Y', 'I', 'L', 'J'] ['K', 'J', 'T', 'Y', 'U']
+2023-12-07 14:33:53,376 INFO triggered AI command
+2023-12-07 14:33:53,376 INFO triggered AI command
+2023-12-07 14:33:53,377 INFO Commands to game:  STAND_B STAND_GUARD CROUCH_A STAND_B
+2023-12-07 14:33:54,383 INFO Buffer key: ['Y', 'L', 'J', 'U', 'K'] ['L', 'T', 'J', 'U', 'Y']
+2023-12-07 14:33:54,384 INFO triggered AI command
+2023-12-07 14:33:54,384 INFO triggered AI command
+2023-12-07 14:33:55,392 INFO Buffer key: ['I', 'K', 'T', 'J', 'Y'] ['T', 'Y', 'I', 'J', 'U']
+2023-12-07 14:33:55,392 INFO triggered AI command
+2023-12-07 14:33:55,393 INFO triggered AI command
+2023-12-07 14:33:56,399 INFO Buffer key: ['T', 'L', 'J', 'I', 'Y'] ['K', 'T', 'L', 'J', 'U']
+2023-12-07 14:33:56,400 INFO triggered AI command
+2023-12-07 14:33:56,400 INFO triggered AI command
+2023-12-07 14:33:57,407 INFO Buffer key: ['K', 'T', 'J', 'I', 'L'] ['U', 'I', 'L', 'Y', 'T']
+2023-12-07 14:33:57,407 INFO triggered AI command
+2023-12-07 14:33:57,407 INFO triggered AI command
+2023-12-07 14:33:58,416 INFO Buffer key: ['J', 'L', 'Y', 'U', 'I'] ['K', 'I', 'L', 'T', 'J']
+2023-12-07 14:33:58,417 INFO triggered AI command
+2023-12-07 14:33:58,417 INFO triggered AI command
+2023-12-07 14:33:58,417 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_A
+2023-12-07 14:33:59,424 INFO Buffer key: ['L', 'K', 'J', 'T', 'Y'] ['Y', 'I', 'K', 'U', 'J']
+2023-12-07 14:33:59,424 INFO triggered AI command
+2023-12-07 14:33:59,424 INFO triggered AI command
+2023-12-07 14:34:00,432 INFO Buffer key: ['U', 'K', 'T', 'Y', 'I'] ['J', 'I', 'K', 'L', 'T']
+2023-12-07 14:34:00,432 INFO triggered AI command
+2023-12-07 14:34:00,433 INFO triggered AI command
+2023-12-07 14:34:00,433 INFO Commands to game:  CROUCH_A STAND_B THROW_A STAND_A
+2023-12-07 14:42:49,004 INFO Buffer key: ['K', 'U', 'J', 'Y', 'L'] ['Y', 'T', 'J', 'K', 'U']
+2023-12-07 14:42:49,005 INFO triggered AI command
+2023-12-07 14:42:54,015 INFO Buffer key: ['L', 'I', 'T', 'U', 'K'] ['I', 'J', 'T', 'U', 'L']
+2023-12-07 14:42:54,015 INFO triggered AI command
+2023-12-07 14:42:54,015 INFO triggered AI command
+2023-12-07 14:42:54,015 INFO Commands to game:  AIR_FA STAND_A AIR_UA STAND_A
+2023-12-07 14:42:59,026 INFO Buffer key: ['U', 'L', 'K', 'J', 'Y'] ['I', 'L', 'Y', 'U', 'K']
+2023-12-07 14:42:59,026 INFO triggered AI command
+2023-12-07 14:43:04,032 INFO Buffer key: ['I', 'L', 'T', 'Y', 'K'] ['J', 'K', 'T', 'Y', 'U']
+2023-12-07 14:43:04,032 INFO triggered AI command
+2023-12-07 14:43:04,033 INFO triggered AI command
+2023-12-07 14:43:04,033 INFO Commands to game:  AIR_UA STAND_A THROW_A STAND_A
+2023-12-07 14:43:09,043 INFO Buffer key: ['K', 'J', 'L', 'T', 'U'] ['U', 'Y', 'L', 'K', 'T']
+2023-12-07 14:43:09,043 INFO triggered AI command
+2023-12-07 14:43:09,043 INFO triggered AI command
+2023-12-07 14:43:09,043 INFO Commands to game:  CROUCH_A STAND_A AIR_FA STAND_B
+2023-12-07 14:43:14,052 INFO Buffer key: ['I', 'L', 'J', 'Y', 'T'] ['Y', 'I', 'T', 'K', 'U']
+2023-12-07 14:43:14,052 INFO triggered AI command
+2023-12-07 14:43:14,053 INFO triggered AI command
+2023-12-07 14:43:14,053 INFO Commands to game:  AIR_UB STAND_B AIR_UA STAND_B
+2023-12-07 14:43:19,060 INFO Buffer key: ['J', 'K', 'U', 'T', 'L'] ['J', 'I', 'U', 'T', 'Y']
+2023-12-07 14:43:19,060 INFO triggered AI command
+2023-12-07 14:43:19,060 INFO triggered AI command
+2023-12-07 14:43:19,061 INFO Commands to game:  THROW_A STAND_A THROW_A STAND_A
+2023-12-07 14:43:24,068 INFO Buffer key: ['L', 'U', 'Y', 'I', 'T'] ['I', 'T', 'J', 'U', 'L']
+2023-12-07 14:43:24,068 INFO triggered AI command
+2023-12-07 14:43:24,069 INFO triggered AI command
+2023-12-07 14:43:29,077 INFO Buffer key: ['L', 'U', 'J', 'Y', 'I'] ['Y', 'I', 'K', 'L', 'J']
+2023-12-07 14:43:29,077 INFO triggered AI command
+2023-12-07 14:43:29,078 INFO triggered AI command
+2023-12-07 14:43:29,078 INFO Commands to game:  AIR_FB STAND_B STAND_B JUMP
+2023-12-07 14:43:34,088 INFO Buffer key: ['U', 'Y', 'T', 'L', 'J'] ['J', 'I', 'K', 'T', 'Y']
+2023-12-07 14:43:34,088 INFO triggered AI command
+2023-12-07 14:43:39,096 INFO Buffer key: ['T', 'J', 'U', 'L', 'K'] ['Y', 'U', 'J', 'K', 'L']
+2023-12-07 14:43:39,097 INFO triggered AI command
+2023-12-07 14:43:39,097 INFO triggered AI command
+2023-12-07 14:43:39,097 INFO Commands to game:  STAND_A FORWARD_WALK STAND_B CROUCH
+2023-12-07 14:43:44,107 INFO Buffer key: ['L', 'J', 'Y', 'I', 'U'] ['U', 'T', 'I', 'K', 'J']
+2023-12-07 14:43:44,107 INFO triggered AI command
+2023-12-07 14:43:44,107 INFO triggered AI command
+2023-12-07 14:43:49,117 INFO Buffer key: ['Y', 'I', 'U', 'J', 'L'] ['U', 'L', 'K', 'T', 'I']
+2023-12-07 14:43:49,117 INFO triggered AI command
+2023-12-07 14:43:54,125 INFO Buffer key: ['Y', 'K', 'L', 'U', 'J'] ['T', 'I', 'L', 'Y', 'K']
+2023-12-07 14:43:54,125 INFO triggered AI command
+2023-12-07 14:43:54,126 INFO triggered AI command
+2023-12-07 14:43:54,126 INFO Commands to game:  STAND_B STAND_GUARD AIR_UB STAND_B
+2023-12-07 14:43:59,136 INFO Buffer key: ['L', 'K', 'J', 'T', 'U'] ['K', 'T', 'I', 'L', 'U']
+2023-12-07 14:43:59,136 INFO triggered AI command
+2023-12-07 14:44:04,147 INFO Buffer key: ['J', 'Y', 'L', 'I', 'K'] ['I', 'U', 'J', 'T', 'Y']
+2023-12-07 14:44:04,148 INFO triggered AI command
+2023-12-07 14:44:04,148 INFO triggered AI command
+2023-12-07 14:44:04,148 INFO Commands to game:  THROW_B STAND_B AIR_UA STAND_B
+2023-12-07 14:44:09,155 INFO Buffer key: ['I', 'T', 'K', 'U', 'J'] ['J', 'K', 'Y', 'U', 'T']
+2023-12-07 14:44:09,156 INFO triggered AI command
+2023-12-07 14:44:09,156 INFO triggered AI command
+2023-12-07 14:44:14,166 INFO Buffer key: ['L', 'I', 'U', 'J', 'Y'] ['U', 'I', 'T', 'K', 'J']
+2023-12-07 14:44:14,166 INFO triggered AI command
+2023-12-07 14:44:14,166 INFO triggered AI command
+2023-12-07 14:44:14,166 INFO Commands to game:  AIR_FB STAND_B AIR_UA STAND_A
+2023-12-07 14:44:19,178 INFO Buffer key: ['T', 'K', 'U', 'Y', 'I'] ['Y', 'K', 'L', 'I', 'U']
+2023-12-07 14:44:19,178 INFO triggered AI command
+2023-12-07 14:44:19,178 INFO triggered AI command
+2023-12-07 14:44:24,189 INFO Buffer key: ['K', 'J', 'Y', 'L', 'I'] ['T', 'K', 'U', 'Y', 'L']
+2023-12-07 14:44:24,189 INFO triggered AI command
+2023-12-07 14:44:24,189 INFO triggered AI command
+2023-12-07 14:44:29,196 INFO Buffer key: ['K', 'T', 'L', 'I', 'Y'] ['K', 'Y', 'U', 'I', 'J']
+2023-12-07 14:44:29,196 INFO triggered AI command
+2023-12-07 14:44:29,196 INFO triggered AI command
+2023-12-07 14:44:29,196 INFO Commands to game:  CROUCH_A STAND_B CROUCH_B STAND_B
+2023-12-07 14:44:34,204 INFO Buffer key: ['I', 'K', 'U', 'Y', 'T'] ['Y', 'J', 'I', 'L', 'T']
+2023-12-07 14:44:34,205 INFO triggered AI command
+2023-12-07 14:44:34,205 INFO triggered AI command
+2023-12-07 14:44:34,205 INFO Commands to game:  AIR_UB STAND_B THROW_A STAND_B
+2023-12-07 14:44:39,214 INFO Buffer key: ['U', 'J', 'T', 'L', 'I'] ['K', 'L', 'J', 'Y', 'I']
+2023-12-07 14:44:39,214 INFO triggered AI command
+2023-12-07 14:44:44,224 INFO Buffer key: ['U', 'L', 'K', 'I', 'J'] ['T', 'K', 'I', 'Y', 'U']
+2023-12-07 14:44:44,224 INFO triggered AI command
+2023-12-07 14:44:49,232 INFO Buffer key: ['K', 'L', 'U', 'Y', 'J'] ['T', 'J', 'K', 'U', 'I']
+2023-12-07 14:44:49,232 INFO triggered AI command
+2023-12-07 14:44:54,240 INFO Buffer key: ['T', 'K', 'J', 'U', 'I'] ['Y', 'J', 'I', 'U', 'T']
+2023-12-07 14:44:54,241 INFO triggered AI command
+2023-12-07 14:44:59,249 INFO Buffer key: ['U', 'K', 'J', 'I', 'T'] ['Y', 'T', 'U', 'J', 'I']
+2023-12-07 14:44:59,250 INFO triggered AI command
+2023-12-07 14:45:04,261 INFO Buffer key: ['I', 'L', 'Y', 'U', 'K'] ['U', 'J', 'Y', 'T', 'I']
+2023-12-07 14:45:04,262 INFO triggered AI command
+2023-12-07 14:45:09,272 INFO Buffer key: ['J', 'T', 'I', 'U', 'K'] ['J', 'L', 'K', 'T', 'I']
+2023-12-07 14:45:09,272 INFO triggered AI command
+2023-12-07 14:45:09,273 INFO triggered AI command
+2023-12-07 14:45:09,273 INFO Commands to game:  THROW_A STAND_A THROW_A STAND_A
+2023-12-07 14:45:14,280 INFO Buffer key: ['I', 'J', 'U', 'L', 'T'] ['L', 'U', 'Y', 'T', 'J']
+2023-12-07 14:45:14,281 INFO triggered AI command
+2023-12-07 14:45:14,281 INFO triggered AI command
+2023-12-07 14:45:19,288 INFO Buffer key: ['T', 'K', 'U', 'J', 'I'] ['I', 'K', 'L', 'U', 'Y']
+2023-12-07 14:45:19,288 INFO triggered AI command
+2023-12-07 14:45:24,297 INFO Buffer key: ['T', 'U', 'L', 'K', 'J'] ['K', 'T', 'I', 'U', 'Y']
+2023-12-07 14:45:24,297 INFO triggered AI command
+2023-12-07 14:45:24,298 INFO triggered AI command
+2023-12-07 14:45:24,298 INFO Commands to game:  STAND_A STAND_GUARD CROUCH_A STAND_A
+2023-12-07 14:45:29,309 INFO Buffer key: ['I', 'U', 'K', 'T', 'J'] ['L', 'T', 'K', 'Y', 'J']
+2023-12-07 14:45:29,310 INFO triggered AI command
+2023-12-07 14:45:29,310 INFO triggered AI command
+2023-12-07 14:45:29,310 INFO Commands to game:  AIR_UA STAND_A AIR_FA STAND_B
+2023-12-07 14:45:34,320 INFO Buffer key: ['Y', 'I', 'J', 'T', 'U'] ['T', 'Y', 'L', 'K', 'J']
+2023-12-07 14:45:34,320 INFO triggered AI command
+2023-12-07 14:45:39,327 INFO Buffer key: ['L', 'J', 'T', 'K', 'I'] ['I', 'T', 'K', 'J', 'U']
+2023-12-07 14:45:39,328 INFO triggered AI command
+2023-12-07 14:45:39,328 INFO triggered AI command
+2023-12-07 14:45:44,338 INFO Buffer key: ['T', 'U', 'L', 'I', 'Y'] ['L', 'K', 'T', 'J', 'I']
+2023-12-07 14:45:44,338 INFO triggered AI command
+2023-12-07 14:45:49,349 INFO Buffer key: ['Y', 'J', 'K', 'I', 'T'] ['I', 'Y', 'U', 'J', 'L']
+2023-12-07 14:45:49,349 INFO triggered AI command
+2023-12-07 14:45:49,349 INFO triggered AI command
+2023-12-07 14:45:49,349 INFO Commands to game:  THROW_A STAND_A AIR_UB STAND_B
+2023-12-07 14:45:54,355 INFO Buffer key: ['U', 'J', 'T', 'Y', 'K'] ['U', 'L', 'T', 'J', 'Y']
+2023-12-07 14:45:54,356 INFO triggered AI command
+2023-12-07 14:45:54,356 INFO triggered AI command
+2023-12-07 14:45:54,356 INFO Commands to game:  THROW_A STAND_A AIR_FA STAND_A
+2023-12-07 14:45:59,365 INFO Buffer key: ['I', 'U', 'J', 'L', 'K'] ['K', 'I', 'J', 'L', 'T']
+2023-12-07 14:45:59,365 INFO triggered AI command
+2023-12-07 14:46:04,372 INFO Buffer key: ['U', 'J', 'T', 'I', 'Y'] ['Y', 'U', 'K', 'J', 'I']
+2023-12-07 14:46:04,372 INFO triggered AI command
+2023-12-07 14:46:04,372 INFO triggered AI command
+2023-12-07 14:46:04,373 INFO Commands to game:  THROW_A STAND_A STAND_B JUMP
+2023-12-07 14:46:09,381 INFO Buffer key: ['I', 'J', 'K', 'T', 'U'] ['L', 'Y', 'J', 'U', 'I']
+2023-12-07 14:46:09,382 INFO triggered AI command
+2023-12-07 14:46:09,382 INFO triggered AI command
+2023-12-07 14:46:09,382 INFO Commands to game:  AIR_UA STAND_A AIR_FB STAND_B
+2023-12-07 15:33:25,103 INFO Buffer key: ['L', 'I', 'T', 'Y', 'J'] ['K', 'I', 'T', 'L', 'J']
+2023-12-07 15:33:25,108 INFO triggered AI command
+2023-12-07 15:33:25,109 INFO triggered AI command
+2023-12-07 15:33:25,109 INFO Commands to game:  AIR_FA STAND_A CROUCH_A STAND_A
+2023-12-07 15:37:09,624 INFO Buffer key: ['T', 'L', 'Y', 'U', 'K'] ['U', 'Y', 'T', 'L', 'I']
+2023-12-07 15:37:09,625 INFO triggered AI command
+2023-12-07 15:37:09,625 INFO triggered AI command
+2023-12-07 15:37:09,625 INFO Commands to game:  AIR_FB STAND_B STAND_B JUMP
+2023-12-07 15:37:40,669 INFO Buffer key: ['T', 'J', 'L', 'Y', 'I'] ['Y', 'L', 'U', 'J', 'I']
+2023-12-07 15:37:40,669 INFO triggered AI command
+2023-12-07 15:37:40,669 INFO triggered AI command
+2023-12-07 15:37:48,184 INFO Buffer key: ['I', 'Y', 'K', 'L', 'J'] ['L', 'J', 'K', 'Y', 'T']
+2023-12-07 15:37:48,189 INFO triggered AI command
+2023-12-07 15:37:48,190 INFO triggered AI command
+2023-12-07 15:37:48,190 INFO Commands to game:  AIR_UB STAND_B AIR_FB STAND_A
+2023-12-07 15:37:54,705 INFO Buffer key: ['L', 'K', 'J', 'Y', 'I'] ['T', 'J', 'Y', 'L', 'U']
+2023-12-07 15:37:54,705 INFO triggered AI command
+2023-12-07 15:37:54,705 INFO triggered AI command
+2023-12-07 15:37:54,705 INFO Commands to game:  AIR_FB STAND_B THROW_B STAND_A
+2023-12-07 15:38:50,275 INFO Buffer key: ['T', 'L', 'Y', 'K', 'U'] ['U', 'L', 'I', 'J', 'Y']
+2023-12-07 15:38:50,280 INFO triggered AI command
+2023-12-07 15:38:50,281 INFO triggered AI command
+2023-12-07 15:38:50,281 INFO Commands to game:  AIR_FB STAND_B AIR_FB STAND_B
+2023-12-07 15:41:31,855 INFO Buffer key: ['U', 'Y', 'L', 'J', 'I'] ['L', 'T', 'J', 'Y', 'I']
+2023-12-07 15:41:31,856 INFO triggered AI command
+2023-12-07 15:41:32,863 INFO Buffer key: ['I', 'T', 'K', 'Y', 'J'] ['J', 'T', 'Y', 'I', 'U']
+2023-12-07 15:41:32,863 INFO triggered AI command
+2023-12-07 15:41:32,863 INFO triggered AI command
+2023-12-07 15:41:33,871 INFO Buffer key: ['U', 'K', 'J', 'T', 'I'] ['J', 'L', 'I', 'T', 'K']
+2023-12-07 15:41:33,871 INFO triggered AI command
+2023-12-07 15:41:33,871 INFO triggered AI command
+2023-12-07 15:41:33,871 INFO Commands to game:  CROUCH_A STAND_A THROW_A STAND_A
+2023-12-07 15:41:34,880 INFO Buffer key: ['U', 'T', 'I', 'K', 'L'] ['U', 'L', 'Y', 'J', 'K']
+2023-12-07 15:41:34,881 INFO triggered AI command
+2023-12-07 15:41:34,881 INFO triggered AI command
+2023-12-07 15:41:34,881 INFO Commands to game:  STAND_A JUMP AIR_FB STAND_B
+2023-12-07 15:41:35,889 INFO Buffer key: ['U', 'I', 'J', 'T', 'K'] ['T', 'J', 'U', 'K', 'I']
+2023-12-07 15:41:35,889 INFO triggered AI command
+2023-12-07 15:41:35,890 INFO triggered AI command
+2023-12-07 15:41:36,896 INFO Buffer key: ['T', 'L', 'Y', 'J', 'U'] ['U', 'Y', 'T', 'K', 'L']
+2023-12-07 15:41:36,896 INFO triggered AI command
+2023-12-07 15:41:36,897 INFO triggered AI command
+2023-12-07 15:41:36,897 INFO Commands to game:  AIR_FB STAND_B STAND_B FORWARD_WALK
+2023-12-07 15:41:37,903 INFO Buffer key: ['U', 'T', 'K', 'I', 'L'] ['L', 'K', 'I', 'T', 'U']
+2023-12-07 15:41:37,903 INFO triggered AI command
+2023-12-07 15:41:37,903 INFO triggered AI command
+2023-12-07 15:41:37,903 INFO Commands to game:  STAND_A CROUCH AIR_FA STAND_A
+2023-12-07 15:41:38,909 INFO Buffer key: ['L', 'T', 'I', 'K', 'U'] ['J', 'U', 'L', 'T', 'Y']
+2023-12-07 15:41:38,910 INFO triggered AI command
+2023-12-07 15:41:38,910 INFO triggered AI command
+2023-12-07 15:41:38,910 INFO Commands to game:  AIR_FA STAND_A THROW_A STAND_B
+2023-12-07 15:41:39,917 INFO Buffer key: ['Y', 'J', 'K', 'L', 'I'] ['L', 'U', 'I', 'K', 'Y']
+2023-12-07 15:41:39,917 INFO triggered AI command
+2023-12-07 15:41:39,918 INFO triggered AI command
+2023-12-07 15:41:40,924 INFO Buffer key: ['L', 'J', 'Y', 'T', 'I'] ['T', 'U', 'I', 'K', 'J']
+2023-12-07 15:41:40,924 INFO triggered AI command
+2023-12-07 15:41:40,925 INFO triggered AI command
+2023-12-07 15:41:40,925 INFO Commands to game:  AIR_FB STAND_A STAND_A JUMP
+2023-12-07 15:41:41,932 INFO Buffer key: ['J', 'T', 'U', 'I', 'Y'] ['I', 'L', 'Y', 'K', 'U']
+2023-12-07 15:41:41,932 INFO triggered AI command
+2023-12-07 15:41:42,939 INFO Buffer key: ['T', 'K', 'L', 'J', 'U'] ['Y', 'I', 'L', 'J', 'T']
+2023-12-07 15:41:42,939 INFO triggered AI command
+2023-12-07 15:49:30,118 INFO Buffer key: ['L', 'J', 'U', 'T', 'Y'] ['T', 'K', 'Y', 'J', 'L']
+2023-12-07 15:49:30,118 INFO triggered AI command
+2023-12-07 15:49:30,119 INFO triggered AI command
+2023-12-07 15:49:30,119 INFO Commands to game:  AIR_FA STAND_A CROUCH_B STAND_A
+2023-12-07 15:49:31,126 INFO Buffer key: ['U', 'J', 'L', 'K', 'Y'] ['Y', 'I', 'J', 'T', 'U']
+2023-12-07 15:49:31,127 INFO triggered AI command
+2023-12-07 15:49:31,127 INFO triggered AI command
+2023-12-07 15:49:32,135 INFO Buffer key: ['I', 'T', 'K', 'Y', 'U'] ['K', 'L', 'I', 'T', 'U']
+2023-12-07 15:49:32,135 INFO triggered AI command
+2023-12-07 15:49:32,135 INFO triggered AI command
+2023-12-07 15:49:32,135 INFO Commands to game:  AIR_UA STAND_A CROUCH_A STAND_A
+2023-12-07 15:49:33,143 INFO Buffer key: ['L', 'I', 'J', 'U', 'K'] ['K', 'J', 'U', 'Y', 'L']
+2023-12-07 15:49:33,143 INFO triggered AI command
+2023-12-07 15:49:34,150 INFO Buffer key: ['L', 'I', 'K', 'J', 'T'] ['L', 'U', 'Y', 'J', 'T']
+2023-12-07 15:49:34,150 INFO triggered AI command
+2023-12-07 15:49:34,150 INFO triggered AI command
+2023-12-07 15:49:34,151 INFO Commands to game:  AIR_FA STAND_A AIR_FB STAND_B
+2023-12-07 15:49:35,157 INFO Buffer key: ['J', 'Y', 'T', 'I', 'L'] ['L', 'Y', 'K', 'J', 'U']
+2023-12-07 15:49:35,158 INFO triggered AI command
+2023-12-07 15:49:35,158 INFO triggered AI command
+2023-12-07 15:49:35,158 INFO Commands to game:  THROW_B STAND_B AIR_FB STAND_B
+2023-12-07 15:49:36,165 INFO Buffer key: ['Y', 'L', 'I', 'K', 'U'] ['I', 'U', 'K', 'J', 'Y']
+2023-12-07 15:49:36,165 INFO triggered AI command
+2023-12-07 15:49:37,174 INFO Buffer key: ['T', 'J', 'Y', 'K', 'U'] ['Y', 'T', 'I', 'J', 'L']
+2023-12-07 15:49:37,174 INFO triggered AI command
+2023-12-07 15:49:37,174 INFO triggered AI command
+2023-12-07 15:49:37,174 INFO Commands to game:  THROW_B STAND_B STAND_B STAND_GUARD
+2023-12-07 15:49:38,181 INFO Buffer key: ['U', 'Y', 'K', 'L', 'I'] ['Y', 'K', 'U', 'J', 'I']
+2023-12-07 15:49:38,182 INFO triggered AI command
+2023-12-07 15:49:39,189 INFO Buffer key: ['T', 'Y', 'L', 'J', 'I'] ['J', 'U', 'L', 'I', 'K']
+2023-12-07 15:49:39,189 INFO triggered AI command
+2023-12-07 15:49:39,189 INFO triggered AI command
+2023-12-07 15:49:40,196 INFO Buffer key: ['K', 'T', 'Y', 'L', 'U'] ['I', 'L', 'J', 'U', 'K']
+2023-12-07 15:49:40,196 INFO triggered AI command
+2023-12-07 15:49:40,197 INFO triggered AI command
+2023-12-07 15:49:41,204 INFO Buffer key: ['T', 'J', 'I', 'Y', 'K'] ['Y', 'T', 'U', 'J', 'K']
+2023-12-07 15:49:41,204 INFO triggered AI command
+2023-12-07 15:49:41,204 INFO triggered AI command
+2023-12-07 15:49:41,204 INFO Commands to game:  THROW_B STAND_B STAND_A STAND_GUARD
+2023-12-07 15:49:42,214 INFO Buffer key: ['I', 'Y', 'J', 'T', 'K'] ['J', 'I', 'T', 'Y', 'L']
+2023-12-07 15:49:42,214 INFO triggered AI command
+2023-12-07 15:49:42,214 INFO triggered AI command
+2023-12-07 15:49:42,214 INFO Commands to game:  AIR_UB STAND_B THROW_A STAND_B
+2023-12-07 15:49:43,221 INFO Buffer key: ['Y', 'L', 'U', 'T', 'I'] ['I', 'U', 'K', 'T', 'L']
+2023-12-07 15:49:43,222 INFO triggered AI command
+2023-12-07 15:49:43,222 INFO triggered AI command
+2023-12-07 15:49:44,229 INFO Buffer key: ['T', 'L', 'Y', 'J', 'U'] ['K', 'T', 'Y', 'U', 'J']
+2023-12-07 15:49:44,229 INFO triggered AI command
+2023-12-07 15:49:45,237 INFO Buffer key: ['T', 'I', 'L', 'J', 'Y'] ['L', 'U', 'K', 'J', 'T']
+2023-12-07 15:49:45,237 INFO triggered AI command
+2023-12-07 15:49:45,237 INFO triggered AI command
+2023-12-07 15:49:45,238 INFO Commands to game:  AIR_UB STAND_B AIR_FA STAND_A
+2023-12-07 15:49:46,246 INFO Buffer key: ['T', 'K', 'Y', 'U', 'J'] ['K', 'Y', 'I', 'T', 'L']
+2023-12-07 15:49:46,246 INFO triggered AI command
+2023-12-07 15:49:46,246 INFO triggered AI command
+2023-12-07 15:49:46,246 INFO Commands to game:  CROUCH_B STAND_B CROUCH_B STAND_B
+2023-12-07 15:49:47,253 INFO Buffer key: ['U', 'T', 'J', 'Y', 'K'] ['I', 'U', 'L', 'Y', 'K']
+2023-12-07 15:49:47,254 INFO triggered AI command
+2023-12-07 15:49:47,254 INFO triggered AI command
+2023-12-07 15:49:48,261 INFO Buffer key: ['I', 'L', 'K', 'U', 'T'] ['T', 'J', 'L', 'Y', 'K']
+2023-12-07 15:49:48,261 INFO triggered AI command
+2023-12-07 15:49:48,262 INFO triggered AI command
+2023-12-07 15:49:48,262 INFO Commands to game:  AIR_UA STAND_A THROW_B STAND_A
+2023-12-07 15:49:49,269 INFO Buffer key: ['J', 'K', 'Y', 'I', 'T'] ['K', 'U', 'T', 'Y', 'J']
+2023-12-07 15:49:49,269 INFO triggered AI command
+2023-12-07 15:49:49,269 INFO triggered AI command
+2023-12-07 15:49:49,269 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_B
+2023-12-07 15:49:50,276 INFO Buffer key: ['U', 'J', 'Y', 'L', 'K'] ['L', 'K', 'Y', 'U', 'T']
+2023-12-07 15:49:50,276 INFO triggered AI command
+2023-12-07 15:49:50,276 INFO triggered AI command
+2023-12-07 15:49:50,277 INFO Commands to game:  THROW_B STAND_B AIR_FB STAND_B
+2023-12-07 15:49:51,285 INFO Buffer key: ['I', 'K', 'Y', 'L', 'J'] ['J', 'I', 'L', 'U', 'T']
+2023-12-07 15:49:51,285 INFO triggered AI command
+2023-12-07 15:49:51,286 INFO triggered AI command
+2023-12-07 15:49:51,286 INFO Commands to game:  AIR_UB STAND_B THROW_A STAND_A
+2023-12-07 15:49:52,293 INFO Buffer key: ['K', 'Y', 'L', 'U', 'T'] ['Y', 'I', 'L', 'J', 'K']
+2023-12-07 15:49:52,293 INFO triggered AI command
+2023-12-07 15:49:52,293 INFO triggered AI command
+2023-12-07 15:49:52,294 INFO Commands to game:  CROUCH_B STAND_B STAND_B CROUCH
+2023-12-07 15:49:53,302 INFO Buffer key: ['K', 'T', 'U', 'Y', 'I'] ['J', 'K', 'T', 'I', 'L']
+2023-12-07 15:49:53,302 INFO triggered AI command
+2023-12-07 15:49:53,302 INFO triggered AI command
+2023-12-07 15:49:53,302 INFO Commands to game:  CROUCH_A STAND_B THROW_A STAND_A
+2023-12-07 15:49:54,312 INFO Buffer key: ['U', 'K', 'T', 'L', 'J'] ['K', 'T', 'Y', 'L', 'U']
+2023-12-07 15:49:54,313 INFO triggered AI command
+2023-12-07 15:49:54,313 INFO triggered AI command
+2023-12-07 15:49:55,321 INFO Buffer key: ['J', 'T', 'L', 'Y', 'I'] ['Y', 'U', 'T', 'L', 'J']
+2023-12-07 15:49:55,321 INFO triggered AI command
+2023-12-07 15:49:55,322 INFO triggered AI command
+2023-12-07 15:49:56,328 INFO Buffer key: ['J', 'K', 'I', 'L', 'U'] ['T', 'U', 'L', 'J', 'K']
+2023-12-07 15:49:56,329 INFO triggered AI command
+2023-12-07 15:49:57,336 INFO Buffer key: ['L', 'K', 'I', 'Y', 'U'] ['J', 'I', 'L', 'K', 'Y']
+2023-12-07 15:49:57,336 INFO triggered AI command
+2023-12-07 15:49:57,336 INFO triggered AI command
+2023-12-07 15:49:57,336 INFO Commands to game:  AIR_FB STAND_B THROW_B STAND_B
+2023-12-07 15:49:58,345 INFO Buffer key: ['K', 'J', 'L', 'U', 'Y'] ['I', 'U', 'Y', 'K', 'T']
+2023-12-07 15:49:58,345 INFO triggered AI command
+2023-12-07 15:49:59,350 INFO Buffer key: ['K', 'L', 'J', 'I', 'Y'] ['T', 'J', 'I', 'K', 'Y']
+2023-12-07 15:49:59,351 INFO triggered AI command
+2023-12-07 15:49:59,351 INFO triggered AI command
+2023-12-07 15:49:59,351 INFO Commands to game:  CROUCH_B STAND_B THROW_B STAND_A
+2023-12-07 15:50:00,358 INFO Buffer key: ['L', 'T', 'I', 'K', 'J'] ['K', 'L', 'U', 'Y', 'I']
+2023-12-07 15:50:00,358 INFO triggered AI command
+2023-12-07 15:50:00,359 INFO triggered AI command
+2023-12-07 15:50:00,359 INFO Commands to game:  AIR_FA STAND_A CROUCH_B STAND_B
+2023-12-07 15:51:54,889 INFO Buffer key: ['U', 'T', 'Y', 'K', 'I'] ['J', 'U', 'K', 'I', 'Y']
+2023-12-07 15:51:54,889 INFO triggered AI command
+2023-12-07 15:51:55,897 INFO Buffer key: ['U', 'I', 'L', 'K', 'T'] ['L', 'T', 'Y', 'J', 'U']
+2023-12-07 15:51:55,897 INFO triggered AI command
+2023-12-07 15:51:55,897 INFO triggered AI command
+2023-12-07 15:51:55,898 INFO Commands to game:  AIR_UA STAND_A AIR_FA STAND_A
+2023-12-07 15:51:56,903 INFO Buffer key: ['J', 'U', 'K', 'I', 'L'] ['J', 'T', 'Y', 'K', 'I']
+2023-12-07 15:51:56,903 INFO triggered AI command
+2023-12-07 15:51:57,909 INFO Buffer key: ['U', 'I', 'L', 'J', 'K'] ['J', 'L', 'T', 'U', 'K']
+2023-12-07 15:51:57,909 INFO triggered AI command
+2023-12-07 15:51:58,916 INFO Buffer key: ['K', 'J', 'I', 'Y', 'L'] ['Y', 'U', 'J', 'K', 'T']
+2023-12-07 15:51:58,916 INFO triggered AI command
+2023-12-07 15:51:58,916 INFO triggered AI command
+2023-12-07 15:51:59,923 INFO Buffer key: ['Y', 'U', 'L', 'J', 'I'] ['I', 'L', 'K', 'U', 'T']
+2023-12-07 15:51:59,923 INFO triggered AI command
+2023-12-07 15:51:59,924 INFO triggered AI command
+2023-12-07 15:51:59,924 INFO Commands to game:  STAND_B JUMP AIR_UA STAND_A
+2023-12-07 15:52:00,931 INFO Buffer key: ['L', 'I', 'T', 'U', 'Y'] ['L', 'U', 'K', 'I', 'T']
+2023-12-07 15:52:00,931 INFO triggered AI command
+2023-12-07 15:52:00,931 INFO triggered AI command
+2023-12-07 15:52:00,931 INFO Commands to game:  AIR_FA STAND_B AIR_FA STAND_A
+2023-12-07 15:52:01,938 INFO Buffer key: ['I', 'K', 'T', 'Y', 'U'] ['Y', 'T', 'J', 'L', 'U']
+2023-12-07 15:52:01,938 INFO triggered AI command
+2023-12-07 15:52:01,938 INFO triggered AI command
+2023-12-07 15:52:02,945 INFO Buffer key: ['T', 'K', 'Y', 'J', 'U'] ['J', 'Y', 'L', 'U', 'T']
+2023-12-07 15:52:02,945 INFO triggered AI command
+2023-12-07 15:52:02,946 INFO triggered AI command
+2023-12-07 15:52:02,946 INFO Commands to game:  CROUCH_B STAND_B THROW_B STAND_B
+2023-12-07 15:52:03,955 INFO Buffer key: ['U', 'L', 'I', 'K', 'T'] ['Y', 'L', 'J', 'K', 'T']
+2023-12-07 15:52:03,955 INFO triggered AI command
+2023-12-07 15:52:03,956 INFO triggered AI command
+2023-12-07 15:52:03,956 INFO Commands to game:  AIR_FA STAND_A AIR_FA STAND_A
+2023-12-07 15:52:04,965 INFO Buffer key: ['L', 'T', 'K', 'U', 'J'] ['I', 'J', 'U', 'Y', 'K']
+2023-12-07 15:52:04,965 INFO triggered AI command
+2023-12-07 15:52:05,972 INFO Buffer key: ['T', 'I', 'Y', 'J', 'U'] ['T', 'K', 'Y', 'U', 'J']
+2023-12-07 15:52:05,973 INFO triggered AI command
+2023-12-07 15:52:06,980 INFO Buffer key: ['L', 'I', 'T', 'Y', 'K'] ['K', 'I', 'Y', 'U', 'T']
+2023-12-07 15:52:06,980 INFO triggered AI command
+2023-12-07 15:52:06,980 INFO triggered AI command
+2023-12-07 15:52:07,988 INFO Buffer key: ['K', 'J', 'I', 'Y', 'L'] ['J', 'L', 'K', 'Y', 'I']
+2023-12-07 15:52:07,988 INFO triggered AI command
+2023-12-07 15:52:07,988 INFO triggered AI command
+2023-12-07 15:52:07,988 INFO Commands to game:  CROUCH_B STAND_B THROW_B STAND_B
+2023-12-07 15:52:08,995 INFO Buffer key: ['U', 'Y', 'L', 'J', 'K'] ['K', 'U', 'I', 'L', 'J']
+2023-12-07 15:52:08,995 INFO triggered AI command
+2023-12-07 15:52:08,995 INFO triggered AI command
+2023-12-07 15:52:10,000 INFO Buffer key: ['K', 'L', 'T', 'I', 'Y'] ['I', 'J', 'T', 'K', 'U']
+2023-12-07 15:52:10,001 INFO triggered AI command
+2023-12-07 15:52:10,001 INFO triggered AI command
+2023-12-07 15:52:10,001 INFO Commands to game:  CROUCH_A STAND_B AIR_UA STAND_A
+2023-12-07 15:52:11,007 INFO Buffer key: ['I', 'U', 'L', 'K', 'J'] ['L', 'T', 'Y', 'U', 'J']
+2023-12-07 15:52:11,007 INFO triggered AI command
+2023-12-07 15:52:12,015 INFO Buffer key: ['K', 'J', 'I', 'L', 'Y'] ['L', 'I', 'U', 'T', 'J']
+2023-12-07 15:52:12,015 INFO triggered AI command
+2023-12-07 15:52:12,015 INFO triggered AI command
+2023-12-07 15:52:13,022 INFO Buffer key: ['J', 'L', 'K', 'T', 'Y'] ['I', 'U', 'K', 'L', 'T']
+2023-12-07 15:52:13,022 INFO triggered AI command
+2023-12-07 15:52:13,023 INFO triggered AI command
+2023-12-07 15:52:13,023 INFO Commands to game:  THROW_A STAND_B AIR_UA STAND_A
+2023-12-07 15:52:14,032 INFO Buffer key: ['L', 'Y', 'U', 'J', 'T'] ['U', 'I', 'J', 'Y', 'T']
+2023-12-07 15:52:14,032 INFO triggered AI command
+2023-12-07 15:52:15,039 INFO Buffer key: ['L', 'K', 'T', 'I', 'J'] ['T', 'L', 'J', 'Y', 'I']
+2023-12-07 15:52:15,040 INFO triggered AI command
+2023-12-07 15:52:15,040 INFO triggered AI command
+2023-12-07 15:52:15,040 INFO Commands to game:  AIR_FA STAND_A AIR_FB STAND_A
+2023-12-07 15:52:16,047 INFO Buffer key: ['I', 'L', 'U', 'T', 'K'] ['I', 'J', 'K', 'Y', 'L']
+2023-12-07 15:52:16,047 INFO triggered AI command
+2023-12-07 15:52:17,056 INFO Buffer key: ['L', 'T', 'Y', 'U', 'K'] ['J', 'L', 'T', 'K', 'Y']
+2023-12-07 15:52:17,056 INFO triggered AI command
+2023-12-07 15:52:17,056 INFO triggered AI command
+2023-12-07 15:52:17,056 INFO Commands to game:  AIR_FA STAND_A THROW_A STAND_B
+2023-12-07 15:52:18,065 INFO Buffer key: ['Y', 'J', 'K', 'I', 'T'] ['K', 'Y', 'T', 'L', 'J']
+2023-12-07 15:52:18,066 INFO triggered AI command
+2023-12-07 15:52:18,066 INFO triggered AI command
+2023-12-07 15:52:18,067 INFO Commands to game:  THROW_A STAND_B CROUCH_B STAND_B
+2023-12-07 15:52:19,072 INFO Buffer key: ['I', 'K', 'L', 'J', 'T'] ['U', 'T', 'J', 'I', 'K']
+2023-12-07 15:52:19,073 INFO triggered AI command
+2023-12-07 15:52:19,073 INFO triggered AI command
+2023-12-07 15:52:20,080 INFO Buffer key: ['U', 'I', 'L', 'T', 'Y'] ['I', 'T', 'K', 'Y', 'J']
+2023-12-07 15:52:20,080 INFO triggered AI command
+2023-12-07 15:52:20,080 INFO triggered AI command
+2023-12-07 15:52:20,080 INFO Commands to game:  AIR_UA STAND_A AIR_UA STAND_B
+2023-12-07 15:52:21,088 INFO Buffer key: ['J', 'K', 'Y', 'I', 'L'] ['U', 'K', 'T', 'I', 'Y']
+2023-12-07 15:52:21,088 INFO triggered AI command
+2023-12-07 15:52:21,088 INFO triggered AI command
+2023-12-07 15:52:21,088 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_A
+2023-12-07 15:52:22,095 INFO Buffer key: ['I', 'J', 'T', 'U', 'Y'] ['J', 'K', 'L', 'U', 'Y']
+2023-12-07 15:52:22,096 INFO triggered AI command
+2023-12-07 15:52:22,096 INFO triggered AI command
+2023-12-07 15:52:22,096 INFO Commands to game:  AIR_UA STAND_B THROW_B STAND_B
+2023-12-07 15:52:23,103 INFO Buffer key: ['K', 'L', 'T', 'I', 'J'] ['I', 'Y', 'L', 'J', 'K']
+2023-12-07 15:52:23,104 INFO triggered AI command
+2023-12-07 15:52:23,104 INFO triggered AI command
+2023-12-07 15:52:23,104 INFO Commands to game:  CROUCH_A STAND_A AIR_UB STAND_B
+2023-12-07 15:52:24,111 INFO Buffer key: ['T', 'L', 'K', 'I', 'U'] ['L', 'U', 'Y', 'J', 'I']
+2023-12-07 15:52:24,112 INFO triggered AI command
+2023-12-07 15:52:24,112 INFO triggered AI command
+2023-12-07 15:52:24,112 INFO Commands to game:  STAND_A JUMP AIR_FB STAND_B
+2023-12-07 15:52:25,118 INFO Buffer key: ['U', 'L', 'Y', 'T', 'I'] ['I', 'L', 'Y', 'J', 'U']
+2023-12-07 15:52:25,119 INFO triggered AI command
+2023-12-07 15:52:26,127 INFO Buffer key: ['Y', 'L', 'T', 'K', 'U'] ['J', 'T', 'Y', 'L', 'U']
+2023-12-07 15:52:26,128 INFO triggered AI command
+2023-12-07 15:52:27,134 INFO Buffer key: ['T', 'J', 'I', 'Y', 'L'] ['T', 'K', 'U', 'Y', 'L']
+2023-12-07 15:52:27,135 INFO triggered AI command
+2023-12-07 15:52:27,135 INFO triggered AI command
+2023-12-07 15:52:28,141 INFO Buffer key: ['K', 'T', 'Y', 'L', 'I'] ['I', 'U', 'Y', 'J', 'T']
+2023-12-07 15:52:28,141 INFO triggered AI command
+2023-12-07 15:52:28,141 INFO triggered AI command
+2023-12-07 15:52:28,141 INFO Commands to game:  CROUCH_A STAND_A AIR_UB STAND_B
+2023-12-07 15:52:29,148 INFO Buffer key: ['L', 'J', 'K', 'U', 'Y'] ['I', 'U', 'J', 'Y', 'L']
+2023-12-07 15:52:29,148 INFO triggered AI command
+2023-12-07 15:52:29,149 INFO triggered AI command
+2023-12-07 15:52:30,159 INFO Buffer key: ['K', 'L', 'Y', 'U', 'I'] ['J', 'I', 'T', 'L', 'U']
+2023-12-07 15:52:30,159 INFO triggered AI command
+2023-12-07 15:52:31,166 INFO Buffer key: ['T', 'I', 'L', 'K', 'U'] ['I', 'L', 'K', 'J', 'U']
+2023-12-07 15:52:31,166 INFO triggered AI command
+2023-12-07 15:52:31,167 INFO triggered AI command
+2023-12-07 15:52:32,174 INFO Buffer key: ['K', 'U', 'J', 'T', 'Y'] ['J', 'Y', 'T', 'I', 'L']
+2023-12-07 15:52:32,174 INFO triggered AI command
+2023-12-07 15:52:32,174 INFO triggered AI command
+2023-12-07 15:52:32,175 INFO Commands to game:  CROUCH_A STAND_B THROW_B STAND_A
+2023-12-07 15:52:33,183 INFO Buffer key: ['J', 'Y', 'L', 'I', 'U'] ['U', 'K', 'J', 'Y', 'L']
+2023-12-07 15:52:33,183 INFO triggered AI command
+2023-12-07 15:52:33,183 INFO triggered AI command
+2023-12-07 15:52:34,190 INFO Buffer key: ['K', 'Y', 'J', 'T', 'U'] ['J', 'K', 'L', 'I', 'U']
+2023-12-07 15:52:34,191 INFO triggered AI command
+2023-12-07 15:52:34,191 INFO triggered AI command
+2023-12-07 15:52:35,198 INFO Buffer key: ['L', 'I', 'T', 'Y', 'U'] ['L', 'Y', 'J', 'I', 'T']
+2023-12-07 15:52:35,199 INFO triggered AI command
+2023-12-07 15:52:35,199 INFO triggered AI command
+2023-12-07 15:52:35,199 INFO Commands to game:  AIR_FA STAND_A AIR_FB STAND_A
+2023-12-07 15:52:36,208 INFO Buffer key: ['L', 'T', 'Y', 'J', 'I'] ['L', 'K', 'I', 'T', 'J']
+2023-12-07 15:52:36,208 INFO triggered AI command
+2023-12-07 15:52:36,208 INFO triggered AI command
+2023-12-07 15:52:36,209 INFO Commands to game:  AIR_FA STAND_B AIR_FA STAND_A
+2023-12-07 15:52:37,217 INFO Buffer key: ['K', 'Y', 'L', 'T', 'I'] ['T', 'L', 'U', 'K', 'J']
+2023-12-07 15:52:37,217 INFO triggered AI command
+2023-12-07 15:52:37,217 INFO triggered AI command
+2023-12-07 15:52:38,224 INFO Buffer key: ['L', 'T', 'J', 'K', 'I'] ['Y', 'L', 'J', 'T', 'I']
+2023-12-07 15:52:38,224 INFO triggered AI command
+2023-12-07 15:52:38,224 INFO triggered AI command
+2023-12-07 15:52:38,224 INFO Commands to game:  AIR_FA STAND_A AIR_FA STAND_B
+2023-12-07 15:52:39,231 INFO Buffer key: ['Y', 'T', 'J', 'U', 'K'] ['J', 'T', 'U', 'K', 'I']
+2023-12-07 15:52:39,231 INFO triggered AI command
+2023-12-07 15:52:40,238 INFO Buffer key: ['J', 'L', 'Y', 'I', 'K'] ['U', 'K', 'T', 'J', 'I']
+2023-12-07 15:52:40,238 INFO triggered AI command
+2023-12-07 15:52:40,238 INFO triggered AI command
+2023-12-07 15:52:40,238 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_A
+2023-12-07 15:52:41,244 INFO Buffer key: ['K', 'J', 'U', 'I', 'T'] ['I', 'K', 'U', 'L', 'Y']
+2023-12-07 15:52:41,244 INFO triggered AI command
+2023-12-07 15:52:42,251 INFO Buffer key: ['Y', 'U', 'I', 'L', 'T'] ['I', 'T', 'Y', 'U', 'L']
+2023-12-07 15:52:42,252 INFO triggered AI command
+2023-12-07 15:52:42,252 INFO triggered AI command
+2023-12-07 15:52:43,259 INFO Buffer key: ['J', 'I', 'Y', 'T', 'U'] ['L', 'Y', 'J', 'T', 'I']
+2023-12-07 15:52:43,259 INFO triggered AI command
+2023-12-07 15:52:43,259 INFO triggered AI command
+2023-12-07 15:52:43,259 INFO Commands to game:  THROW_B STAND_A AIR_FB STAND_A
+2023-12-07 15:52:44,266 INFO Buffer key: ['T', 'L', 'I', 'J', 'U'] ['I', 'Y', 'J', 'U', 'K']
+2023-12-07 15:52:44,267 INFO triggered AI command
+2023-12-07 15:52:45,274 INFO Buffer key: ['T', 'U', 'K', 'J', 'L'] ['U', 'K', 'J', 'T', 'L']
+2023-12-07 15:52:45,275 INFO triggered AI command
+2023-12-07 15:52:46,283 INFO Buffer key: ['T', 'L', 'K', 'I', 'Y'] ['U', 'Y', 'J', 'T', 'L']
+2023-12-07 15:52:46,283 INFO triggered AI command
+2023-12-07 15:52:46,284 INFO triggered AI command
+2023-12-07 15:52:46,284 INFO Commands to game:  AIR_FB STAND_B THROW_A STAND_A
+2023-12-07 15:52:47,292 INFO Buffer key: ['K', 'L', 'Y', 'J', 'U'] ['L', 'J', 'K', 'U', 'I']
+2023-12-07 15:52:47,292 INFO triggered AI command
+2023-12-07 15:52:47,293 INFO triggered AI command
+2023-12-07 15:52:48,300 INFO Buffer key: ['Y', 'I', 'U', 'K', 'T'] ['J', 'Y', 'T', 'L', 'I']
+2023-12-07 15:52:48,300 INFO triggered AI command
+2023-12-07 15:52:49,308 INFO Buffer key: ['L', 'J', 'K', 'I', 'U'] ['T', 'L', 'Y', 'J', 'K']
+2023-12-07 15:52:49,308 INFO triggered AI command
+2023-12-07 15:52:50,315 INFO Buffer key: ['I', 'T', 'U', 'K', 'J'] ['T', 'U', 'I', 'J', 'K']
+2023-12-07 15:52:50,316 INFO triggered AI command
+2023-12-07 15:52:51,323 INFO Buffer key: ['J', 'L', 'I', 'K', 'T'] ['K', 'J', 'L', 'T', 'Y']
+2023-12-07 15:52:51,323 INFO triggered AI command
+2023-12-07 15:52:51,323 INFO triggered AI command
+2023-12-07 15:52:51,324 INFO Commands to game:  THROW_A STAND_A CROUCH_A STAND_B
+2023-12-07 15:52:52,331 INFO Buffer key: ['J', 'U', 'Y', 'L', 'I'] ['I', 'K', 'L', 'U', 'T']
+2023-12-07 15:52:52,331 INFO triggered AI command
+2023-12-07 15:52:52,331 INFO triggered AI command
+2023-12-07 15:52:53,339 INFO Buffer key: ['Y', 'I', 'U', 'L', 'T'] ['Y', 'L', 'U', 'I', 'J']
+2023-12-07 15:52:53,339 INFO triggered AI command
+2023-12-07 15:52:53,340 INFO triggered AI command
+2023-12-07 15:52:53,340 INFO Commands to game:  AIR_UA STAND_A STAND_B JUMP
+2023-12-07 15:52:54,349 INFO Buffer key: ['K', 'Y', 'U', 'T', 'J'] ['U', 'J', 'Y', 'T', 'I']
+2023-12-07 15:52:54,349 INFO triggered AI command
+2023-12-07 16:33:20,578 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:20,583 INFO triggered AI command
+2023-12-07 16:33:21,590 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:21,590 INFO triggered AI command
+2023-12-07 16:33:22,097 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:22,097 INFO triggered AI command
+2023-12-07 16:33:22,604 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:22,604 INFO triggered AI command
+2023-12-07 16:33:23,111 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:23,111 INFO triggered AI command
+2023-12-07 16:33:23,618 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:23,618 INFO triggered AI command
+2023-12-07 16:33:24,126 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:24,126 INFO triggered AI command
+2023-12-07 16:33:24,632 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:24,633 INFO triggered AI command
+2023-12-07 16:33:25,140 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:25,140 INFO triggered AI command
+2023-12-07 16:33:25,646 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:25,647 INFO triggered AI command
+2023-12-07 16:33:26,154 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:26,155 INFO triggered AI command
+2023-12-07 16:33:26,661 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:26,662 INFO triggered AI command
+2023-12-07 16:33:27,168 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:27,169 INFO triggered AI command
+2023-12-07 16:33:27,702 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:27,703 INFO triggered AI command
+2023-12-07 16:33:28,210 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:28,210 INFO triggered AI command
+2023-12-07 16:33:28,716 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:28,716 INFO triggered AI command
+2023-12-07 16:33:29,221 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:29,221 INFO triggered AI command
+2023-12-07 16:33:29,727 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:29,728 INFO triggered AI command
+2023-12-07 16:33:30,235 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:30,235 INFO triggered AI command
+2023-12-07 16:33:30,741 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:30,742 INFO triggered AI command
+2023-12-07 16:33:31,249 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:31,249 INFO triggered AI command
+2023-12-07 16:33:31,755 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:31,756 INFO triggered AI command
+2023-12-07 16:33:32,262 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:32,263 INFO triggered AI command
+2023-12-07 16:33:32,768 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:32,769 INFO triggered AI command
+2023-12-07 16:33:33,274 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:33,275 INFO triggered AI command
+2023-12-07 16:33:33,782 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:33,782 INFO triggered AI command
+2023-12-07 16:33:34,289 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:34,290 INFO triggered AI command
+2023-12-07 16:33:34,794 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:34,795 INFO triggered AI command
+2023-12-07 16:33:35,300 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:35,300 INFO triggered AI command
+2023-12-07 16:33:35,807 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:35,807 INFO triggered AI command
+2023-12-07 16:33:36,312 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:36,313 INFO triggered AI command
+2023-12-07 16:33:36,818 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:36,818 INFO triggered AI command
+2023-12-07 16:33:37,324 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:37,324 INFO triggered AI command
+2023-12-07 16:33:37,831 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:37,831 INFO triggered AI command
+2023-12-07 16:33:38,337 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:38,337 INFO triggered AI command
+2023-12-07 16:33:38,843 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:38,843 INFO triggered AI command
+2023-12-07 16:33:39,349 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:39,349 INFO triggered AI command
+2023-12-07 16:33:39,855 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:39,855 INFO triggered AI command
+2023-12-07 16:33:40,362 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:40,362 INFO triggered AI command
+2023-12-07 16:33:40,869 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:40,869 INFO triggered AI command
+2023-12-07 16:33:41,375 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:41,375 INFO triggered AI command
+2023-12-07 16:33:41,881 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:41,882 INFO triggered AI command
+2023-12-07 16:33:42,389 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:42,389 INFO triggered AI command
+2023-12-07 16:33:42,896 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:42,896 INFO triggered AI command
+2023-12-07 16:33:43,402 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:43,402 INFO triggered AI command
+2023-12-07 16:33:43,908 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:43,908 INFO triggered AI command
+2023-12-07 16:33:44,416 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:44,416 INFO triggered AI command
+2023-12-07 16:33:44,921 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:44,922 INFO triggered AI command
+2023-12-07 16:33:45,428 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:45,428 INFO triggered AI command
+2023-12-07 16:33:45,933 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:45,934 INFO triggered AI command
+2023-12-07 16:33:46,439 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:46,439 INFO triggered AI command
+2023-12-07 16:33:46,945 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:46,945 INFO triggered AI command
+2023-12-07 16:33:47,451 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:47,452 INFO triggered AI command
+2023-12-07 16:33:47,958 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:47,958 INFO triggered AI command
+2023-12-07 16:33:48,463 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:48,464 INFO triggered AI command
+2023-12-07 16:33:48,968 INFO Buffer key: ['I', 'K', 'J', 'L', 'I'] ['I', 'K', 'J', 'L', 'I']
+2023-12-07 16:33:48,969 INFO triggered AI command
+2023-12-07 16:33:49,474 INFO Buffer key: ['K', 'J', 'L', 'I', 'K'] ['K', 'J', 'L', 'I', 'K']
+2023-12-07 16:33:49,475 INFO triggered AI command
+2023-12-07 16:33:49,980 INFO Buffer key: ['J', 'L', 'I', 'K', 'J'] ['J', 'L', 'I', 'K', 'J']
+2023-12-07 16:33:49,980 INFO triggered AI command
+2023-12-07 16:33:50,485 INFO Buffer key: ['L', 'I', 'K', 'J', 'L'] ['L', 'I', 'K', 'J', 'L']
+2023-12-07 16:33:50,485 INFO triggered AI command
+2023-12-07 16:36:53,823 INFO Buffer key: ['T', 'U', 'K', 'Y', 'I'] ['K', 'L', 'U', 'I', 'J']
+2023-12-07 16:36:54,831 INFO Buffer key: ['I', 'J', 'U', 'L', 'K'] ['J', 'Y', 'K', 'U', 'T']
+2023-12-07 16:36:55,837 INFO Buffer key: ['L', 'T', 'I', 'J', 'Y'] ['U', 'L', 'T', 'I', 'K']
+2023-12-07 16:36:56,844 INFO Buffer key: ['U', 'J', 'K', 'Y', 'L'] ['Y', 'I', 'K', 'L', 'T']
+2023-12-07 16:36:56,845 INFO Commands to game:  THROW_B STAND_B AIR_UA STAND_B
+2023-12-07 16:36:57,853 INFO Buffer key: ['T', 'J', 'Y', 'I', 'L'] ['K', 'T', 'Y', 'L', 'J']
+2023-12-07 16:36:57,853 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_B
+2023-12-07 16:36:58,861 INFO Buffer key: ['K', 'T', 'U', 'J', 'Y'] ['T', 'U', 'Y', 'J', 'L']
+2023-12-07 16:36:58,861 INFO Commands to game:  CROUCH_A STAND_A STAND_B FORWARD_WALK
+2023-12-07 16:36:59,869 INFO Buffer key: ['T', 'K', 'J', 'I', 'U'] ['Y', 'I', 'K', 'T', 'L']
+2023-12-07 16:36:59,870 INFO Commands to game:  STAND_A CROUCH AIR_UA STAND_A
+2023-12-07 16:37:00,875 INFO Buffer key: ['Y', 'J', 'T', 'U', 'K'] ['T', 'I', 'U', 'J', 'Y']
+2023-12-07 16:37:01,882 INFO Buffer key: ['U', 'Y', 'L', 'I', 'K'] ['J', 'I', 'U', 'K', 'L']
+2023-12-07 16:37:02,890 INFO Buffer key: ['L', 'U', 'T', 'J', 'Y'] ['L', 'I', 'K', 'T', 'Y']
+2023-12-07 16:37:03,897 INFO Buffer key: ['I', 'J', 'T', 'U', 'Y'] ['K', 'J', 'I', 'L', 'U']
+2023-12-07 16:37:04,905 INFO Buffer key: ['J', 'K', 'L', 'I', 'U'] ['L', 'Y', 'K', 'J', 'T']
+2023-12-07 16:37:05,911 INFO Buffer key: ['Y', 'I', 'K', 'U', 'T'] ['J', 'Y', 'T', 'I', 'K']
+2023-12-07 16:37:05,912 INFO Commands to game:  AIR_UA STAND_A THROW_B STAND_A
+2023-12-07 16:37:06,918 INFO Buffer key: ['I', 'U', 'Y', 'L', 'J'] ['L', 'Y', 'T', 'I', 'K']
+2023-12-07 16:37:07,923 INFO Buffer key: ['U', 'T', 'L', 'K', 'I'] ['Y', 'J', 'L', 'K', 'U']
+2023-12-07 16:37:07,923 INFO Commands to game:  STAND_A JUMP STAND_B CROUCH
+2023-12-07 16:37:08,928 INFO Buffer key: ['Y', 'T', 'K', 'U', 'L'] ['J', 'L', 'I', 'K', 'U']
+2023-12-07 16:41:36,309 INFO Commands to game:  THROW_A STAND_B STAND_A STAND_GUARD
+2023-12-07 16:41:40,337 INFO Commands to game:  AIR_FB STAND_B STAND_B FORWARD_WALK
+2023-12-07 16:41:42,351 INFO Commands to game:  STAND_B CROUCH AIR_UB STAND_A
+2023-12-07 16:41:43,359 INFO Commands to game:  STAND_A STAND_GUARD AIR_UA STAND_A
+2023-12-07 16:41:44,365 INFO Commands to game:  AIR_FA STAND_A THROW_A STAND_A
+2023-12-07 16:41:46,379 INFO Commands to game:  STAND_A FORWARD_WALK CROUCH_B STAND_B
+2023-12-07 16:41:47,387 INFO Commands to game:  CROUCH_B STAND_B AIR_UA STAND_B
+2023-12-07 16:41:49,399 INFO Commands to game:  AIR_FA STAND_A THROW_B STAND_B
+2023-12-07 16:41:56,446 INFO Commands to game:  AIR_FA STAND_A AIR_FA STAND_A
+2023-12-07 16:41:57,452 INFO Commands to game:  STAND_A JUMP STAND_A FORWARD_WALK
+2023-12-07 16:41:58,461 INFO Commands to game:  AIR_FB STAND_B STAND_B FORWARD_WALK
+2023-12-07 16:41:59,468 INFO Commands to game:  AIR_FB STAND_B CROUCH_B STAND_B
+2023-12-07 16:45:46,027 INFO Commands to game:  AIR_UA STAND_A AIR_FB STAND_B
+2023-12-07 16:45:49,049 INFO Commands to game:  BACK_STEP STAND_B DASH STAND_A
+2023-12-07 16:45:52,073 INFO Commands to game:  AIR_UA STAND_A STAND_A STAND_GUARD
+2023-12-07 16:45:54,084 INFO Commands to game:  BACK_STEP STAND_B THROW_A STAND_A
+2023-12-07 16:45:55,093 INFO Commands to game:  STAND_B STAND_GUARD AIR_FB STAND_B
+2023-12-07 16:45:56,099 INFO Commands to game:  AIR_UB STAND_B AIR_UA STAND_B
+2023-12-07 16:45:58,113 INFO Commands to game:  THROW_B STAND_B AIR_FA STAND_B
+2023-12-07 16:46:00,128 INFO Commands to game:  AIR_FB STAND_B AIR_UA STAND_B
+2023-12-07 16:46:01,136 INFO Commands to game:  AIR_FB STAND_B AIR_FA STAND_A
+2023-12-07 16:46:03,149 INFO Commands to game:  DASH STAND_B STAND_A JUMP
+2023-12-07 16:46:04,156 INFO Commands to game:  CROUCH_B STAND_A AIR_FB STAND_A
+2023-12-07 16:46:08,181 INFO Commands to game:  THROW_B STAND_B BACK_STEP STAND_A
+2023-12-07 16:46:12,205 INFO Commands to game:  THROW_A STAND_A CROUCH_B STAND_B
+2023-12-07 16:46:14,219 INFO Commands to game:  CROUCH_A STAND_A AIR_UA STAND_A
+2023-12-07 16:46:15,226 INFO Commands to game:  CROUCH_B STAND_B CROUCH_B STAND_B
+2023-12-07 16:46:16,232 INFO Commands to game:  AIR_FB STAND_B CROUCH_B STAND_B
+2023-12-07 16:46:17,239 INFO Commands to game:  CROUCH_B STAND_B THROW_B STAND_B
+2023-12-07 16:46:19,251 INFO Commands to game:  AIR_FB STAND_B AIR_UB STAND_A
+2023-12-07 16:48:07,578 INFO Commands to game:  AIR_UB STAND_B STAND_B JUMP
+2023-12-07 16:52:46,189 INFO Commands to game:  THROW_B STAND_B THROW_B STAND_B
+2023-12-07 16:52:48,703 INFO Commands to game:  CROUCH_A STAND_B STAND_B FORWARD_WALK
+2023-12-07 16:52:50,718 INFO Commands to game:  STAND_B FORWARD_WALK THROW_A STAND_A
+2023-12-07 16:52:51,724 INFO Commands to game:  AIR_UB STAND_B CROUCH_B STAND_B
+2023-12-07 16:52:54,744 INFO Commands to game:  STAND_B JUMP THROW_A STAND_B
+2023-12-07 16:52:56,252 INFO Commands to game:  AIR_UB STAND_B THROW_B STAND_B
+2023-12-07 16:52:58,768 INFO Commands to game:  CROUCH_B STAND_B AIR_UB STAND_A
+2023-12-07 16:53:00,783 INFO Commands to game:  AIR_UB STAND_B CROUCH_A STAND_B
+2023-12-07 16:53:03,300 INFO Commands to game:  AIR_FA STAND_B AIR_FA STAND_A
+2023-12-07 16:53:06,824 INFO Commands to game:  AIR_UA STAND_A STAND_A JUMP
+2023-12-07 16:53:07,831 INFO Commands to game:  AIR_FB STAND_A THROW_B STAND_A
+2023-12-07 16:53:14,376 INFO Commands to game:  STAND_B CROUCH THROW_B STAND_B
+2023-12-07 16:53:18,397 INFO Commands to game:  THROW_A STAND_A CROUCH_A STAND_A
+2023-12-07 16:53:19,406 INFO Commands to game:  CROUCH_B STAND_B STAND_A CROUCH
+2023-12-07 16:53:20,413 INFO Commands to game:  AIR_FA STAND_B AIR_FB STAND_B
+2023-12-07 16:53:21,921 INFO Commands to game:  STAND_B JUMP AIR_UB STAND_B
+2023-12-07 16:53:23,935 INFO Commands to game:  AIR_UA STAND_A AIR_FA STAND_A
+2023-12-07 16:53:27,459 INFO Commands to game:  STAND_A STAND_GUARD STAND_B STAND_GUARD
+2023-12-07 16:53:33,497 INFO Commands to game:  AIR_UB STAND_B AIR_FA STAND_A
+2023-12-07 16:53:35,005 INFO Commands to game:  AIR_FA STAND_A CROUCH_A STAND_A
+2023-12-07 16:53:38,024 INFO Commands to game:  AIR_FB STAND_B CROUCH_B STAND_A
+2023-12-07 16:53:45,064 INFO Commands to game:  STAND_A FORWARD_WALK CROUCH_B STAND_B
+2023-12-07 16:53:47,580 INFO Commands to game:  AIR_UB STAND_B CROUCH_A STAND_A
+2023-12-07 16:53:49,089 INFO Commands to game:  CROUCH_A STAND_B AIR_FB STAND_B
+2023-12-07 16:53:50,096 INFO Commands to game:  AIR_UB STAND_B STAND_B STAND_GUARD
+2023-12-07 16:57:44,893 INFO Commands to game:  STAND_A STAND_GUARD AIR_FB STAND_B
+2023-12-07 16:57:46,401 INFO Commands to game:  THROW_B STAND_B CROUCH_B STAND_A
+2023-12-07 16:57:49,924 INFO Commands to game:  THROW_A STAND_A AIR_UB STAND_A
+2023-12-07 16:57:52,438 INFO Commands to game:  AIR_FB STAND_B AIR_FA STAND_A
+2023-12-07 16:57:56,469 INFO Commands to game:  STAND_B CROUCH AIR_FB STAND_B
+2023-12-07 16:57:58,985 INFO Commands to game:  AIR_FA STAND_A CROUCH_A STAND_A
+2023-12-07 16:57:59,992 INFO Commands to game:  AIR_FB STAND_B AIR_UA STAND_A
+2023-12-07 16:58:06,026 INFO Commands to game:  STAND_B CROUCH CROUCH_A STAND_B
+2023-12-07 16:58:07,035 INFO Commands to game:  CROUCH_A STAND_A AIR_FA STAND_A
+2023-12-07 16:58:09,049 INFO Commands to game:  STAND_A FORWARD_WALK AIR_FA STAND_B
+2023-12-07 16:58:10,556 INFO Commands to game:  CROUCH_B STAND_A THROW_A STAND_A
+2023-12-07 16:58:13,071 INFO Commands to game:  AIR_FB STAND_B AIR_FB STAND_B
+2023-12-07 16:58:18,605 INFO Commands to game:  THROW_A STAND_A STAND_A FORWARD_WALK
+2023-12-07 16:58:21,121 INFO Commands to game:  AIR_UA STAND_A THROW_A STAND_B
+2023-12-07 16:58:24,643 INFO Commands to game:  THROW_A STAND_A THROW_B STAND_B
+2023-12-07 16:58:27,158 INFO Commands to game:  CROUCH_B STAND_A AIR_UB STAND_A
+2023-12-07 16:58:30,681 INFO Commands to game:  AIR_UA STAND_B AIR_FB STAND_B
+2023-12-07 16:58:32,189 INFO Commands to game:  AIR_UB STAND_B AIR_UA STAND_A
+2023-12-07 16:58:34,704 INFO Commands to game:  AIR_UB STAND_B AIR_FB STAND_B
+2023-12-07 16:58:39,235 INFO Commands to game:  CROUCH_A STAND_A AIR_FB STAND_B
+2023-12-07 16:58:40,243 INFO Commands to game:  THROW_B STAND_B AIR_UB STAND_B
+2023-12-07 16:58:41,251 INFO Commands to game:  THROW_B STAND_B THROW_A STAND_B
+2023-12-07 16:58:44,772 INFO Commands to game:  AIR_UA STAND_A STAND_B CROUCH
+2023-12-07 16:58:48,296 INFO Commands to game:  AIR_FB STAND_B THROW_B STAND_A
+2023-12-07 16:58:51,818 INFO Commands to game:  AIR_UB STAND_B AIR_FA STAND_A
+2023-12-07 16:58:53,833 INFO Commands to game:  THROW_B STAND_B CROUCH_B STAND_A
+2023-12-07 16:58:56,350 INFO Commands to game:  CROUCH_A STAND_B STAND_A JUMP
+2023-12-07 16:58:57,358 INFO Commands to game:  AIR_UA STAND_A AIR_UB STAND_A
+2023-12-07 16:58:58,867 INFO Commands to game:  AIR_FA STAND_B THROW_A STAND_A
+2023-12-07 16:59:08,421 INFO Commands to game:  THROW_A STAND_A CROUCH_B STAND_B
+2023-12-07 16:59:09,428 INFO Commands to game:  CROUCH_A STAND_A AIR_UB STAND_B
+2023-12-07 16:59:13,958 INFO Commands to game:  STAND_B FORWARD_WALK AIR_UB STAND_A
+2023-12-07 16:59:15,465 INFO Commands to game:  STAND_A CROUCH AIR_UB STAND_A
+2023-12-07 16:59:17,481 INFO Commands to game:  AIR_UB STAND_B STAND_B JUMP
+2023-12-07 16:59:18,488 INFO Commands to game:  AIR_UB STAND_B AIR_FB STAND_B
+2023-12-07 16:59:19,996 INFO Commands to game:  AIR_FB STAND_A STAND_A JUMP
+2023-12-07 16:59:21,004 INFO Commands to game:  STAND_B STAND_GUARD AIR_UA STAND_A
+2023-12-07 16:59:22,513 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_A
+2023-12-07 16:59:23,521 INFO Commands to game:  STAND_A FORWARD_WALK CROUCH_A STAND_B
+2023-12-07 16:59:28,549 INFO Commands to game:  AIR_FA STAND_B AIR_UA STAND_A
+2023-12-07 16:59:34,087 INFO Commands to game:  THROW_B STAND_A STAND_A FORWARD_WALK
+2023-12-07 16:59:41,640 INFO Commands to game:  AIR_FA STAND_A STAND_A CROUCH
+2023-12-07 16:59:42,649 INFO Commands to game:  AIR_FA STAND_A THROW_A STAND_B
+2023-12-07 16:59:44,664 INFO Commands to game:  CROUCH_B STAND_B CROUCH_A STAND_A
+2023-12-07 16:59:47,178 INFO Commands to game:  AIR_FB STAND_B AIR_UB STAND_A
+2023-12-07 16:59:49,192 INFO Commands to game:  AIR_UA STAND_B THROW_A STAND_B
+2023-12-07 16:59:51,708 INFO Commands to game:  THROW_B STAND_A THROW_A STAND_A
+2023-12-07 16:59:53,722 INFO Commands to game:  THROW_A STAND_A CROUCH_B STAND_B
+2023-12-07 16:59:56,239 INFO Commands to game:  THROW_A STAND_B STAND_A JUMP
+2023-12-07 16:59:57,247 INFO Commands to game:  CROUCH_A STAND_A AIR_UB STAND_A
+2023-12-07 17:00:06,807 INFO Commands to game:  THROW_A STAND_B CROUCH_B STAND_B
+2023-12-07 17:00:09,321 INFO Commands to game:  AIR_FB STAND_A AIR_FA STAND_A
+2023-12-07 17:00:11,834 INFO Commands to game:  AIR_FB STAND_B AIR_FA STAND_A
+2023-12-07 17:00:12,842 INFO Commands to game:  CROUCH_A STAND_A AIR_UA STAND_A
+2023-12-07 17:00:14,353 INFO Commands to game:  CROUCH_A STAND_A AIR_FB STAND_B
+2023-12-07 17:00:16,367 INFO Commands to game:  STAND_A CROUCH AIR_FA STAND_A
+2023-12-07 17:00:19,890 INFO Commands to game:  THROW_A STAND_A THROW_B STAND_B
+2023-12-07 17:00:21,399 INFO Commands to game:  AIR_UB STAND_B AIR_UA STAND_B
+2023-12-07 17:00:24,922 INFO Commands to game:  AIR_UA STAND_B STAND_A CROUCH
+2023-12-07 17:00:26,937 INFO Commands to game:  CROUCH_A STAND_B THROW_B STAND_B
+2023-12-07 17:00:35,490 INFO Commands to game:  STAND_B JUMP AIR_FA STAND_A
+2023-12-07 17:00:36,497 INFO Commands to game:  AIR_UA STAND_B CROUCH_A STAND_A
+2023-12-07 17:00:39,519 INFO Commands to game:  STAND_B JUMP THROW_B STAND_B
+2023-12-07 17:00:44,552 INFO Commands to game:  AIR_UB STAND_B AIR_UA STAND_A
+2023-12-07 17:00:46,061 INFO Commands to game:  AIR_FA STAND_B STAND_B STAND_GUARD
+2023-12-07 17:00:47,069 INFO Commands to game:  CROUCH_A STAND_A CROUCH_A STAND_A
+2023-12-07 17:00:50,591 INFO Commands to game:  AIR_UA STAND_B THROW_B STAND_B
+2023-12-07 17:00:51,598 INFO Commands to game:  AIR_UA STAND_A THROW_B STAND_B
+2023-12-07 17:00:54,114 INFO Commands to game:  STAND_B FORWARD_WALK AIR_FA STAND_A
+2023-12-07 17:00:55,122 INFO Commands to game:  AIR_UA STAND_A STAND_A JUMP
+2023-12-07 17:00:57,637 INFO Commands to game:  AIR_FB STAND_B STAND_A FORWARD_WALK
+2023-12-07 17:00:58,644 INFO Commands to game:  AIR_UB STAND_B AIR_UB STAND_A
+2023-12-07 17:01:04,180 INFO Commands to game:  AIR_FB STAND_A STAND_B STAND_GUARD
+2023-12-07 17:01:08,707 INFO Commands to game:  CROUCH_A STAND_A CROUCH_A STAND_B
+2023-12-07 17:01:10,720 INFO Commands to game:  STAND_B CROUCH AIR_UA STAND_A
+2023-12-07 17:01:15,246 INFO Commands to game:  AIR_FB STAND_A AIR_FB STAND_A
+2023-12-07 17:01:20,276 INFO Commands to game:  STAND_A JUMP STAND_A JUMP
+2023-12-07 17:01:21,785 INFO Commands to game:  STAND_B FORWARD_WALK AIR_UA STAND_A
+2023-12-07 17:01:22,792 INFO Commands to game:  AIR_UA STAND_A CROUCH_B STAND_B
+2023-12-07 17:01:23,800 INFO Commands to game:  STAND_A STAND_GUARD AIR_UA STAND_A
+2023-12-07 17:01:27,324 INFO Commands to game:  AIR_UB STAND_A THROW_A STAND_A
+2023-12-07 17:01:32,354 INFO Commands to game:  CROUCH_A STAND_A CROUCH_B STAND_A
+2023-12-07 17:01:33,361 INFO Commands to game:  STAND_A STAND_GUARD CROUCH_B STAND_A
+2023-12-07 17:01:34,871 INFO Commands to game:  THROW_B STAND_B AIR_UB STAND_A
+2023-12-07 17:01:35,878 INFO Commands to game:  CROUCH_A STAND_A THROW_A STAND_A
+2023-12-07 17:01:38,900 INFO Commands to game:  AIR_UB STAND_B STAND_B FORWARD_WALK
+2023-12-07 17:01:41,417 INFO Commands to game:  CROUCH_B STAND_B AIR_FA STAND_A
+2023-12-07 17:01:42,925 INFO Commands to game:  THROW_B STAND_B AIR_UA STAND_A
+2023-12-07 17:01:43,933 INFO Commands to game:  CROUCH_B STAND_B AIR_UB STAND_B
+2023-12-07 17:01:45,946 INFO Commands to game:  AIR_UB STAND_A STAND_A JUMP
+2023-12-07 17:01:47,454 INFO Commands to game:  AIR_FA STAND_B AIR_UB STAND_B
+2023-12-07 17:01:48,460 INFO Commands to game:  AIR_UB STAND_B STAND_A CROUCH
+2023-12-07 17:01:51,981 INFO Commands to game:  STAND_B FORWARD_WALK STAND_B CROUCH
+2023-12-07 17:01:52,988 INFO Commands to game:  CROUCH_A STAND_A AIR_UA STAND_A
+2023-12-07 17:01:55,502 INFO Commands to game:  THROW_B STAND_A STAND_B JUMP
+2023-12-07 17:01:57,009 INFO Commands to game:  THROW_A STAND_A AIR_FB STAND_B
+2023-12-07 17:01:59,524 INFO Commands to game:  AIR_UB STAND_B AIR_FB STAND_B
+2023-12-07 17:02:00,531 INFO Commands to game:  CROUCH_B STAND_B AIR_UA STAND_B
+2023-12-07 17:02:06,563 INFO Commands to game:  AIR_FB STAND_A THROW_B STAND_B
+2023-12-07 17:02:07,572 INFO Commands to game:  AIR_UB STAND_A THROW_B STAND_A
+2023-12-07 17:02:12,598 INFO Commands to game:  CROUCH_A STAND_A STAND_A JUMP
+2023-12-07 17:02:13,606 INFO Commands to game:  THROW_A STAND_B AIR_UB STAND_B
+2023-12-07 17:02:17,629 INFO Commands to game:  AIR_FB STAND_B THROW_A STAND_A
+2023-12-07 17:02:20,143 INFO Commands to game:  AIR_UA STAND_B THROW_A STAND_B
+2023-12-07 17:02:21,150 INFO Commands to game:  THROW_B STAND_B AIR_UB STAND_A
+2023-12-07 17:02:29,705 INFO Commands to game:  AIR_FA STAND_B STAND_A JUMP
+2023-12-07 17:02:31,720 INFO Commands to game:  AIR_UA STAND_A STAND_B FORWARD_WALK
+2023-12-07 17:02:32,727 INFO Commands to game:  STAND_A JUMP AIR_UB STAND_A
+2023-12-07 17:02:33,734 INFO Commands to game:  CROUCH_A STAND_A AIR_UA STAND_A
+2023-12-07 17:02:37,255 INFO Commands to game:  THROW_A STAND_A AIR_FA STAND_A
+2023-12-07 17:02:38,261 INFO Commands to game:  CROUCH_B STAND_B THROW_A STAND_A
+2023-12-07 17:02:40,773 INFO Commands to game:  CROUCH_A STAND_A AIR_UA STAND_A
+2023-12-07 17:02:41,780 INFO Commands to game:  AIR_UA STAND_B STAND_B CROUCH
+2023-12-07 17:02:42,788 INFO Commands to game:  THROW_A STAND_A STAND_B JUMP
+2023-12-07 17:02:52,344 INFO Commands to game:  THROW_A STAND_A STAND_A CROUCH
+2023-12-07 17:02:55,864 INFO Commands to game:  STAND_A STAND_GUARD STAND_A FORWARD_WALK
+2023-12-07 17:02:56,870 INFO Commands to game:  THROW_B STAND_B CROUCH_B STAND_B
+2023-12-07 17:02:58,377 INFO Commands to game:  THROW_B STAND_A AIR_UA STAND_A
+2023-12-07 17:03:00,892 INFO Commands to game:  THROW_A STAND_B AIR_FB STAND_B
+2023-12-07 17:03:01,898 INFO Commands to game:  THROW_A STAND_A AIR_FA STAND_A
+2023-12-07 17:03:05,417 INFO Commands to game:  STAND_A CROUCH CROUCH_A STAND_B
+2023-12-07 17:03:08,438 INFO Commands to game:  THROW_A STAND_A THROW_A STAND_B
+2023-12-07 17:03:13,466 INFO Commands to game:  AIR_UB STAND_B STAND_A CROUCH
+2023-12-07 17:03:14,473 INFO Commands to game:  THROW_A STAND_A CROUCH_B STAND_A
+2023-12-07 17:03:15,981 INFO Commands to game:  STAND_B STAND_GUARD AIR_UB STAND_A
+2023-12-07 17:03:21,516 INFO Commands to game:  THROW_A STAND_A THROW_B STAND_B
+2023-12-07 17:03:23,023 INFO Commands to game:  THROW_A STAND_A AIR_FB STAND_B
+2023-12-07 17:03:24,030 INFO Commands to game:  AIR_UB STAND_B THROW_B STAND_A
+2023-12-07 17:03:27,550 INFO Commands to game:  CROUCH_A STAND_A CROUCH_A STAND_B
+2023-12-07 17:03:31,074 INFO Commands to game:  AIR_FA STAND_A CROUCH_A STAND_B
+2023-12-07 17:03:32,581 INFO Commands to game:  STAND_A JUMP AIR_UA STAND_B
+2023-12-07 17:03:34,596 INFO Commands to game:  CROUCH_A STAND_B CROUCH_B STAND_B
+2023-12-07 17:03:36,104 INFO Commands to game:  THROW_A STAND_A AIR_FB STAND_B
+2023-12-07 17:03:39,127 INFO Commands to game:  CROUCH_A STAND_B STAND_A STAND_GUARD
+2023-12-07 17:03:40,636 INFO Commands to game:  CROUCH_A STAND_A STAND_A JUMP
+2023-12-07 17:03:41,643 INFO Commands to game:  THROW_A STAND_B AIR_FB STAND_B
+2023-12-07 17:03:42,651 INFO Commands to game:  THROW_A STAND_A AIR_FA STAND_A
+2023-12-07 17:03:46,175 INFO Commands to game:  CROUCH_A STAND_A CROUCH_A STAND_A
+2023-12-07 17:03:49,696 INFO Commands to game:  AIR_UA STAND_A AIR_UA STAND_A
+2023-12-07 17:03:53,216 INFO Commands to game:  STAND_B FORWARD_WALK THROW_B STAND_A
+2023-12-07 17:03:56,737 INFO Commands to game:  CROUCH_B STAND_B STAND_A STAND_GUARD
+2023-12-07 17:03:58,751 INFO Commands to game:  THROW_A STAND_B STAND_A FORWARD_WALK
+2023-12-07 17:04:01,265 INFO Commands to game:  AIR_FA STAND_A THROW_A STAND_A
+2023-12-07 17:04:03,781 INFO Commands to game:  AIR_UA STAND_A STAND_B STAND_GUARD
+2023-12-07 17:04:07,302 INFO Commands to game:  AIR_UB STAND_B CROUCH_A STAND_B
+2023-12-07 17:04:09,818 INFO Commands to game:  AIR_FA STAND_A CROUCH_A STAND_A
+2023-12-07 17:04:10,825 INFO Commands to game:  STAND_A STAND_GUARD STAND_A JUMP
+2023-12-07 17:04:11,832 INFO Commands to game:  THROW_B STAND_B AIR_FA STAND_A
+2023-12-07 17:04:13,341 INFO Commands to game:  THROW_A STAND_B THROW_B STAND_B
+2023-12-07 17:04:18,877 INFO Commands to game:  AIR_FA STAND_A STAND_B FORWARD_WALK
+2023-12-07 17:04:21,395 INFO Commands to game:  AIR_UA STAND_B AIR_UB STAND_B
+2023-12-07 17:04:22,904 INFO Commands to game:  THROW_B STAND_B AIR_UB STAND_B
+2023-12-07 17:04:24,920 INFO Commands to game:  THROW_B STAND_B AIR_UA STAND_A
+2023-12-07 17:04:28,444 INFO Commands to game:  THROW_A STAND_A STAND_B CROUCH
+2023-12-07 17:04:29,953 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_A
+2023-12-07 17:04:38,510 INFO Commands to game:  CROUCH_A STAND_A THROW_B STAND_B
+2023-12-07 17:04:45,557 INFO Commands to game:  CROUCH_B STAND_A AIR_UB STAND_B
+2023-12-07 17:04:46,566 INFO Commands to game:  THROW_B STAND_B AIR_UA STAND_A
+2023-12-07 17:04:48,076 INFO Commands to game:  AIR_FB STAND_A STAND_B FORWARD_WALK
+2023-12-07 17:04:50,091 INFO Commands to game:  AIR_UA STAND_A AIR_UB STAND_A
+2023-12-07 17:04:54,624 INFO Commands to game:  AIR_UA STAND_A STAND_A JUMP
+2023-12-07 17:04:56,134 INFO Commands to game:  CROUCH_B STAND_B CROUCH_B STAND_B
+2023-12-07 17:04:57,143 INFO Commands to game:  AIR_UA STAND_A THROW_B STAND_B
+2023-12-07 17:04:58,151 INFO Commands to game:  CROUCH_A STAND_A THROW_B STAND_A
+2023-12-07 17:05:00,666 INFO Commands to game:  AIR_FA STAND_A CROUCH_B STAND_B
+2023-12-07 17:05:04,189 INFO Commands to game:  CROUCH_B STAND_B CROUCH_B STAND_A
+2023-12-07 17:05:14,759 INFO Commands to game:  CROUCH_B STAND_B AIR_FB STAND_B
+2023-12-07 17:05:15,767 INFO Commands to game:  THROW_B STAND_B CROUCH_A STAND_A
+2023-12-07 17:05:18,281 INFO Commands to game:  STAND_B JUMP AIR_UB STAND_B
+2023-12-07 17:05:19,289 INFO Commands to game:  CROUCH_A STAND_A AIR_UB STAND_B
+2023-12-07 17:05:22,812 INFO Commands to game:  CROUCH_B STAND_B CROUCH_A STAND_A
+2023-12-07 17:05:23,820 INFO Commands to game:  CROUCH_B STAND_B AIR_UB STAND_B
+2023-12-07 17:05:25,835 INFO Commands to game:  AIR_FA STAND_A AIR_UA STAND_B
+2023-12-07 17:05:27,345 INFO Commands to game:  THROW_A STAND_B THROW_B STAND_B
+2023-12-07 17:05:30,867 INFO Commands to game:  THROW_A STAND_B AIR_FB STAND_A

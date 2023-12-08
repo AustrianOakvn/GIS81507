@@ -1,3 +1,4 @@
+import random
 from typing import List
 import logging
 import os
@@ -8,8 +9,7 @@ import requests
 from twitchio.ext import commands
 from twitchio.message import Message
 
-
-from config import COMMAND_HANDLER_ROUTE, CONTROL_KEYS, NUM_PLAYERS, PING_ROUTE
+from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, CONTROL_KEYS, MAPPING, MOVEMENT_KEYS, NUM_PLAYERS, PING_ROUTE
 from datamodel import GameStatus, Player
 from components.databases.bet_db import BetDatabase
 from components.bet.bet_system import BetSystem
@@ -30,14 +30,11 @@ class Bot(commands.Bot):
             initial_channels=[os.environ.get("CHANNEL")],
         )
 
-
         # if new game is started, then clear player_list and next_game_queue
 
         # Bet database & system
         self.bet_db = BetDatabase()
         self.bet_system = BetSystem(self.bet_db)
-
-        # TODO: if new game is started, then clear player_list and next_game_queue
 
         # player_list is a dictionary of twitch_id: Player
         # self.player_list = {'964201114': Player(twitch_id='964201114', username='damtien440', player_team='player_1')}
@@ -45,16 +42,15 @@ class Bot(commands.Bot):
         self.next_game_queue = {}
 
         self.game = GameStatus(
-            game_id=None, game_status=None, character_1=None, character_2=None
+           game_state=None, p1_stats=None, p2_stats=None
         )
 
+        self.p1_commands = []
+        self.p2_commands = []
 
         # start a thread checking game status every 0.5 seconds
-        # TODO: Uncomment this when game API is ready
-        # ping_thread = threading.Thread(target=self._check_game_status)
-        # ping_thread.start()
-
-        # TODO: Init API for whispering
+        ping_thread = threading.Thread(target=self._send_command)
+        ping_thread.start()
 
     async def event_ready(self):
         # Notify us when everything is ready!
@@ -94,17 +90,17 @@ class Bot(commands.Bot):
 
         logger.info("There is an action key")
 
-        response = self._send_action_key_to_gameapi(
+        self._collect_command(
             action_key, self.player_list[message.author.id]
         )
 
         logger.info("Sent action key to game backend")
 
-        self._update_game_status(response.json())
+        # self._update_game_status(response.json())
 
         # TODO: If the game ended, then output the result to chat,
         # and remove the players from the player_list, procede to the next game
-        self._procede_to_next_game()
+        # self._procede_to_next_game()
 
     @commands.command()
     async def balance(self, ctx: commands.Context):
@@ -114,6 +110,7 @@ class Bot(commands.Bot):
             ctx (commands.Context): Chat context
         """
         logger.debug("Player %s sent check balance command.", ctx.author.name)
+
         current_balance = self.bet_system.get_balance(ctx.author.id, ctx.author.name)
         await ctx.send(f"User {ctx.author.name} has {current_balance} in balance.")
 
@@ -153,6 +150,7 @@ class Bot(commands.Bot):
         ### END OF COMMAND CHECK
 
         logger.debug("Bet command from player %s has valid syntax.", ctx.author.name)
+
         status, message = self.bet_system.bet(ctx.author.id, ctx.author.name, amount, chosen_player)
         if status:
             logger.info("Executed bet command from user %s (%s) for player %d with amount of %d.", ctx.author.name, ctx.author.id, chosen_player, amount)
@@ -189,29 +187,38 @@ class Bot(commands.Bot):
     @staticmethod
     def _get_action_key(message: Message) -> str or None:
         """Check if message contains a valid action key"""
-        action_key = message.content[0].lower()
+        action_key = message.content[0].upper()
 
         if action_key in CONTROL_KEYS:
             return action_key
+        
+        action_key = MAPPING[action_key]
+        
+        print("mapped action key: ", action_key)
 
-        return None
+        return action_key
 
-    @staticmethod
-    def _send_action_key_to_gameapi(action_key: str, player: Player):
+    def _collect_command(self, action_key: str, player: Player):
         """Send action key to API"""
-        status = send_to_api(
-            COMMAND_HANDLER_ROUTE, {player.player_team: {"actions": action_key}}
-        )
-
-        return status
+        if player.player_team == "player_1":
+            self.p1_commands.append(action_key)
+            
+        elif player.player_team == "player_2":
+            self.p2_commands.append(action_key)
+            
+        # print("sent action key: ", action_key)
+        
+        # return status
 
     def _update_game_status(self, game_status):
         """Update game status"""
-        self.game.game_status = game_status["game_status"]
-        self.game.character_1.hp = game_status["character_1"]["hp"]
-        self.game.character_1.energy = game_status["character_1"]["energy"]
-        self.game.character_2.hp = game_status["character_2"]["hp"]
-        self.game.character_2.energy = game_status["character_2"]["energy"]
+        self.game.game_state = game_status["game_state"]
+        self.game.p1_stats.hp = game_status["p1_stats"]["hp"]
+        self.game.p1_stats.energy = game_status["p1_stats"]["energy"]
+        self.game.p2_stats.hp = game_status["p2_stats"]["hp"]
+        self.game.p2_stats.energy = game_status["character_2"]["energy"]
+        
+        # print("recieved game status: ", self.game.game_state)
 
     def _register_player(self, message: Message):
         if (message.author.id in self.player_list) or (
@@ -229,7 +236,7 @@ class Bot(commands.Bot):
 
     def _procede_to_next_game(self):
         """Procede to the next game"""
-        if self.game.game_status == False:
+        if self.game.game_state == "finished":
             logger.info("Game ended")
             self.player_list.clear()
 
@@ -240,9 +247,31 @@ class Bot(commands.Bot):
             self.next_game_queue.clear()
             logger.info("New game started, player list has been updated")
 
-    def _check_game_status(self, interval=500):
+    def _send_command(self, interval=1000):
         while True:
-            response = send_to_api(PING_ROUTE, {})
+            
+            # havest command from chat
+            send_json = {
+                "player_1": self.p1_commands,
+                "player_2": self.p2_commands
+            }
+            
+            # send_json = {
+            #     "player_1": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5),
+            #     "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
+            # }
+            
+            print("sent command: ", send_json)
+            
+            self.p1_commands.clear()
+            self.p2_commands.clear()
+            
+            response = send_to_api(COMMAND_HANDLER_ROUTE, send_json)
+            
+            print("recieved game status: ", response.json())
+            
+            # TODO: Detect game end, update player list
+
             self._update_game_status(response.json())
             self._procede_to_next_game()
 
