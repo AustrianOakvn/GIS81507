@@ -20,22 +20,56 @@ class BetSystem():
         # Map user id to chosen player and bet amount
         self.next_match: dict[str, Tuple[int, int]] = {}
 
-    def get_balance(self, user_id: str) -> int:
+    def get_top_user_and_balance(self, top_k: int = 5) -> list[Tuple[str, int]]:
+        """Get top users with most balance
+
+        Args:
+            top_k (int, optional): Number of users. Defaults to 5.
+
+        Returns:
+            list[Tuple[str, int]]: List of tuples of user id and balance
+        """
+        top_list: list[Tuple[str, int]] = self.bet_db.top_balance(top_k)
+        return [(i[1], i[2]) for i in top_list]
+
+    def get_top_bet_by_character(self, character_id: int, top_k: int = 5) -> list[Tuple[str, int]]:
+        """Get top bet (of current match) by character ID
+
+        Args:
+            character_id (int): Character ID
+            top_k (int, optional): Number of players. Defaults to 5.
+
+        Returns:
+            list[Tuple[str, int]]: List of tuples of user_name, amount
+        """
+        assert character_id in [1, 2]
+
+        bet_list = [(user_id, amount) for user_id, (c_id, amount) in self.current_match.items() if character_id == c_id]
+        bet_list = sorted(bet_list, key=lambda x: x[1], reverse=True)[:top_k]
+
+        # Resolve user_id to user_name
+        bet_list = [(self.bet_db.get_name(i[0]), i[1]) for i in bet_list]
+
+        return bet_list
+
+    def get_balance(self, user_id: str, user_name: str) -> int:
         """Get balance of a user.
 
         Args:
             user_id (str): Twitch User ID of user
+            user_name (str): Username
 
         Returns:
             int: Balance of user
         """
-        return self.bet_db.get_balance(user_id)
+        return self.bet_db.get_balance(user_id, user_name)
 
-    def bet(self, user_id: str, amount: int, player: int) -> Tuple[bool, str]:
+    def bet(self, user_id: str, user_name: str, amount: int, player: int) -> Tuple[bool, str]:
         """Place a bet
 
         Args:
             user_id (str): Twitch User ID
+            user_name (str): Username
             amount (int): Amount of bet
             player (int): Player to bet on
 
@@ -46,10 +80,10 @@ class BetSystem():
         if already_bet_player is not None and already_bet_player != player:
             return False, f"You cannot bet on player {player} if you have already placed a bet on player {already_bet_player}."
 
-        if self.get_balance(user_id) < amount:
+        if self.get_balance(user_id, user_name) < amount:
             return False, "Balance not enough."
 
-        if self.bet_db.bet(user_id, amount) is True:
+        if self.bet_db.bet(user_id, user_name, amount) is True:
             self.next_match[user_id] = player, already_bet_amount + amount
             return True, ""
         else:
@@ -77,9 +111,10 @@ class BetSystem():
 
         # Award the gamblers who win
         winning = [(user_id, amount) for user_id, (player, amount) in self.current_match.items() if player == winner]
-        rate = 1 + (len(winning) / len(self.current_match))
-        for user_id, amount in winning:
-            self.award(user_id, int(amount * rate))
+        if len(winning) != 0:
+            rate = 1 + (len(winning) / len(self.current_match))
+            for user_id, amount in winning:
+                self.award(user_id, int(amount * rate))
 
         # Award the players who win
         for user_id in players_list:

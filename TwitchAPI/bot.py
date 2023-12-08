@@ -9,7 +9,6 @@ import requests
 from twitchio.ext import commands
 from twitchio.message import Message
 
-
 from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, CONTROL_KEYS, MAPPING, MOVEMENT_KEYS, NUM_PLAYERS, PING_ROUTE
 from datamodel import GameStatus, Player
 from components.databases.bet_db import BetDatabase
@@ -52,7 +51,6 @@ class Bot(commands.Bot):
         # start a thread checking game status every 0.5 seconds
         ping_thread = threading.Thread(target=self._send_command)
         ping_thread.start()
-    
 
     async def event_ready(self):
         # Notify us when everything is ready!
@@ -112,7 +110,8 @@ class Bot(commands.Bot):
             ctx (commands.Context): Chat context
         """
         logger.debug("Player %s sent check balance command.", ctx.author.name)
-        current_balance = self.bet_system.get_balance(ctx.author.id)
+
+        current_balance = self.bet_system.get_balance(ctx.author.id, ctx.author.name)
         await ctx.send(f"User {ctx.author.name} has {current_balance} in balance.")
 
     @commands.command()
@@ -151,10 +150,11 @@ class Bot(commands.Bot):
         ### END OF COMMAND CHECK
 
         logger.debug("Bet command from player %s has valid syntax.", ctx.author.name)
-        status, message = self.bet_system.bet(ctx.author.id, amount, chosen_player)
+
+        status, message = self.bet_system.bet(ctx.author.id, ctx.author.name, amount, chosen_player)
         if status:
             logger.info("Executed bet command from user %s (%s) for player %d with amount of %d.", ctx.author.name, ctx.author.id, chosen_player, amount)
-            new_balance = self.bet_db.get_balance(ctx.author.id)
+            new_balance = self.bet_db.get_balance(ctx.author.id, ctx.author.name)
             await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
         else:
             logger.error("Bet command from user %s (%s) was not executed. Reason: %s", ctx.author.name, ctx.author.id, message)
@@ -271,7 +271,7 @@ class Bot(commands.Bot):
             print("recieved game status: ", response.json())
             
             # TODO: Detect game end, update player list
-            
+
             self._update_game_status(response.json())
             self._procede_to_next_game()
 
