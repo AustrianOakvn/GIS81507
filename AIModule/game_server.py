@@ -13,8 +13,9 @@ import uvicorn
 from fastapi import FastAPI 
 from pydantic import BaseModel
 
-from multiprocessing import Process, Value
-from multiprocessing.managers import BaseManager
+#from multiprocessing import Process, Value
+#from multiprocessing.managers import BaseManager
+import threading
 import random
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 
@@ -139,19 +140,22 @@ def ping():
 
 if __name__ == "__main__":
 
-    BaseManager.register('DemoAI_2', DemoAI_2)
+    #BaseManager.register('DemoAI_2', DemoAI_2)
+    #gateway = Gateway(port=GAME_PORT)
+    #manager = BaseManager()
+    #manager.start()
+    #agent_1 = manager.DemoAI_2()
+    #agent_2 = manager.DemoAI_2()
     gateway = Gateway(port=GAME_PORT)
-    manager = BaseManager()
-    manager.start()
-    agent_1 = manager.DemoAI_2()
-    agent_2 = manager.DemoAI_2()
+    agent_1 = DemoAI_2()
+    agent_2 = DemoAI_2()
     character = 'ZEN'
     gateway.register_ai("KickAI", agent_1)
     gateway.register_ai("DisplayInfo", agent_2)
 
-    game_proc = Process(target=run_game, args=(GAME_PORT, gateway, character))
+    game_proc = threading.Thread(target=run_game, args=(GAME_PORT, gateway, character))
     #command_proc = Process(target=command_handler, args=(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS))
-    server_proc = Process(target=uvicorn.run, args=(app,), kwargs={"port": 8888})
+    server_proc = threading.Thread(target=uvicorn.run, args=(app,), kwargs={"port": 8888})
     procs = [game_proc, server_proc]
 
     for proc in procs:
