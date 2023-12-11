@@ -41,7 +41,7 @@ balance_leaderboard_frame.grid(row=1, column=2, columnspan=2, padx=10, pady=10)
 # Example of how to add items to the balance leaderboard
 for i in range(5):
 
-   ttk.Label(balance_leaderboard_frame, text=f"Player {i+1} (score)").pack() 
+   ttk.Label(balance_leaderboard_frame, text=f"Player {i+1} (score)").pack()
 
 # Frame for game stats
 game_stats_frame = tk.LabelFrame(root, text="Game Stats")

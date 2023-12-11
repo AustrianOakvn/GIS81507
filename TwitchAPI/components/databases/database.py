@@ -3,7 +3,7 @@ import sqlite3
 
 class Database:
     def __init__(self, db_name: str):
-        self.con = sqlite3.connect(f"{db_name}.db")
+        self.con = sqlite3.connect(f"{db_name}.db", check_same_thread=False)
 
     def check_if_table_exists(self, table_name: str) -> bool:
         """Return True if table with specified name exists, else False.

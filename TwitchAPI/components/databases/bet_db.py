@@ -70,8 +70,23 @@ class BetDatabase(Database):
             return ""
         return results[0][0]
 
-    def get_balance(self, user_id: str, user_name: str) -> int:
-        """Get current balance of a user
+    def get_balance(self, user_id: str) -> int:
+        """Get current balance of a user. Should only be used if user already exists.
+
+        Args:
+            user_id (str): Twitch ID of user
+
+        Returns:
+            int: Current balance of the user
+        """
+        result: int = self.get_cursor().execute(
+            "SELECT available FROM balance WHERE id = ?", (user_id,)
+        ).fetchone()
+
+        return result[0]
+
+    def get_balance_update_username(self, user_id: str, user_name: str) -> int:
+        """Get current balance of a user. Also update his/her username.
 
         Args:
             user_id (str): Twitch ID of user
@@ -85,11 +100,11 @@ class BetDatabase(Database):
             self.insert_new_user(user_id, user_name)
             self.commit_db()
 
-        result: Tuple[str, str, int] = self.get_cursor().execute(
-            "SELECT * FROM balance WHERE id = ?", (user_id,)
+        result: int = self.get_cursor().execute(
+            "SELECT available FROM balance WHERE id = ?", (user_id,)
         ).fetchone()
 
-        return result[-1]
+        return result[0]
 
     def top_balance(self, topk: int) -> list[Tuple[str, str, int]]:
         """Get top balance in database. Return list of ID and balance
@@ -101,13 +116,13 @@ class BetDatabase(Database):
             list[Tuple[str, str, int]]: List of IDs, usernames and balances
         """
         results: list[Tuple[str, str, int]] = self.get_cursor().execute(
-            "SELECT user_name, balance FROM balance ORDER BY available DESC LIMIT ?", (topk,)
+            "SELECT id, username, balance FROM balance ORDER BY available DESC LIMIT ?", (topk,)
         ).fetchall()
 
         return results
 
     def bet(self, user_id: str, user_name: str, amount: int) -> bool:
-        """Subtract amount from user's available balance (if enough).
+        """Subtract amount from user's available balance (if enough). Update the username
 
         Args:
             user_id (str): Twitch ID of user
@@ -116,7 +131,12 @@ class BetDatabase(Database):
         Returns:
             bool: Whether if the amount was subtracted (True) or not (False).
         """
-        current_balance = self.get_balance(user_id, user_name)
+        self.get_cursor().execute(
+            "UPDATE balance SET username = ? WHERE id = ?",
+            (user_name, user_id)
+        )
+
+        current_balance = self.get_balance(user_id)
         new_balance = current_balance - amount
         if new_balance < 0:
             logging.debug("Bet command from %s is not processed. Reason: insufficient balance.", user_id)
@@ -134,8 +154,33 @@ class BetDatabase(Database):
         )
         return True
 
-    def award(self, user_id: str, user_name: str, amount: int) -> int:
+    def award(self, user_id: str, amount: int) -> int:
         """Award amount to user's available balance.
+
+        Args:
+            user_id (str): Twitch ID of user
+            amount (int): Amount to add
+
+        Returns:
+            int: New balance
+        """
+        current_balance = self.get_balance(user_id)
+        new_balance = current_balance + amount
+
+        # Update new balance
+        self.get_cursor().execute(
+            "UPDATE balance SET available = ? WHERE id = ?",
+            (new_balance, user_id)
+        )
+        self.commit_db()
+        logger.debug(
+            "Added %d to the balance of %s. New balance: %d",
+            amount, user_id, new_balance
+        )
+        return new_balance
+
+    def award_update_username(self, user_id: str, user_name: str, amount: int) -> int:
+        """Award amount to user's available balance. Update username.
 
         Args:
             user_id (str): Twitch ID of user
@@ -145,6 +190,11 @@ class BetDatabase(Database):
         Returns:
             int: New balance
         """
+        self.get_cursor().execute(
+            "UPDATE balance SET username = ? WHERE id = ?",
+            (user_name, user_id)
+        )
+
         current_balance = self.get_balance(user_id, user_name)
         new_balance = current_balance + amount
 

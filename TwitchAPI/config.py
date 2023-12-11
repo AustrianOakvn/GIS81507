@@ -3,8 +3,10 @@ CONTROL_KEYS = {"z", "x", "c", "a", "w", "s", "d"}
 # K -> down, J-> left, L -> right, I->up
 MOVEMENT_KEYS = ["K", "J", "L", "I"]
 USER_MM_KEYS = ["A", "W", "S", "D"]
-ATTACK_KEYS = ["T", "Y", "U"]
-USER_ATTACK_KEYS = ["Z", "X", "C"]
+# ATTACK_KEYS = ["T", "Y", "U"]
+ATTACK_KEYS = ["T", "Y"]
+# USER_ATTACK_KEYS = ["Z", "X", "C"]
+USER_ATTACK_KEYS = ["Z", "X"]
 
 MAPPING = {k:v for k,v in zip(USER_MM_KEYS, MOVEMENT_KEYS)}
 

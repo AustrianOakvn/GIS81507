@@ -1,5 +1,5 @@
 import random
-from typing import List
+from typing import List, Dict
 import logging
 import os
 import threading
@@ -38,8 +38,8 @@ class Bot(commands.Bot):
 
         # player_list is a dictionary of twitch_id: Player
         # self.player_list = {'964201114': Player(twitch_id='964201114', username='damtien440', player_team='player_1')}
-        self.player_list = {}
-        self.next_game_queue = {}
+        self.player_list: Dict[str, Player] = {}
+        self.next_game_queue: Dict[str, Player] = {}
 
         self.game = GameStatus(
            game_state="finish", p1_stats=Character(0, 0), p2_stats=Character(0, 0)
@@ -154,7 +154,7 @@ class Bot(commands.Bot):
         status, message = self.bet_system.bet(ctx.author.id, ctx.author.name, amount, chosen_player)
         if status:
             logger.info("Executed bet command from user %s (%s) for player %d with amount of %d.", ctx.author.name, ctx.author.id, chosen_player, amount)
-            new_balance = self.bet_db.get_balance(ctx.author.id, ctx.author.name)
+            new_balance = self.bet_db.get_balance_update_username(ctx.author.id, ctx.author.name)
             await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
         else:
             logger.error("Bet command from user %s (%s) was not executed. Reason: %s", ctx.author.name, ctx.author.id, message)
@@ -191,10 +191,10 @@ class Bot(commands.Bot):
 
         if action_key in CONTROL_KEYS:
             return action_key
-        
+
         action_key = MAPPING[action_key]
-        
-        print("mapped action key: ", action_key)
+
+        # print("mapped action key: ", action_key)
 
         return action_key
 
@@ -202,17 +202,20 @@ class Bot(commands.Bot):
         """Send action key to API"""
         if player.player_team == "player_1":
             self.p1_commands.append(action_key)
-            
+
         elif player.player_team == "player_2":
             self.p2_commands.append(action_key)
-            
+
         # print("sent action key: ", action_key)
-        
+
         # return status
 
-    def _update_game_status(self, game_status):
+    def _update_game_status(self, game_status: dict):
         """Update game status"""
-        print("recieved game status: ", game_status, type(game_status))
+        # print(game_status)
+        if len(list(game_status.keys())) == 0:
+            return
+
         self.game.game_state = game_status["game_state"]
         self.game.p1_stats.hp = game_status["p1_stats"]["hp"]
         self.game.p1_stats.energy = game_status["p1_stats"]["energy"]
@@ -239,8 +242,20 @@ class Bot(commands.Bot):
         if self.game.game_state == "finished":
             logger.info("Game ended")
             # self.player_list.clear()
-            winner_1 = self.game.p1_stats.hp > self.game.p2_stats.hp
-            self.bet_system.round_finish(1 if winner_1 else 2, [])
+
+            if self.game.p1_stats.hp == self.game.p2_stats.hp:
+                # Draw
+                winner = 0
+                to_be_awarded = list(self.player_list.keys())
+            else:
+                # P1/P2 wins
+                winner = 1 if self.game.p1_stats.hp > self.game.p2_stats.hp else 2
+                to_be_awarded = list(
+                    player_id for player_id, _player in self.player_list.items()
+                    if _player.player_team == f"player_{winner}"
+                )
+
+            self.bet_system.round_finish(winner, to_be_awarded)
             # for id, player in enumerate(self.next_game_queue, start=1):
             #     self.player_list[player.twitch_id] = player
             #     if id > NUM_PLAYERS:
@@ -250,27 +265,27 @@ class Bot(commands.Bot):
 
     def _send_command(self, interval=1000):
         while True:
-            
+
             # havest command from chat
             #send_json = {
                 #"player_1": self.p1_commands,
                 #"player_2": self.p2_commands
             #}
-            
+
             send_json = {
                 "player_1": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5),
                 "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
             }
-            
-            print("sent command: ", send_json)
-            
+
+            # print("sent command: ", send_json)
+
             self.p1_commands.clear()
             self.p2_commands.clear()
-            
+
             response = send_to_api(COMMAND_HANDLER_ROUTE, send_json)
-            
-            print("recieved game status: ", response.json())
-            
+
+            # print("recieved game status: ", response.json())
+
             # TODO: Detect game end, update player list
 
             self._update_game_status(response.json())
