@@ -12,7 +12,7 @@ for i, k in enumerate(USER_ATTACK_KEYS):
     MAPPING[k] = ATTACK_KEYS[i]
 
 # START_GAME_ROUTE = "http://192.168.1.22:8080/start_game"
-COMMAND_HANDLER_ROUTE = "http://192.168.1.22:8080/commands"
-PING_ROUTE = "http://192.168.1.22:8080/ping"
+COMMAND_HANDLER_ROUTE = "http://localhost:8080/commands"
+PING_ROUTE = "http://localhost:8080/ping"
 NUM_PLAYERS = 6
 PING_MS = 500

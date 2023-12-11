@@ -76,7 +76,7 @@ class BetSystem():
         Returns:
             Tuple[bool, str]: Status and reason for failing
         """
-        already_bet_player, already_bet_amount = self.next_match.get(user_id, (None, 0))
+        already_bet_player, already_bet_amount = self.next_match.get((user_id, user_name), (None, 0))
         if already_bet_player is not None and already_bet_player != player:
             return False, f"You cannot bet on player {player} if you have already placed a bet on player {already_bet_player}."
 
@@ -84,19 +84,19 @@ class BetSystem():
             return False, "Balance not enough."
 
         if self.bet_db.bet(user_id, user_name, amount) is True:
-            self.next_match[user_id] = player, already_bet_amount + amount
+            self.next_match[(user_id, user_name)] = player, already_bet_amount + amount
             return True, ""
         else:
             return False, "Unspecified error."
 
-    def award(self, user_id: str, amount: int):
+    def award(self, user_id: str, user_name: str, amount: int):
         """Award balance to a user.
 
         Args:
             user_id (str): Twitch ID of user
             amount (int): Amount to award
         """
-        self.bet_db.award(user_id, amount)
+        self.bet_db.award(user_id, user_name, amount)
 
     def round_finish(self, winner: int, players_list: list[str], amount_for_winner: int = 5000):
         """This will reward the gamblers and players to win the round.
@@ -107,18 +107,20 @@ class BetSystem():
             players_list (list[str]): List of players to award for winning
             amount_for_winner (int, optional): Amount to reward to each winner. Defaults to 5000.
         """
+        print("round finish called")
+        print(self.current_match)
         assert winner in [1, 2], "winner must be either 1 or 2"
 
         # Award the gamblers who win
-        winning = [(user_id, amount) for user_id, (player, amount) in self.current_match.items() if player == winner]
+        winning = [(user_id, user_name, amount) for (user_id, user_name), (player, amount) in self.current_match.items() if player == winner]
         if len(winning) != 0:
             rate = 1 + (len(winning) / len(self.current_match))
-            for user_id, amount in winning:
-                self.award(user_id, int(amount * rate))
+            for user_id, user_name, amount in winning:
+                self.award(user_id, user_name, int(amount * rate))
 
         # Award the players who win
-        for user_id in players_list:
-            self.award(user_id, amount_for_winner)
+        for user_id, user_name in players_list:
+            self.award(user_id, user_name, amount_for_winner)
 
         # Assign current_match to next_match and next_match to a new dictionary
         self.current_match = self.next_match

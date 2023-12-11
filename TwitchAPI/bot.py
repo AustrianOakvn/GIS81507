@@ -13,7 +13,7 @@ from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, CONTROL_KEYS, MAPPING, MO
 from datamodel import GameStatus, Player
 from components.databases.bet_db import BetDatabase
 from components.bet.bet_system import BetSystem
-
+from datamodel import Character
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +42,7 @@ class Bot(commands.Bot):
         self.next_game_queue = {}
 
         self.game = GameStatus(
-           game_state=None, p1_stats=None, p2_stats=None
+           game_state="finish", p1_stats=Character(0, 0), p2_stats=Character(0, 0)
         )
 
         self.p1_commands = []
@@ -212,12 +212,12 @@ class Bot(commands.Bot):
 
     def _update_game_status(self, game_status):
         """Update game status"""
+        print("recieved game status: ", game_status, type(game_status))
         self.game.game_state = game_status["game_state"]
         self.game.p1_stats.hp = game_status["p1_stats"]["hp"]
         self.game.p1_stats.energy = game_status["p1_stats"]["energy"]
         self.game.p2_stats.hp = game_status["p2_stats"]["hp"]
-        self.game.p2_stats.energy = game_status["character_2"]["energy"]
-        
+        self.game.p2_stats.energy = game_status["p2_stats"]["energy"]
         # print("recieved game status: ", self.game.game_state)
 
     def _register_player(self, message: Message):
@@ -238,28 +238,29 @@ class Bot(commands.Bot):
         """Procede to the next game"""
         if self.game.game_state == "finished":
             logger.info("Game ended")
-            self.player_list.clear()
-
-            for id, player in enumerate(self.next_game_queue, start=1):
-                self.player_list[player.twitch_id] = player
-                if id > NUM_PLAYERS:
-                    break
-            self.next_game_queue.clear()
+            # self.player_list.clear()
+            winner_1 = self.game.p1_stats.hp > self.game.p2_stats.hp
+            self.bet_system.round_finish(1 if winner_1 else 2, [])
+            # for id, player in enumerate(self.next_game_queue, start=1):
+            #     self.player_list[player.twitch_id] = player
+            #     if id > NUM_PLAYERS:
+            #         break
+            # self.next_game_queue.clear()
             logger.info("New game started, player list has been updated")
 
     def _send_command(self, interval=1000):
         while True:
             
             # havest command from chat
-            send_json = {
-                "player_1": self.p1_commands,
-                "player_2": self.p2_commands
-            }
+            #send_json = {
+                #"player_1": self.p1_commands,
+                #"player_2": self.p2_commands
+            #}
             
-            # send_json = {
-            #     "player_1": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5),
-            #     "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
-            # }
+            send_json = {
+                "player_1": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5),
+                "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
+            }
             
             print("sent command: ", send_json)
             
