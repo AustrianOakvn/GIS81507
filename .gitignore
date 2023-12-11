@@ -164,4 +164,4 @@ cython_debug/
 #.idea/
 
 *.db
-*log.txt
+**/*log.txt
