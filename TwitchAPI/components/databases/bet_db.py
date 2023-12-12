@@ -116,7 +116,7 @@ class BetDatabase(Database):
             list[Tuple[str, str, int]]: List of IDs, usernames and balances
         """
         results: list[Tuple[str, str, int]] = self.get_cursor().execute(
-            "SELECT id, username, balance FROM balance ORDER BY available DESC LIMIT ?", (topk,)
+            "SELECT id, username, available FROM balance ORDER BY available DESC LIMIT ?", (topk,)
         ).fetchall()
 
         return results
