@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 
 class Bot(commands.Bot):
-    def __init__(self):
+    def __init__(self, random_simulator=False):
         # Initialise our Bot with our access token, prefix and a list of channels to join on boot...
         # prefix can be a callable, which returns a list of strings or a string...
         # initial_channels can also be a callable which returns a list of strings...
@@ -29,6 +29,8 @@ class Bot(commands.Bot):
             prefix=os.environ.get("COMMAND_PREFIX"),
             initial_channels=[os.environ.get("CHANNEL")],
         )
+        
+        self.random_simulator = random_simulator
 
         # if new game is started, then clear player_list and next_game_queue
 
@@ -64,14 +66,6 @@ class Bot(commands.Bot):
         if message.echo:
             return
 
-        # Print the contents of our message to console...
-        # logger.info(
-        #     "%s (%s): %s", message.author.name, message.author.id, message.content
-        # )
-
-        # Since we have commands and are overriding the default `event_message`
-        # We must let the bot know we want to handle and invoke our commands...
-
         if isinstance(message.content, str) and message.content.startswith(
             self.command_prefix
         ):
@@ -96,11 +90,6 @@ class Bot(commands.Bot):
 
         logger.info("Sent action key to game backend")
 
-        # self._update_game_status(response.json())
-
-        # TODO: If the game ended, then output the result to chat,
-        # and remove the players from the player_list, procede to the next game
-        # self._procede_to_next_game()
 
     @commands.command()
     async def balance(self, ctx: commands.Context):
@@ -189,10 +178,7 @@ class Bot(commands.Bot):
         """Check if message contains a valid action key"""
         action_key = message.content[0].upper()
 
-        if action_key in CONTROL_KEYS:
-            return action_key
-
-        action_key = MAPPING[action_key]
+        action_key = MAPPING.get(action_key, None)
 
         # print("mapped action key: ", action_key)
 
@@ -267,15 +253,19 @@ class Bot(commands.Bot):
         while True:
 
             # havest command from chat
-            #send_json = {
-                #"player_1": self.p1_commands,
-                #"player_2": self.p2_commands
-            #}
+            
+            if not self.random_simulator:
+                send_json = {
+                    "player_1": self.p1_commands,
+                    "player_2": self.p2_commands
+                }
+                
+            else:
 
-            send_json = {
-                "player_1": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5),
-                "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
-            }
+                send_json = {
+                    "player_1": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5),
+                    "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
+                }
 
             # print("sent command: ", send_json)
 
