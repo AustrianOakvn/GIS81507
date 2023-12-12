@@ -1,3 +1,5 @@
+from dataclasses import asdict
+import json
 import random
 from typing import List, Dict
 import logging
@@ -9,7 +11,7 @@ import requests
 from twitchio.ext import commands
 from twitchio.message import Message
 
-from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, CONTROL_KEYS, MAPPING, MOVEMENT_KEYS, NUM_PLAYERS, PING_ROUTE
+from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, MAPPING, MOVEMENT_KEYS, STATUS_JSON_ADDRESS
 from datamodel import GameStatus, Player
 from components.databases.bet_db import BetDatabase
 from components.bet.bet_system import BetSystem
@@ -274,14 +276,28 @@ class Bot(commands.Bot):
 
             response = send_to_api(COMMAND_HANDLER_ROUTE, send_json)
 
-            # print("recieved game status: ", response.json())
+            print("recieved game status: ", response.json())
 
             # TODO: Detect game end, update player list
 
             self._update_game_status(response.json())
             self._procede_to_next_game()
+            self._update_status_to_gui()
 
             sleep(interval / 1000)
+            
+    def _update_status_to_gui(self):
+        """Update status to GUI"""
+        
+        status = {
+            "top_5_balance": self.bet_db.top_balance(5),
+            "game_status": asdict(self.game),
+            "player_list": [asdict(player) for player in self.player_list.values()],
+            "next_game_queue": [asdict(player) for player in self.next_game_queue.values()]
+        }
+        
+        with open(STATUS_JSON_ADDRESS, "w") as f:
+            f.write(json.dumps(status))
 
 
 def send_to_api(endpoint, json_content):

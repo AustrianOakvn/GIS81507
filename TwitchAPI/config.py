@@ -19,3 +19,6 @@ COMMAND_HANDLER_ROUTE = "http://localhost:8080/commands"
 PING_ROUTE = "http://localhost:8080/ping"
 NUM_PLAYERS = 6
 PING_MS = 500
+
+# status json address
+STATUS_JSON_ADDRESS = "status.json"
