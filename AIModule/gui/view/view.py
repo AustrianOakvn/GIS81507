@@ -79,16 +79,30 @@ class GameView:
     def update_content(self):
         status = self._read_status_json()
         # print(status)
+        
+        child_ld_board = self.balance_leaderboard_frame.winfo_children()
 
         # destroy previous leaderboard
-        for child in self.balance_leaderboard_frame.winfo_children():
-            child.destroy()
+        cnt_for_destroy = abs(len(status["top_5_balance"]) - len(child_ld_board))
+        print(cnt_for_destroy)
+        if cnt_for_destroy > 0:
+            for i, child in enumerate(self.balance_leaderboard_frame.winfo_children(), start=1):
+                child.destroy()
+                if i == cnt_for_destroy:
+                    break
 
         self.player_leaderboard_records = []
-
+        child_ld_board = self.balance_leaderboard_frame.winfo_children()
+        
         # update leaderboard
         for i in range(len(status["top_5_balance"])):
+            
             user_id, user_name, balance = status["top_5_balance"][i]
+            
+            if i < len(child_ld_board):
+                child_ld_board[i].config(text=f"Player {user_name}: {balance}")
+                continue
+            
             label = ttk.Label(
                 self.balance_leaderboard_frame, text=f"Player {user_name}: {balance}"
             ).pack()
