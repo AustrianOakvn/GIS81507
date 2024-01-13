@@ -98,16 +98,7 @@ class Commands(BaseModel):
     p1_actions: List[str]
     p2_actions: List[str]
 
-
-app = FastAPI()
-
-@app.post("/set-command")
-def perform_command(body:Commands):
-    P1_TWITCH_KEYS, P2_TWITCH_KEYS = body.p1_actions, body.p2_actions
-
-    print("received keys", P1_TWITCH_KEYS, P2_TWITCH_KEYS)
-    game_state = get_game_status(agent_1)
-    command_handler(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS)
+def format_game_stat(game_state):
     if game_state == None:
         return {"game_state": "error"}
     if game_state[1] == None or game_state[2] == None:
@@ -128,7 +119,25 @@ def perform_command(body:Commands):
         agent_2.set_round_status(False)
     else:
         state["game_state"] = "running"
+    return state
 
+app = FastAPI()
+
+
+@app.post("/set-command")
+def perform_command(body:Commands):
+    P1_TWITCH_KEYS, P2_TWITCH_KEYS = body.p1_actions, body.p2_actions
+
+    print("received keys", P1_TWITCH_KEYS, P2_TWITCH_KEYS)
+    game_state = get_game_status(agent_1)
+    command_handler(agent_1, agent_2, P1_TWITCH_KEYS, P2_TWITCH_KEYS)
+    state = format_game_stat(game_state)
+    return state
+
+@app.post("/get-game-status")
+def get_game_state():
+    game_state = get_game_status(agent_1)
+    state = format_game_stat(game_state)
     return state
 
 
