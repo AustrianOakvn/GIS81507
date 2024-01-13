@@ -1,3 +1,4 @@
+import argparse
 import json
 import tkinter as tk
 from tkinter import PhotoImage, ttk
@@ -6,7 +7,10 @@ from tkinter import PhotoImage, ttk
 USER_NAME_LENTH_LIMIT = 8
 
 class GameView:
-    def __init__(self, update_interval=1000):
+    def __init__(self, arg, update_interval=1000):
+        
+        self.arg = arg
+        
         # Main application window
         self.root = tk.Tk()
         self.root.title("Game Betting Interface")
@@ -79,69 +83,76 @@ class GameView:
         self.root.after(self.update_interval, self.update_content)
 
     def update_content(self):
-        status = self._read_status_json()
-        # print(status)
-        
-        child_ld_board = self.balance_leaderboard_frame.winfo_children()
-
-        # destroy previous leaderboard
-        cnt_for_destroy = abs(len(status["top_5_balance"]) - len(child_ld_board))
-        print(cnt_for_destroy)
-        if cnt_for_destroy > 0:
-            for i, child in enumerate(self.balance_leaderboard_frame.winfo_children(), start=1):
-                child.destroy()
-                if i == cnt_for_destroy:
-                    break
-
-        self.player_leaderboard_records = []
-        child_ld_board = self.balance_leaderboard_frame.winfo_children()
-        
-        # update leaderboard
-        for i in range(len(status["top_5_balance"])):
+        try:
             
-            user_id, user_name, balance = status["top_5_balance"][i]
+            status = self._read_status_json()
+            # print(status)
             
-            if i < len(child_ld_board):
-                child_ld_board[i].config(text=f"Player {user_name}: {balance}")
-                continue
+            child_ld_board = self.balance_leaderboard_frame.winfo_children()
+
+            # destroy previous leaderboard
+            cnt_for_destroy = abs(len(status["top_5_balance"]) - len(child_ld_board))
+            print(cnt_for_destroy)
+            if cnt_for_destroy > 0:
+                for i, child in enumerate(self.balance_leaderboard_frame.winfo_children(), start=1):
+                    child.destroy()
+                    if i == cnt_for_destroy:
+                        break
+
+            self.player_leaderboard_records = []
+            child_ld_board = self.balance_leaderboard_frame.winfo_children()
             
-            label = ttk.Label(
-                self.balance_leaderboard_frame, text=f"Player {user_name}: {balance}"
-            ).pack()
-            self.player_leaderboard_records.append(label)
-
-        player_1_list = []
-        player_2_list = []
-
-        for current_player in status["player_list"]:
-            if current_player["player_team"] == "player_1":
-                player_1_list.append(current_player["username"][:USER_NAME_LENTH_LIMIT])
-            elif current_player["player_team"] == "player_2":
-                player_2_list.append(current_player["username"][:USER_NAME_LENTH_LIMIT])
-
-        next_game_list_p1 = []
-        next_game_list_p2 = []
-
-        for next_player in status["next_game_queue"]:
-            if next_player["player_team"] == "player_1":
-                next_game_list_p1.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
-            elif next_player["player_team"] == "player_2":
-                next_game_list_p2.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
+            # update leaderboard
+            for i in range(len(status["top_5_balance"])):
                 
-        player_1_info = "Current players: " + ", ".join(player_1_list) + "\nNext game players: " + ", ".join(next_game_list_p1)
-        player_2_info = "Current players: " + ", ".join(player_2_list) + "\nNext game players: " + ", ".join(next_game_list_p2)
+                user_id, user_name, balance = status["top_5_balance"][i]
                 
-        self.player1_label.config(text=player_1_info)
-        self.player2_label.config(text=player_2_info)
+                if i < len(child_ld_board):
+                    child_ld_board[i].config(text=f"Player {user_name}: {balance}")
+                    continue
+                
+                label = ttk.Label(
+                    self.balance_leaderboard_frame, text=f"Player {user_name}: {balance}"
+                ).pack()
+                self.player_leaderboard_records.append(label)
 
-        # self.game_stats_label.config(text=f"Next Match: {', '.join(next_game_list)}")
+            player_1_list = []
+            player_2_list = []
 
-        # Schedule the next update after 1 second
-        self.root.after(self.update_interval, self.update_content)
+            for current_player in status["player_list"]:
+                if current_player["player_team"] == "player_1":
+                    player_1_list.append(current_player["username"][:USER_NAME_LENTH_LIMIT])
+                elif current_player["player_team"] == "player_2":
+                    player_2_list.append(current_player["username"][:USER_NAME_LENTH_LIMIT])
 
-    @staticmethod
-    def _read_status_json():
-        with open("status.json", "r") as f:
+            next_game_list_p1 = []
+            next_game_list_p2 = []
+
+            for next_player in status["next_game_queue"]:
+                if next_player["player_team"] == "player_1":
+                    next_game_list_p1.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
+                elif next_player["player_team"] == "player_2":
+                    next_game_list_p2.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
+                    
+            player_1_info = "Current players: " + ", ".join(player_1_list) + "\nNext game players: " + ", ".join(next_game_list_p1)
+            player_2_info = "Current players: " + ", ".join(player_2_list) + "\nNext game players: " + ", ".join(next_game_list_p2)
+                    
+            self.player1_label.config(text=player_1_info)
+            self.player2_label.config(text=player_2_info)
+
+            # self.game_stats_label.config(text=f"Next Match: {', '.join(next_game_list)}")
+
+            # Schedule the next update after 1 second
+            self.root.after(self.update_interval, self.update_content)
+            
+        except Exception as e:
+            print(e)
+            self.root.after(self.update_interval, self.update_content)
+
+    # @staticmethod
+    def _read_status_json(self):
+        path = self.arg.json_path
+        with open(path, "r") as f:
             return json.load(f)
 
     # def update_gif(self):
@@ -152,10 +163,18 @@ class GameView:
     #     self.gif_label.configure(image=frame)
     #     self.root.after(100, self.update_gif, ind)
 
+def parse_args():    
+    arg = argparse.ArgumentParser()
+    arg.add_argument("--json_path", type=str, default="status.json")
+    
+    return arg.parse_args()
 
 if __name__ == "__main__":
+
+    arg = parse_args()
+    
     # Create an instance of the GameView class
-    game_view = GameView()
+    game_view = GameView(arg)
 
     # Run the application
     game_view.root.mainloop()
