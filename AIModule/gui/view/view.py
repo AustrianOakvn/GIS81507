@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter import PhotoImage, ttk
 
 
+USER_NAME_LENTH_LIMIT = 8
+
 class GameView:
     def __init__(self, update_interval=1000):
         # Main application window
@@ -62,10 +64,10 @@ class GameView:
         self.game_stats_frame.grid(row=2, column=2, columnspan=2, padx=10, pady=10)
 
         # Placeholder for actual game stats (using a label for simplicity)
-        self.game_stats_label = tk.Label(
-            self.game_stats_frame, text="Current Match: \nNext Match:"
-        )
-        self.game_stats_label.pack()
+        # self.game_stats_label = tk.Label(
+        #     self.game_stats_frame, text="Current Match: \nNext Match:"
+        # )
+        # self.game_stats_label.pack()
 
         # frameCnt = 12
         # self.frames = [PhotoImage(file='mygif.gif',format = 'gif -index %i' %(i)) for i in range(frameCnt)]
@@ -113,19 +115,26 @@ class GameView:
 
         for current_player in status["player_list"]:
             if current_player["player_team"] == "player_1":
-                player_1_list.append(current_player["username"])
+                player_1_list.append(current_player["username"][:USER_NAME_LENTH_LIMIT])
             elif current_player["player_team"] == "player_2":
-                player_2_list.append(current_player["username"])
+                player_2_list.append(current_player["username"][:USER_NAME_LENTH_LIMIT])
 
-        self.player1_label.config(text=", ".join(player_1_list))
-        self.player2_label.config(text=", ".join(player_2_list))
-
-        next_game_list = []
+        next_game_list_p1 = []
+        next_game_list_p2 = []
 
         for next_player in status["next_game_queue"]:
-            next_game_list.append(next_player["username"])
+            if next_player["player_team"] == "player_1":
+                next_game_list_p1.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
+            elif next_player["player_team"] == "player_2":
+                next_game_list_p2.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
+                
+        player_1_info = "Current players: " + ", ".join(player_1_list) + "\nNext game players: " + ", ".join(next_game_list_p1)
+        player_2_info = "Current players: " + ", ".join(player_2_list) + "\nNext game players: " + ", ".join(next_game_list_p2)
+                
+        self.player1_label.config(text=player_1_info)
+        self.player2_label.config(text=player_2_info)
 
-        self.game_stats_label.config(text=f"Next Match: {', '.join(next_game_list)}")
+        # self.game_stats_label.config(text=f"Next Match: {', '.join(next_game_list)}")
 
         # Schedule the next update after 1 second
         self.root.after(self.update_interval, self.update_content)
