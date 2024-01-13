@@ -73,7 +73,7 @@ class GameView:
         self.instruction_frame.place(x=960, y=320)
 
         # Read instructions file
-        with open("/home/tien/AI_Games/GIS81507/AIModule/gui/view/command_instruction.txt") as f:
+        with open("command_instruction.txt") as f:
             instr = f.readlines()
             instr = [x.strip() for x in instr]
             instr = "\n".join(instr)
@@ -106,7 +106,7 @@ class GameView:
 
             # destroy previous leaderboard
             cnt_for_destroy = abs(len(status["top_5_balance"]) - len(child_ld_board))
-            print(cnt_for_destroy)
+            # print(cnt_for_destroy)
             if cnt_for_destroy > 0:
                 for i, child in enumerate(self.balance_leaderboard_frame.winfo_children(), start=1):
                     child.destroy()
