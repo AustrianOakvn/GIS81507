@@ -13,8 +13,6 @@ import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-#from multiprocessing import Process, Value
-#from multiprocessing.managers import BaseManager
 import threading
 import random
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
@@ -42,19 +40,32 @@ def AICommand(twitch_keys: List[str]):
     print("triggered AI command")
     twitch_move_keys = []
     twitch_attk_keys = []
+    sampled_move = None
+    sampled_attack = None
     for k in twitch_keys:
         if k in MOVEMENT_KEYS:
             twitch_move_keys.append(k)
         if k in ATTACK_KEYS:
             twitch_attk_keys.append(k)
+
+    if len(twitch_move_keys) != 0:
+        sampled_move = sample_action(twitch_move_keys)
+    if len(twitch_attk_keys) != 0:
+        sampled_attack = sample_action(twitch_attk_keys)
     combo_2, combo_4 = combo_finder(twitch_keys)
+
     if combo_4 != None:
-        return combo_4, sample_action(twitch_move_keys)
+        return combo_4, sampled_move
     if combo_2 != None:
-        return combo_2, sample_action(twitch_attk_keys)
+        return combo_2, sampled_attack
     else:
+<<<<<<< Updated upstream
         return sample_action(twitch_attk_keys), sample_action(twitch_move_keys)
 
+=======
+        return sampled_move, sampled_attack
+    
+>>>>>>> Stashed changes
 
 def run_game(port:int, gateway, character):
     # Thread to run the game
@@ -84,9 +95,14 @@ def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
             #print("sending command to game:", p1_move, p1_attack, p2_move, p2_attack)
             agent_1.set_action(p1_move, p1_attack)
             agent_2.set_action(p2_move, p2_attack)
-        except:
+        except Exception as ex:
             print("Error in command handler")
+<<<<<<< Updated upstream
 
+=======
+            print(ex)
+    
+>>>>>>> Stashed changes
 
 def get_game_status(agent_1):
     round_finished, p1_data, p2_data = agent_1.get_status()

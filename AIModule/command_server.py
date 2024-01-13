@@ -25,13 +25,11 @@ def pop_command(queue_1, queue_2, window_size:int=5):
     if queue_1.empty() or queue_2.empty():
         return None
     if queue_1.qsize() < window_size or queue_2.qsize() < window_size:
-
         return None
     else:
         sub_actions_1 = []
         sub_actions_2 = []
         for i in range(window_size):
-
             sub_actions_1.append(queue_1.get())
             sub_actions_2.append(queue_2.get())
 
