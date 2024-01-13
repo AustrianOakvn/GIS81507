@@ -11,7 +11,7 @@ import requests
 from twitchio.ext import commands
 from twitchio.message import Message
 
-from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, MAPPING, MOVEMENT_KEYS, STATUS_JSON_ADDRESS
+from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, MAPPING, MOVEMENT_KEYS, NUM_PLAYERS, STATUS_JSON_ADDRESS
 from datamodel import GameStatus, Player
 from components.databases.bet_db import BetDatabase
 from components.bet.bet_system import BetSystem
@@ -220,12 +220,12 @@ class Bot(commands.Bot):
         self.next_game_queue[message.author.id] = Player(
             twitch_id=message.author.id,
             username=message.author.name,
-            player_team="player_1" if len(self.player_list) % 2 == 0 else "player_2",
+            player_team="player_1" if len(self.next_game_queue) % 2 == 0 else "player_2",
         )
 
         return True
 
-    def _procede_to_next_game(self):
+    def _procede_to_next_game(self, max_player=NUM_PLAYERS):
         """Procede to the next game"""
         if self.game.game_state == "finished":
             logger.info("Game ended")
@@ -244,11 +244,17 @@ class Bot(commands.Bot):
                 )
 
             self.bet_system.round_finish(winner, to_be_awarded)
-            # for id, player in enumerate(self.next_game_queue, start=1):
-            #     self.player_list[player.twitch_id] = player
-            #     if id > NUM_PLAYERS:
-            #         break
-            # self.next_game_queue.clear()
+            
+            self.player_list.clear()
+            
+            # add players in next_game_queue to player_list
+            for id, player in enumerate(self.next_game_queue.values(), start=1):
+                self.player_list[player.twitch_id] = player
+                if id > max_player:
+                    break
+            
+            self.next_game_queue.clear()
+            
             logger.info("New game started, player list has been updated")
 
     def _send_command(self, interval=1000):
