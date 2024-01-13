@@ -1,18 +1,22 @@
+MAPPING_P1 = {
+    "W": "I",  # Up
+    "A": "J",  # Left
+    "S": "K",  # Down
+    "D": "L",  # Right
+    "Z": "T",  # Z
+    "X": "Y",  # X
+    "C": "U"
+}
 
-# K -> down, J-> left, L -> right, I->up
-MOVEMENT_KEYS = ["K", "J", "L", "I"]
-USER_MM_KEYS = ["A", "W", "S", "D"]
-# ATTACK_KEYS = ["T", "Y", "U"]
-ATTACK_KEYS = ["T", "Y"]
-# USER_ATTACK_KEYS = ["Z", "X", "C"]
-USER_ATTACK_KEYS = ["Z", "X"]
-
-CONTROL_KEYS = set(USER_MM_KEYS + USER_ATTACK_KEYS)
-
-MAPPING = {k:v for k,v in zip(USER_MM_KEYS, MOVEMENT_KEYS)}
-
-for i, k in enumerate(USER_ATTACK_KEYS):
-    MAPPING[k] = ATTACK_KEYS[i]
+MAPPING_P2 = {
+    "W": "I",  # Up
+    "D": "J",  # Left
+    "S": "K",  # Down
+    "A": "L",  # Right
+    "Z": "T",  # Z
+    "X": "Y",  # X
+    "C": "U"
+}
 
 # START_GAME_ROUTE = "http://192.168.1.22:8080/start_game"
 COMMAND_HANDLER_ROUTE = "http://localhost:8080/commands"
@@ -21,4 +25,4 @@ NUM_PLAYERS = 6
 PING_MS = 500
 
 # status json address
-STATUS_JSON_ADDRESS = "status.json"
+STATUS_JSON_ADDRESS = "/Users/vinhtq115/tmpdisk/ramdisk/status.json"

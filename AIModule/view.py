@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import PhotoImage, ttk
 
 
-USER_NAME_LENTH_LIMIT = 8
+USER_NAME_LENTH_LIMIT = 12
 
 class GameView:
     def __init__(self, arg, update_interval=1000):
@@ -122,11 +122,11 @@ class GameView:
                 user_id, user_name, balance = status["top_5_balance"][i]
 
                 if i < len(child_ld_board):
-                    child_ld_board[i].config(text=f"Player {user_name}: {balance}")
+                    child_ld_board[i].config(text=f"{user_name}: {balance}")
                     continue
 
                 label = ttk.Label(
-                    self.balance_leaderboard_frame, text=f"Player {user_name}: {balance}"
+                    self.balance_leaderboard_frame, text=f"{user_name}: {balance}"
                 ).pack(anchor='w')
                 self.player_leaderboard_records.append(label)
 

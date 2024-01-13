@@ -11,7 +11,7 @@ import requests
 from twitchio.ext import commands
 from twitchio.message import Message
 
-from config import ATTACK_KEYS, COMMAND_HANDLER_ROUTE, MAPPING, MOVEMENT_KEYS, NUM_PLAYERS, STATUS_JSON_ADDRESS
+from config import COMMAND_HANDLER_ROUTE, MAPPING_P1, MAPPING_P2, NUM_PLAYERS, STATUS_JSON_ADDRESS
 from datamodel import GameStatus, Player
 from components.databases.bet_db import BetDatabase
 from components.bet.bet_system import BetSystem
@@ -71,26 +71,26 @@ class Bot(commands.Bot):
         if isinstance(message.content, str) and message.content.startswith(
             self.command_prefix
         ):
-            logger.info("Received command")
+            # logger.info("Received command")
             await self.handle_commands(message)
             return
 
-        logger.info("Usual chat")
+        # logger.info("Usual chat")
 
         if message.author.id not in self.player_list:
             return
 
-        action_key = self._get_action_key(message)
+        action_key = self._get_action_key(message, self.player_list[message.author.id].player_team == "player_1")
         if action_key is None:
             return
 
-        logger.info("There is an action key")
+        # logger.info("There is an action key")
 
         self._collect_command(
             action_key, self.player_list[message.author.id]
         )
 
-        logger.info("Sent action key to game backend")
+        # logger.info("Sent action key to game backend")
 
 
     @commands.command()
@@ -164,6 +164,7 @@ class Bot(commands.Bot):
     @commands.command()
     async def register(self, ctx: commands.Context):
         """Register player"""
+        self.bet_system.get_balance(ctx.author.id, ctx.author.name)
         result = self._register_player(ctx.message)
 
         if result:
@@ -176,12 +177,15 @@ class Bot(commands.Bot):
             )
 
     @staticmethod
-    def _get_action_key(message: Message) -> str or None:
+    def _get_action_key(message: Message, p1: bool) -> str or None:
         """Check if message contains a valid action key"""
         action_key = message.content.upper()
 
         # Filter
-        action_keys_filtered = "".join([MAPPING[i] for i in action_key if i in MAPPING])
+        if p1:
+            action_keys_filtered = "".join([MAPPING_P1[i] for i in action_key if i in MAPPING_P1])
+        else:
+            action_keys_filtered = "".join([MAPPING_P2[i] for i in action_key if i in MAPPING_P2])
         # action_key = MAPPING.get(action_key, None)
 
         # print("mapped action key: ", action_key)
@@ -207,7 +211,7 @@ class Bot(commands.Bot):
             return
 
         self.game.game_state = game_status.get("game_state", "nothing")
-        print(self.game.game_state)
+
         if game_status.get("p1_stats") is None:
             # Create dummy info
             self.game.p1_stats.hp = 400
@@ -256,7 +260,7 @@ class Bot(commands.Bot):
 
             self.bet_system.round_finish(winner, to_be_awarded)
 
-            self.player_list.clear()
+            ## self.player_list.clear()
 
             # add players in next_game_queue to player_list
             for id, player in enumerate(self.next_game_queue.values(), start=1):
@@ -272,20 +276,12 @@ class Bot(commands.Bot):
         while True:
             # havest command from chat
 
-            if not self.random_simulator:
-                send_json = {
-                    "player_1": self.p1_commands[:5],
-                    "player_2": self.p2_commands[:5]
-                }
+            send_json = {
+                "player_1": self.p1_commands[:],
+                "player_2": self.p2_commands[:]
+            }
 
-            else:
-
-                send_json = {
-                    "player_1": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5),
-                    "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
-                }
-
-            print("sent command: ", send_json)
+            # print("sent command: ", send_json)
 
             self.p1_commands.clear()
             self.p2_commands.clear()
@@ -319,5 +315,5 @@ class Bot(commands.Bot):
 def send_to_api(endpoint, json_content):
     """Send json content to API"""
     response = requests.post(endpoint, json=json_content)
-    logger.info("Response from API: %s", response)
+    # logger.info("Response from API: %s", response)
     return response

@@ -23,20 +23,21 @@ python-dotenv
 
 1. Create a new Python environment with requirements
 2. Run the game
-3. Open command server
-```
-cd AIModule
-python command_server.py
-```
-4. Open new terminal and open game server
+3. Open new terminal and open game server
 ```
 cd AIModule
 python game_server.py
 ```
+In the game, Player should show DemoAI_2 (Visual AI)
+4. Open command server
+```
+cd AIModule
+python command_server.py
+```
 5. Open new terminal and GUI. Specify a new path so that the GUI will read from this file. It does not have to be exist for now.
 ```
-cd AIModule/gui/view
-python view.py <path_to_game_stat_file>
+cd AIModule
+python view.py --json_path <path_to_game_stat_file>
 ```
 6. In `TwitchAPI` folder, configure the bot by copying `.env.example` to `.env`. Then, modify the `.env` file using your credentials.
 7. In `TwitchAPI/config.py`, set `STATUS_JSON_ADDRESS` to the path specified in step 5.
