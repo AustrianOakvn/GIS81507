@@ -6,7 +6,7 @@ from pyftg import Gateway
 from game_interface import DemoAI_2
 from action_mapping import *
 from combo_logic import combo_finder, sample_action
-
+import time
 
 from typing import List
 import uvicorn
@@ -65,7 +65,9 @@ def AICommand(twitch_keys: List[str], agent, sample=False):
             agent.set_action(sampled_move, sampled_attack)
             return sampled_move, sampled_attack
         else:
-            for k in twitch_keys:
+            for i, k in enumerate(twitch_keys):
+                time.sleep(0.5)
+                print("Action number:", i)
                 if k in MOVEMENT_KEYS:
                     agent.set_action(ACTIONS_INVERSE[KEY_MAP_INVERSE[k]], None)
                 elif k in ATTACK_KEYS:

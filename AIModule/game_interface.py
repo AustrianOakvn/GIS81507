@@ -52,18 +52,18 @@ class DemoAI_2(AIInterface):
         self.input_key.empty()
         self.cc.skill_cancel()
         if self.selected_move == None and self.selected_attk== None:
-            time.sleep(0.1)
+            time.sleep(0.2)
             return 
         elif self.selected_move == None and self.selected_attk!= None:
-            time.sleep(0.1)
+            time.sleep(0.2)
             self.cc.command_call(self.selected_attk)
             self.selected_attk = None
         elif self.selected_move != None and self.selected_attk == None:
-            time.sleep(0.1)
+            time.sleep(0.2)
             self.cc.command_call(self.selected_move)
             self.selected_move = None 
         else:
-            time.sleep(0.1)
+            time.sleep(0.2)
             self.cc.command_call(self.selected_move)
             self.cc.command_call(self.selected_attk)
             self.selected_move = None 
