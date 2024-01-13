@@ -13,6 +13,7 @@ import threading
 
 
 GAME_ENDPOINT = "http://127.0.0.1:8888/set-command"
+GAME_ENDPOINT_STAT = "http://127.0.0.1:8888/get-game-status"
 GAME_STATUS = {}
     
 class CommandRequest(BaseModel):
@@ -48,7 +49,11 @@ def send_command2game(commands):
     response = requests.post(GAME_ENDPOINT, json=payload)
 
     game_stat = response.json()
-    #print("game_stat", type(game_stat), game_stat)
+    return game_stat
+
+def get_game_stat():
+    response = requests.post(GAME_ENDPOINT_STAT)
+    game_stat = response.json()
     return game_stat
 
 
@@ -60,11 +65,10 @@ def game_handler(queue_1, queue_2):
                                window_size=5)
         print("commands", commands)
         if commands == None:
-            continue
+            GAME_STATUS = get_game_stat()
         else:
             print("sending commands to game server", commands)
             GAME_STATUS = send_command2game(commands)
-            #print("game_stat", GAME_STATUS)
 
 def clear_queue(queue):
     while not queue.empty():
@@ -80,18 +84,12 @@ def perform_command(body:CommandRequest):
     p1_commands, p2_commands = body.player_1, body.player_2
     print(p1_commands, p2_commands)
     print("game stat when command invoked", GAME_STATUS)
-    #for c1, c2 in zip(p1_commands, p2_commands):
-        # tmp_storage.append_queue(c1, c2)
-        # QUEUE_1.put(c1)
-        # QUEUE_2.put(c2)
+
     for c1 in p1_commands:
         QUEUE_1.put(c1)
     for c2 in p2_commands:
         QUEUE_2.put(c2)
-    # if "game_state" in GAME_STATUS.keys():
-    #     if GAME_STATUS["game_state"] == "finished":
-    #         clear_queue(QUEUE_1)
-    #         clear_queue(QUEUE_2)
+
 
     return GAME_STATUS
 
