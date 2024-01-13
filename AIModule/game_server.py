@@ -10,7 +10,7 @@ from combo_logic import combo_finder, sample_action
 
 from typing import List
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI 
 from pydantic import BaseModel
 
 import threading
@@ -28,13 +28,13 @@ def setup_logger(name, log_file, level=logging.INFO):
     logger = logging.getLogger(name)
     logger.setLevel(level)
     logger.addHandler(handler)
-    return logger
+    return logger 
 
 #command_logger = setup_logger('command_logger', './game_log/command_log.txt', level=logging.INFO)
 #game_logger = setup_logger('game_logger', './game_log/game_log.txt', level=logging.INFO)
 # logging.basicConfig(filename='./game_log/log.txt', level=LOG_TYPE)
 
-def AICommand(twitch_keys: List[str]):
+def AICommand(twitch_keys: List[str], agent, sample=False):
     # At the moment use simple heuristic to decide the action
     #command_logger.info("triggered AI command")
     print("triggered AI command")
@@ -55,17 +55,23 @@ def AICommand(twitch_keys: List[str]):
     combo_2, combo_4 = combo_finder(twitch_keys)
 
     if combo_4 != None:
+        agent.set_action(combo_4, sampled_move)
         return combo_4, sampled_move
     if combo_2 != None:
+        agent.set_action(combo_2, sampled_attack)
         return combo_2, sampled_attack
     else:
-<<<<<<< Updated upstream
-        return sample_action(twitch_attk_keys), sample_action(twitch_move_keys)
-
-=======
+        if sample:
+            agent.set_action(sampled_move, sampled_attack)
+            return sampled_move, sampled_attack
+        else:
+            for k in twitch_keys:
+                if k in MOVEMENT_KEYS:
+                    agent.set_action(k, None)
+                elif k in ATTACK_KEYS:
+                    agent.set_action(None, k)
         return sampled_move, sampled_attack
     
->>>>>>> Stashed changes
 
 def run_game(port:int, gateway, character):
     # Thread to run the game
@@ -89,27 +95,23 @@ def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
         return
     else:
         try:
-            p1_move, p1_attack = AICommand(p1_twich_keys)
-            p2_move, p2_attack = AICommand(p2_twitch_keys)
+            p1_move, p1_attack = AICommand(p1_twich_keys, agent_1)
+            p2_move, p2_attack = AICommand(p2_twitch_keys, agent_2)
             #command_logger.info(f"Commands to game:  {p1_move} {p1_attack} {p2_move} {p2_attack}")
             #print("sending command to game:", p1_move, p1_attack, p2_move, p2_attack)
-            agent_1.set_action(p1_move, p1_attack)
-            agent_2.set_action(p2_move, p2_attack)
+            # agent_1.set_action(p1_move, p1_attack)
+            # agent_2.set_action(p2_move, p2_attack)
         except Exception as ex:
             print("Error in command handler")
-<<<<<<< Updated upstream
-
-=======
             print(ex)
     
->>>>>>> Stashed changes
 
 def get_game_status(agent_1):
     round_finished, p1_data, p2_data = agent_1.get_status()
     return round_finished, p1_data, p2_data
 
-
-
+        
+        
 class Commands(BaseModel):
     p1_actions: List[str]
     p2_actions: List[str]
