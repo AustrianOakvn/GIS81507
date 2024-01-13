@@ -32,8 +32,8 @@ def setup_logger(name, log_file, level=logging.INFO):
     logger.addHandler(handler)
     return logger 
 
-command_logger = setup_logger('command_logger', './game_log/command_log.txt', level=logging.INFO)
-game_logger = setup_logger('game_logger', './game_log/game_log.txt', level=logging.INFO)
+#command_logger = setup_logger('command_logger', './game_log/command_log.txt', level=logging.INFO)
+#game_logger = setup_logger('game_logger', './game_log/game_log.txt', level=logging.INFO)
 # logging.basicConfig(filename='./game_log/log.txt', level=LOG_TYPE)
 
 def AICommand(twitch_keys: List[str]):
@@ -80,7 +80,7 @@ def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
         try:
             p1_move, p1_attack = AICommand(p1_twich_keys)
             p2_move, p2_attack = AICommand(p2_twitch_keys)
-            command_logger.info(f"Commands to game:  {p1_move} {p1_attack} {p2_move} {p2_attack}")
+            #command_logger.info(f"Commands to game:  {p1_move} {p1_attack} {p2_move} {p2_attack}")
             #print("sending command to game:", p1_move, p1_attack, p2_move, p2_attack)
             agent_1.set_action(p1_move, p1_attack)
             agent_2.set_action(p2_move, p2_attack)
