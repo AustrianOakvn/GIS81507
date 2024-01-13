@@ -166,4 +166,4 @@ cython_debug/
 #.idea/
 
 *.db
-**/*log.txt
+AIModule/game_log
