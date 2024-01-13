@@ -10,7 +10,7 @@ import time
 
 from typing import List
 import uvicorn
-from fastapi import FastAPI 
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 import threading
@@ -28,7 +28,7 @@ def setup_logger(name, log_file, level=logging.INFO):
     logger = logging.getLogger(name)
     logger.setLevel(level)
     logger.addHandler(handler)
-    return logger 
+    return logger
 
 #command_logger = setup_logger('command_logger', './game_log/command_log.txt', level=logging.INFO)
 #game_logger = setup_logger('game_logger', './game_log/game_log.txt', level=logging.INFO)
@@ -73,7 +73,7 @@ def AICommand(twitch_keys: List[str], agent, sample=False):
                 elif k in ATTACK_KEYS:
                     agent.set_action(None, ACTIONS_INVERSE[KEY_MAP_INVERSE[k]])
         return sampled_move, sampled_attack
-    
+
 
 def run_game(port:int, gateway, character):
     # Thread to run the game
@@ -119,14 +119,14 @@ def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
             print("Error in command handler for p2")
             print(ex)
 
-    
+
 
 def get_game_status(agent_1):
     round_finished, p1_data, p2_data = agent_1.get_status()
     return round_finished, p1_data, p2_data
 
-        
-        
+
+
 class Commands(BaseModel):
     p1_actions: List[str]
     p2_actions: List[str]

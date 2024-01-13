@@ -290,8 +290,6 @@ class Bot(commands.Bot):
 
             # print("recieved game status: ", response.json())
 
-            # TODO: Detect game end, update player list
-
             self._update_game_status(response.json())
             self._procede_to_next_game()
             self._update_status_to_gui()

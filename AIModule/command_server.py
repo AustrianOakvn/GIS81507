@@ -1,5 +1,5 @@
 import uvicorn
-from fastapi import FastAPI 
+from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
 
@@ -15,7 +15,7 @@ import threading
 GAME_ENDPOINT = "http://127.0.0.1:8888/set-command"
 GAME_ENDPOINT_STAT = "http://127.0.0.1:8888/get-game-status"
 GAME_STATUS = {}
-    
+
 class CommandRequest(BaseModel):
     player_1: List[str]
     player_2: List[str]
@@ -74,7 +74,7 @@ def game_handler(queue_1, queue_2):
     global GAME_STATUS
     while True:
         time.sleep(0.5)
-        commands = pop_command(queue_1, queue_2, 
+        commands = pop_command(queue_1, queue_2,
                                window_size=5)
         print("commands", commands)
         if commands == None:
@@ -87,7 +87,7 @@ def clear_queue(queue):
     while not queue.empty():
         queue.get()
 
-        
+
 app = FastAPI()
 
 @app.post("/commands")
@@ -106,7 +106,7 @@ def perform_command(body:CommandRequest):
 
     return GAME_STATUS
 
-    
+
 @app.post("/ping", status_code=200)
 
 def ping():
