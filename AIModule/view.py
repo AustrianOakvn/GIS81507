@@ -15,47 +15,51 @@ class GameView:
         self.root = tk.Tk()
         self.root.title("Game Betting Interface")
         self.root.resizable(False, False)
+        self.root.geometry("1280x720")
 
         self.update_interval = update_interval
 
         # Frame for the game display (assuming a label for simplicity)
-        self.game_frame = tk.LabelFrame(self.root, text="Game", width=640, height=480)
-        self.game_frame.grid(row=0, column=0, rowspan=4, columnspan=2, padx=10, pady=10)
+        self.game_frame = tk.LabelFrame(self.root, text="Game", width=960, height=640)
+        # self.game_frame.grid(row=0, column=0, rowspan=4, columnspan=2)
+        self.game_frame.place(x=0, y=0)
 
         # Contact and advertisement frame
-        self.contact_frame = tk.LabelFrame(self.root, text="Contact Us")
-        self.contact_frame.grid(row=5, column=2, padx=10, pady=10)
-        tk.Label(self.contact_frame, text="Group3").pack()
+        self.contact_frame = tk.LabelFrame(self.root, text="Contact Us", width=160, height=80)
+        self.contact_frame.place(x=960, y=640)
+        # self.contact_frame.grid(row=5, column=2, padx=10, pady=10)
+        tk.Label(self.contact_frame, text="Group3", justify=tk.LEFT, wraplength=160).pack(expand=1, fill=tk.BOTH)
 
         self.ad_frame = tk.LabelFrame(self.root, text="Advertisement")
-        self.ad_frame.grid(row=5, column=3, padx=10, pady=10)
-        tk.Label(self.ad_frame, text="Ad").pack()
+        # self.ad_frame.grid(row=5, column=3, padx=10, pady=10)
+        self.ad_frame.place(x=1120, y=640)
+        tk.Label(self.ad_frame, text="Ad", justify=tk.LEFT, wraplength=160).pack()
 
         # Character 1 and 2 information frames
         self.character1_frame = tk.LabelFrame(self.root, text="Character 1")
-        self.character1_frame.grid(row=5, column=0, padx=10, pady=10)
+        self.character1_frame.place(x=0, y=640)
 
         self.character2_frame = tk.LabelFrame(self.root, text="Character 2")
-        self.character2_frame.grid(row=5, column=1, padx=10, pady=10)
+        self.character2_frame.place(x=480, y=640)
 
         # Placeholder for player names in character frames (using labels for simplicity)
         self.player1_label = tk.Label(
-            self.character1_frame, text="player1, player2, etc."
+            self.character1_frame, text="player1, player2, etc.",
+            justify=tk.LEFT, wraplength=480
         )
         self.player1_label.pack()
 
         self.player2_label = tk.Label(
-            self.character2_frame, text="player1, player2, etc."
+            self.character2_frame, text="player1, player2, etc.",
+            justify=tk.LEFT, wraplength=480
         )
         self.player2_label.pack()
 
         # Frame for balance leaderboard
         self.balance_leaderboard_frame = tk.LabelFrame(
-            self.root, text="Balance Leaderboard"
+            self.root, text="Balance Leaderboard",
         )
-        self.balance_leaderboard_frame.grid(
-            row=1, column=2, columnspan=2, padx=10, pady=10
-        )
+        self.balance_leaderboard_frame.place(x=960, y=0)
 
         # Example of how to add items to the balance leaderboard
         # for i in range(5):
@@ -65,13 +69,17 @@ class GameView:
 
         # Frame for instructions
         self.instruction_frame = tk.LabelFrame(self.root, text="Instructions")
-        self.instruction_frame.grid(row=2, column=2, columnspan=2, padx=10, pady=10)
+        # self.instruction_frame.grid(row=2, column=2, columnspan=2, padx=10, pady=10)
+        self.instruction_frame.place(x=960, y=320)
 
         # Read instructions file
-        with open("command_instruction.txt") as f:
+        with open("/home/tien/AI_Games/GIS81507/AIModule/gui/view/command_instruction.txt") as f:
             instr = f.readlines()
+            instr = [x.strip() for x in instr]
             instr = "\n".join(instr)
-            self.instruction_frame.config(text=instr)
+            # print(instr)
+            self.instruction_label = tk.Label(self.instruction_frame, text=instr, justify=tk.LEFT, wraplength=320)
+            self.instruction_label.pack()
 
         # Placeholder for actual game stats (using a label for simplicity)
         # self.game_stats_label = tk.Label(
@@ -119,7 +127,7 @@ class GameView:
 
                 label = ttk.Label(
                     self.balance_leaderboard_frame, text=f"Player {user_name}: {balance}"
-                ).pack()
+                ).pack(anchor='w')
                 self.player_leaderboard_records.append(label)
 
             player_1_list = []
