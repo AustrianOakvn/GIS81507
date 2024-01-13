@@ -31,7 +31,7 @@ class Bot(commands.Bot):
             prefix=os.environ.get("COMMAND_PREFIX"),
             initial_channels=[os.environ.get("CHANNEL")],
         )
-        
+
         self.random_simulator = random_simulator
 
         # if new game is started, then clear player_list and next_game_queue
@@ -178,21 +178,23 @@ class Bot(commands.Bot):
     @staticmethod
     def _get_action_key(message: Message) -> str or None:
         """Check if message contains a valid action key"""
-        action_key = message.content[0].upper()
+        action_key = message.content.upper()
 
-        action_key = MAPPING.get(action_key, None)
+        # Filter
+        action_keys_filtered = "".join([MAPPING[i] for i in action_key if i in MAPPING])
+        # action_key = MAPPING.get(action_key, None)
 
         # print("mapped action key: ", action_key)
 
-        return action_key
+        return action_keys_filtered[:10]
 
-    def _collect_command(self, action_key: str, player: Player):
+    def _collect_command(self, action_key: [str], player: Player):
         """Send action key to API"""
         if player.player_team == "player_1":
-            self.p1_commands.append(action_key)
+            self.p1_commands.extend(action_key)
 
         elif player.player_team == "player_2":
-            self.p2_commands.append(action_key)
+            self.p2_commands.extend(action_key)
 
         # print("sent action key: ", action_key)
 
@@ -204,11 +206,20 @@ class Bot(commands.Bot):
         if len(list(game_status.keys())) == 0:
             return
 
-        self.game.game_state = game_status["game_state"]
-        self.game.p1_stats.hp = game_status["p1_stats"]["hp"]
-        self.game.p1_stats.energy = game_status["p1_stats"]["energy"]
-        self.game.p2_stats.hp = game_status["p2_stats"]["hp"]
-        self.game.p2_stats.energy = game_status["p2_stats"]["energy"]
+        self.game.game_state = game_status.get("game_state", "nothing")
+        print(self.game.game_state)
+        if game_status.get("p1_stats") is None:
+            # Create dummy info
+            self.game.p1_stats.hp = 400
+            self.game.p1_stats.energy = 0
+            self.game.p2_stats.hp = 400
+            self.game.p2_stats.energy = 0
+        else:
+            self.game.p1_stats.hp = game_status["p1_stats"]["hp"]
+            self.game.p1_stats.energy = game_status["p1_stats"]["energy"]
+            self.game.p2_stats.hp = game_status["p2_stats"]["hp"]
+            self.game.p2_stats.energy = game_status["p2_stats"]["energy"]
+
         # print("recieved game status: ", self.game.game_state)
 
     def _register_player(self, message: Message):
@@ -244,30 +255,29 @@ class Bot(commands.Bot):
                 )
 
             self.bet_system.round_finish(winner, to_be_awarded)
-            
+
             self.player_list.clear()
-            
+
             # add players in next_game_queue to player_list
             for id, player in enumerate(self.next_game_queue.values(), start=1):
                 self.player_list[player.twitch_id] = player
                 if id > max_player:
                     break
-            
+
             self.next_game_queue.clear()
-            
+
             logger.info("New game started, player list has been updated")
 
-    def _send_command(self, interval=1000):
+    def _send_command(self, interval=500):
         while True:
-
             # havest command from chat
-            
+
             if not self.random_simulator:
                 send_json = {
-                    "player_1": self.p1_commands,
-                    "player_2": self.p2_commands
+                    "player_1": self.p1_commands[:5],
+                    "player_2": self.p2_commands[:5]
                 }
-                
+
             else:
 
                 send_json = {
@@ -275,14 +285,14 @@ class Bot(commands.Bot):
                     "player_2": random.sample(MOVEMENT_KEYS + ATTACK_KEYS, 5)
                 }
 
-            # print("sent command: ", send_json)
+            print("sent command: ", send_json)
 
             self.p1_commands.clear()
             self.p2_commands.clear()
 
             response = send_to_api(COMMAND_HANDLER_ROUTE, send_json)
 
-            print("recieved game status: ", response.json())
+            # print("recieved game status: ", response.json())
 
             # TODO: Detect game end, update player list
 
@@ -291,17 +301,17 @@ class Bot(commands.Bot):
             self._update_status_to_gui()
 
             sleep(interval / 1000)
-            
+
     def _update_status_to_gui(self):
         """Update status to GUI"""
-        
+
         status = {
             "top_5_balance": self.bet_db.top_balance(5),
             "game_status": asdict(self.game),
             "player_list": [asdict(player) for player in self.player_list.values()],
             "next_game_queue": [asdict(player) for player in self.next_game_queue.values()]
         }
-        
+
         with open(STATUS_JSON_ADDRESS, "w") as f:
             f.write(json.dumps(status))
 
