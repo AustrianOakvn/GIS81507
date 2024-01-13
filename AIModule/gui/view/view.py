@@ -8,9 +8,9 @@ USER_NAME_LENTH_LIMIT = 8
 
 class GameView:
     def __init__(self, arg, update_interval=1000):
-        
+
         self.arg = arg
-        
+
         # Main application window
         self.root = tk.Tk()
         self.root.title("Game Betting Interface")
@@ -84,10 +84,10 @@ class GameView:
 
     def update_content(self):
         try:
-            
+
             status = self._read_status_json()
             # print(status)
-            
+
             child_ld_board = self.balance_leaderboard_frame.winfo_children()
 
             # destroy previous leaderboard
@@ -101,16 +101,16 @@ class GameView:
 
             self.player_leaderboard_records = []
             child_ld_board = self.balance_leaderboard_frame.winfo_children()
-            
+
             # update leaderboard
             for i in range(len(status["top_5_balance"])):
-                
+
                 user_id, user_name, balance = status["top_5_balance"][i]
-                
+
                 if i < len(child_ld_board):
                     child_ld_board[i].config(text=f"Player {user_name}: {balance}")
                     continue
-                
+
                 label = ttk.Label(
                     self.balance_leaderboard_frame, text=f"Player {user_name}: {balance}"
                 ).pack()
@@ -133,10 +133,10 @@ class GameView:
                     next_game_list_p1.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
                 elif next_player["player_team"] == "player_2":
                     next_game_list_p2.append(next_player["username"][:USER_NAME_LENTH_LIMIT])
-                    
+
             player_1_info = "Current players: " + ", ".join(player_1_list) + "\nNext game players: " + ", ".join(next_game_list_p1)
             player_2_info = "Current players: " + ", ".join(player_2_list) + "\nNext game players: " + ", ".join(next_game_list_p2)
-                    
+
             self.player1_label.config(text=player_1_info)
             self.player2_label.config(text=player_2_info)
 
@@ -144,7 +144,7 @@ class GameView:
 
             # Schedule the next update after 1 second
             self.root.after(self.update_interval, self.update_content)
-            
+
         except Exception as e:
             print(e)
             self.root.after(self.update_interval, self.update_content)
@@ -163,16 +163,16 @@ class GameView:
     #     self.gif_label.configure(image=frame)
     #     self.root.after(100, self.update_gif, ind)
 
-def parse_args():    
+def parse_args():
     arg = argparse.ArgumentParser()
     arg.add_argument("--json_path", type=str, default="status.json")
-    
+
     return arg.parse_args()
 
 if __name__ == "__main__":
 
     arg = parse_args()
-    
+
     # Create an instance of the GameView class
     game_view = GameView(arg)
 
