@@ -22,23 +22,37 @@ class CommandRequest(BaseModel):
 
 def pop_command(queue_1, queue_2, window_size:int=5):
     # check if queue is empty
-    if queue_1.empty() or queue_2.empty():
-        return None
-    if queue_1.qsize() < window_size or queue_2.qsize() < window_size:
-        return None
-    else:
-        sub_actions_1 = []
-        sub_actions_2 = []
-        for i in range(window_size):
+    # if queue_1.empty() or queue_2.empty():
+    #     return None
+    # if queue_1.qsize() < window_size or queue_2.qsize() < window_size:
+    #     return None
+    # else:
+    #     sub_actions_1 = []
+    #     sub_actions_2 = []
+    #     for i in range(window_size):
+    #         sub_actions_1.append(queue_1.get())
+    #         sub_actions_2.append(queue_2.get())
+
+    #     return {
+    #         "p1_actions": sub_actions_1,
+    #         "p2_actions": sub_actions_2
+    #     }
+    sub_actions_1 = []
+    sub_actions_2 = []
+    if queue_1.qsize() > 0:
+        while not queue_1.empty():
             sub_actions_1.append(queue_1.get())
+    if queue_2.qsize() > 0:
+        while not queue_2.empty():
             sub_actions_2.append(queue_2.get())
 
-        return {
-            "p1_actions": sub_actions_1,
-            "p2_actions": sub_actions_2
-        }
-    
-    
+    return {
+        "p1_actions": sub_actions_1,
+        "p2_actions": sub_actions_2
+    }
+
+
+
 def send_command2game(commands):
     payload = {
         "p1_actions": commands["p1_actions"],
@@ -48,6 +62,7 @@ def send_command2game(commands):
 
     game_stat = response.json()
     return game_stat
+
 
 def get_game_stat():
     response = requests.post(GAME_ENDPOINT_STAT)

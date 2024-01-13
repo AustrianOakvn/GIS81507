@@ -67,9 +67,9 @@ def AICommand(twitch_keys: List[str], agent, sample=False):
         else:
             for k in twitch_keys:
                 if k in MOVEMENT_KEYS:
-                    agent.set_action(k, None)
+                    agent.set_action(ACTIONS_INVERSE[KEY_MAP_INVERSE[k]], None)
                 elif k in ATTACK_KEYS:
-                    agent.set_action(None, k)
+                    agent.set_action(None, ACTIONS_INVERSE[KEY_MAP_INVERSE[k]])
         return sampled_move, sampled_attack
     
 
@@ -89,21 +89,34 @@ def command_handler(agent_1, agent_2, p1_twich_keys, p2_twitch_keys):
     # Thread to check the command buffer and send to game
     # input: list of commands
     # output: move + attack
-    #command_logger.info(f"Buffer key: {p1_twich_keys} {p2_twitch_keys}")
-    print("current buffer key:", p1_twich_keys, p2_twitch_keys)
-    if len(p1_twich_keys) == 0 or len(p2_twitch_keys) == 0:
-        return
-    else:
-        try:
-            p1_move, p1_attack = AICommand(p1_twich_keys, agent_1)
-            p2_move, p2_attack = AICommand(p2_twitch_keys, agent_2)
+    # print("current buffer key:", p1_twich_keys, p2_twitch_keys)
+    # if len(p1_twich_keys) == 0 or len(p2_twitch_keys) == 0:
+    #     return
+    # else:
+    #     try:
+            # p1_move, p1_attack = AICommand(p1_twich_keys, agent_1)
+            # p2_move, p2_attack = AICommand(p2_twitch_keys, agent_2)
             #command_logger.info(f"Commands to game:  {p1_move} {p1_attack} {p2_move} {p2_attack}")
             #print("sending command to game:", p1_move, p1_attack, p2_move, p2_attack)
             # agent_1.set_action(p1_move, p1_attack)
             # agent_2.set_action(p2_move, p2_attack)
+        # except Exception as ex:
+        #     print("Error in command handler")
+        #     print(ex)
+
+    if len(p1_twich_keys) != 0:
+        try:
+            p1_move, p1_attack = AICommand(p1_twich_keys, agent_1)
         except Exception as ex:
-            print("Error in command handler")
+            print("Error in command handler for p1")
             print(ex)
+    if len(p2_twitch_keys) != 0:
+        try:
+            p2_move, p2_attack = AICommand(p2_twitch_keys, agent_2)
+        except Exception as ex:
+            print("Error in command handler for p2")
+            print(ex)
+
     
 
 def get_game_status(agent_1):
