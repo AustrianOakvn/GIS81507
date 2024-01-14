@@ -169,7 +169,7 @@ class Bot(commands.Bot):
     async def register(self, ctx: commands.Context):
         """Register player"""
         self.bet_system.get_balance(ctx.author.id, ctx.author.name)
-        if ctx.author.id in self.bet_system.next_match:
+        if (ctx.author.id, ctx.author.name) in self.bet_system.next_match:
             await ctx.send(
                 f"Trying to matchfixing? Shame on you {ctx.author.name}."
             )
