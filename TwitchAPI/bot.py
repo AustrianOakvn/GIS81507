@@ -260,7 +260,7 @@ class Bot(commands.Bot):
 
             self.bet_system.round_finish(winner, to_be_awarded)
 
-            ## self.player_list.clear()
+            self.player_list.clear()
 
             # add players in next_game_queue to player_list
             for id, player in enumerate(self.next_game_queue.values(), start=1):
