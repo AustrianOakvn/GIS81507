@@ -30,10 +30,10 @@ class GameView:
         # self.contact_frame.grid(row=5, column=2, padx=10, pady=10)
         tk.Label(self.contact_frame, text="Group3", justify=tk.LEFT, wraplength=160).pack(expand=1, fill=tk.BOTH)
 
-        self.ad_frame = tk.LabelFrame(self.root, text="Advertisement")
+        self.ad_frame = tk.LabelFrame(self.root, text="Buy more balance")
         # self.ad_frame.grid(row=5, column=3, padx=10, pady=10)
         self.ad_frame.place(x=1120, y=640)
-        tk.Label(self.ad_frame, text="Ad", justify=tk.LEFT, wraplength=160).pack()
+        tk.Label(self.ad_frame, text="1000 credits for 1000 JPY", justify=tk.LEFT, wraplength=160).pack()
 
         # Character 1 and 2 information frames
         self.character1_frame = tk.LabelFrame(self.root, text="Character 1")
