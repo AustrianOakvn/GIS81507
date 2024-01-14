@@ -142,14 +142,18 @@ class Bot(commands.Bot):
 
         logger.debug("Bet command from player %s has valid syntax.", ctx.author.name)
 
-        status, message = self.bet_system.bet(ctx.author.id, ctx.author.name, amount, chosen_player)
-        if status:
-            logger.info("Executed bet command from user %s (%s) for player %d with amount of %d.", ctx.author.name, ctx.author.id, chosen_player, amount)
-            new_balance = self.bet_db.get_balance_update_username(ctx.author.id, ctx.author.name)
-            await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
+        # Check if in wait list (no match fixing allowed)
+        if ctx.author.id in self.next_game_queue:
+            await ctx.send(f"Trying to match fixing? Shame on you, {ctx.author.name}.")
         else:
-            logger.error("Bet command from user %s (%s) was not executed. Reason: %s", ctx.author.name, ctx.author.id, message)
-            await ctx.send(f"Bet command from {ctx.author.name} was not executed. Reason: {message}")
+            status, message = self.bet_system.bet(ctx.author.id, ctx.author.name, amount, chosen_player)
+            if status:
+                logger.info("Executed bet command from user %s (%s) for player %d with amount of %d.", ctx.author.name, ctx.author.id, chosen_player, amount)
+                new_balance = self.bet_db.get_balance_update_username(ctx.author.id, ctx.author.name)
+                await ctx.send(f"User {ctx.author.name} placed a bet on player {chosen_player} for {amount}. New balance: {new_balance}.")
+            else:
+                logger.error("Bet command from user %s (%s) was not executed. Reason: %s", ctx.author.name, ctx.author.id, message)
+                await ctx.send(f"Bet command from {ctx.author.name} was not executed. Reason: {message}")
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
