@@ -267,12 +267,17 @@ class Bot(commands.Bot):
             self.player_list.clear()
 
             # add players in next_game_queue to player_list
+            to_be_clear = []
             for id, player in enumerate(self.next_game_queue.values(), start=1):
                 self.player_list[player.twitch_id] = player
-                if id > max_player:
+                to_be_clear.append(player.twitch_id)
+                if id == max_player:
                     break
 
-            self.next_game_queue.clear()
+            for id in to_be_clear:
+                self.next_game_queue.pop(id)
+
+            # self.next_game_queue.clear()
 
             logger.info("New game started, player list has been updated")
 
