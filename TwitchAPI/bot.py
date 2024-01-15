@@ -291,10 +291,21 @@ class Bot(commands.Bot):
         while True:
             # havest command from chat
 
-            send_json = {
-                "player_1": self.p1_commands[:],
-                "player_2": self.p2_commands[:]
-            }
+            if not self.random_simulator:
+                send_json = {
+                    "player_1": self.p1_commands[:],
+                    "player_2": self.p2_commands[:]
+                }
+            else:
+                p1_cs = []
+                p2_cs = []
+                for _ in range(10):
+                    p1_cs.append(random.choice(MAPPING_P1.values()))
+                    p2_cs.append(random.choice(MAPPING_P2.values()))
+                send_json = {
+                    "player_1": p1_cs,
+                    "player_2": p2_cs
+                }
 
             # print("sent command: ", send_json)
 
