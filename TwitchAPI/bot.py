@@ -299,9 +299,11 @@ class Bot(commands.Bot):
             else:
                 p1_cs = []
                 p2_cs = []
+                p1_cmds = list(MAPPING_P1.values())
+                p2_cmds = list(MAPPING_P2.values())
                 for _ in range(10):
-                    p1_cs.append(random.choice(MAPPING_P1.values()))
-                    p2_cs.append(random.choice(MAPPING_P2.values()))
+                    p1_cs.append(random.choice(p1_cmds))
+                    p2_cs.append(random.choice(p2_cmds))
                 send_json = {
                     "player_1": p1_cs,
                     "player_2": p2_cs
